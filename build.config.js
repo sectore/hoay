@@ -61,8 +61,6 @@ module.exports = {
     ],
     fonts: [
       'vendor/font-awesome/font/*.*',
-      'vendor/source-sans-pro/SourceSansPro-Regular.*',
-      'vendor/source-sans-pro/SourceSansPro-Bold.*'
     ]
   }
 };

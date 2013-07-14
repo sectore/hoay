@@ -3,8 +3,7 @@
 build/
 bin/
 node_modules/
-vendor/*
-!vendor/source-sans-pro/
+vendor/
 .sass-cache
 
 phonegap
