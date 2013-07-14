@@ -8,7 +8,9 @@
   position: fixed;
 
   $navbar-padding: 5px;
-  background-color: $bg_color_1;
+  background-color: $color_1;
+
+  border-bottom: solid 1px $color_3;
 
 
   @include hidpi(2.0){
@@ -23,11 +25,11 @@
     font-size: 20px;
     line-height: 44px;
     text-align: center;
-    color: $font_color_1;
+    color: $color_3;
   }
 
   .icon{
-    color: $font_color_1;
+    color: $color_3;
     @include size($navbar-height);
 
     i{
