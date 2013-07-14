@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.content{
+[class*="content"]{
   position: fixed;
   top: 44px;
   right: 0;
