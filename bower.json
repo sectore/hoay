@@ -1,0 +1,13 @@
+{
+  "name": "hoay",
+  "version": "0.0.1",
+  "devDependencies": {
+    "angular": "PatternConsulting/bower-angular#1.1.5",
+    "angular-mobile-nav": "latest",
+    "font-awesome": "~3.2.1",
+    "bourbon": "~3.1.8",
+    "normalize-css": "~2.1.2"
+
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,13 @@
+*.sw*
+*~
+build/
+bin/
+node_modules/
+vendor/*
+!vendor/source-sans-pro/
+.sass-cache
+
+phonegap
+.cordova
+
+.idea

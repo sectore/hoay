@@ -1,0 +1,59 @@
+.navbar{
+
+  $icon-size: 20px;
+  $navbar-height: 44px;
+  @include size(100% $navbar-height);
+  z-index: 10;
+
+  position: fixed;
+
+  $navbar-padding: 5px;
+  background-color: $bg_color_1;
+
+
+  @include hidpi(2.0){
+    $navbar-padding: 10px;
+    @include size(100% 88px);
+  }
+
+  .title{
+    @include position(absolute, 0 30px 0 30px);
+    margin: 0;
+    font-family: $font_1;
+    font-size: 20px;
+    line-height: 44px;
+    text-align: center;
+    color: $font_color_1;
+  }
+
+  .icon{
+    color: $font_color_1;
+    @include size($navbar-height);
+
+    i{
+
+      font-size: 22px;
+      display: inline-block;
+      @include size($navbar-height);
+      line-height: $navbar-height;
+      text-align: center;
+    }
+
+    &:first-child{
+      @include position(absolute, 0px 0 0 0px);
+    }
+
+    &:last-child{
+      @include position(absolute, 0px 0px 0 0);
+    }
+
+    @include hidpi(2.0){
+      $icon-size: 40px;
+      @include size($icon-size);
+      padding: 10px;
+    }
+
+  }
+
+}
+

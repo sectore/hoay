@@ -1,0 +1,23 @@
+@include font-face('#{$font_1}', '/vendor/source-sans-pro/SourceSansPro-Regular');
+@include font-face('#{$font_2}', '/vendor/source-sans-pro/SourceSansPro-Bold', bold);
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-family: 'SourceSansPro';
+  background-color: $bg_color_1;
+  color: $font_color_1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content{
+  position: fixed;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background-color: $bg_color_2;
+}
