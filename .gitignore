@@ -10,3 +10,4 @@ phonegap
 .cordova
 
 .idea
+*.iml
