@@ -1,0 +1,8 @@
+{
+  "calculate":{
+    "TITLE": "Wie alt bist Du?",
+    "LABEL_BUTTON": "Berechnen",
+    "LABEL_START_DATE": "Startdatum",
+    "LABEL_END_DATE": "Enddatum"
+  }
+}

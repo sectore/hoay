@@ -5,6 +5,7 @@ angular.module('hoay', [
   'templates.app'
   'ajoslin.mobile-navigate'
   'ngMobile'
+  'pascalprecht.translate'
   # app related stuff
   'hoay.services'
   'hoay.calculate'
@@ -13,7 +14,7 @@ angular.module('hoay', [
   'hoay.settings'
 ])
 
-.config [
+.config([
   '$routeProvider',
   '$locationProvider',
   ($routeProvider, $locationProvider) ->
@@ -21,4 +22,14 @@ angular.module('hoay', [
       redirectTo: '/'
     # html5Mode
     $locationProvider.html5Mode true
-]
+])
+
+.config([
+  '$translateProvider'
+  ($translateProvider) ->
+    $translateProvider.useStaticFilesLoader
+      prefix: 'assets/locales/'
+      suffix: '.json'
+
+    $translateProvider.preferredLanguage 'de_DE'
+])

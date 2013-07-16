@@ -1,6 +1,6 @@
 <header class="navbar">
   <a class="icon" ng-click="showInfo()"><i class="icon-info"></i></a>
-  <h1 class="title">How old are you?</h1>
+  <h1 class="title" translate>calculate.TITLE</h1>
   <a class="icon" ng-click="showSettings()"><i class="icon-cog"></i></a>
 </header>
 <div class="content-calculate">
@@ -9,7 +9,7 @@
       <a class="button">
         <div class="label-container">
           <div class="label-wrapper">
-            <p class="label-date">Startdate</p>
+            <p class="label-date" translate>calculate.LABEL_START_DATE</p>
             <p class="date">
               23.01.1978
               <i class="icon-sort"></i>
@@ -22,7 +22,7 @@
       <a class="button">
         <div class="label-container">
           <div class="label-wrapper">
-            <p class="label-date">Enddate</p>
+            <p class="label-date" translate>calculate.LABEL_END_DATE</p>
             <p class="date">
               16.07.2013
               <i class="icon-sort"></i>
@@ -35,9 +35,7 @@
       <a class="button button-calculate" ng-click="showResult()">
         <div class="label-container">
           <div class="label-wrapper">
-            <p class="label-calculate">
-              Calculate
-            </p>
+            <p class="label-calculate" translate>calculate.LABEL_BUTTON</p>
           </div>
         </div>
       </a>

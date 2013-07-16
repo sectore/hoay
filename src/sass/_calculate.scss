@@ -1,0 +1,82 @@
+.content-calculate{
+
+  ul>li{
+    @include size(100% 34%);
+
+    &:first-child{
+      .button{
+        border-bottom: solid em(1) $color_1
+      }
+    }
+
+    &:last-child{
+      @include size(100% 32%);
+    }
+  }
+
+  .button{
+    display: table;
+    @include size(100%);
+    background-color: $color_2;
+    cursor: pointer;
+  }
+
+  .button-calculate{
+    background-color: $color_1;
+    position: relative;
+
+    &:after{
+      $arrow-size: 25;
+      position: absolute;
+      bottom: 100%;
+      border: solid transparent;
+      content: " ";
+      @include size(0);
+      border-bottom-color: $color_1;
+      border-width: em($arrow-size);
+      left: 50%;
+      margin-left: em($arrow-size * -1);
+    }
+  }
+
+  .label-container{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .label-wrapper{
+    display: inline-block;
+    text-align: left;
+  }
+
+  .label-date,
+  .date{
+    padding: 0;
+    font-family: $font_1;
+    color: $color_4;
+  }
+  .label-date{
+    font-size: em(30);
+  }
+
+  $font-size-date: 80;
+
+  .date{
+    font-size: em($font-size-date);
+  }
+
+
+  .icon-sort{
+    $icon-size: 60;
+    color: $color_4;
+    font-size: em($icon-size, $font-size-date);
+  }
+
+  .label-calculate{
+    color: $color_2;
+    font-family: $font_1;
+    font-size: em(80);
+  }
+
+}
