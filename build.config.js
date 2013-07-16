@@ -52,7 +52,9 @@ module.exports = {
       'vendor/angular/angular.js',
       'vendor/angular/angular-mocks.js',
       'vendor/angular/angular-mobile.js',
-      'vendor/angular-mobile-nav/mobile-nav.js'
+      'vendor/angular-mobile-nav/mobile-nav.js',
+      'vendor/angular-translate/angular-translate.js',
+      'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js'
     ],
     css: [
       'vendor/normalize-css/normalize.css',
