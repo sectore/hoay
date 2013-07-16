@@ -1,29 +1,24 @@
 .navbar{
 
-  $icon-size: 20px;
-  $navbar-height: 44px;
+  $icon-size: em(20);
+  $navbar-height: 44;
   @include size(100% $navbar-height);
   z-index: 10;
 
   position: fixed;
 
-  $navbar-padding: 5px;
+  $navbar-padding: em(5);
   background-color: $color_1;
 
   border-bottom: solid 1px $color_3;
 
-
-  @include hidpi(2.0){
-    $navbar-padding: 10px;
-    @include size(100% 88px);
-  }
-
   .title{
-    @include position(absolute, 0 30px 0 30px);
+    @include position(absolute, 0 em(30) 0 em(30));
     margin: 0;
     font-family: $font_1;
-    font-size: 20px;
-    line-height: 44px;
+    $font-size: 20;
+    font-size: em($font-size);
+    line-height: em($navbar-height, $font-size);
     text-align: center;
     color: $color_3;
   }
@@ -33,26 +28,20 @@
     @include size($navbar-height);
 
     i{
-
-      font-size: 22px;
+      $icon-height: 22;
+      font-size: em($icon-height);
       display: inline-block;
       @include size($navbar-height);
-      line-height: $navbar-height;
+      line-height: em($navbar-height, $icon-height);
       text-align: center;
     }
 
     &:first-child{
-      @include position(absolute, 0px 0 0 0px);
+      @include position(absolute, em(0) 0 0 em(0));
     }
 
     &:last-child{
-      @include position(absolute, 0px 0px 0 0);
-    }
-
-    @include hidpi(2.0){
-      $icon-size: 40px;
-      @include size($icon-size);
-      padding: 10px;
+      @include position(absolute, em(0) em(0) 0 0);
     }
 
   }
