@@ -26,6 +26,7 @@
   .icon{
     color: $color_3;
     @include size($navbar-height);
+    cursor: pointer;
 
     i{
       $icon-height: 22;

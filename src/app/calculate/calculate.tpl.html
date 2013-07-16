@@ -1,8 +1,46 @@
 <header class="navbar">
   <a class="icon" ng-click="showInfo()"><i class="icon-info"></i></a>
-  <h1 class="title">Calculate</h1>
-  <a class="icon" ng-click="showSettings()"><i class="icon-cog"></i></i></a>
+  <h1 class="title">How old are you?</h1>
+  <a class="icon" ng-click="showSettings()"><i class="icon-cog"></i></a>
 </header>
 <div class="content-calculate">
- <p ng-click="showResult()">Goto Result</p>
+  <ul>
+    <li>
+      <a class="button">
+        <div class="label-container">
+          <div class="label-wrapper">
+            <p class="label-date">Startdate</p>
+            <p class="date">
+              23.01.1978
+              <i class="icon-sort"></i>
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="button">
+        <div class="label-container">
+          <div class="label-wrapper">
+            <p class="label-date">Enddate</p>
+            <p class="date">
+              16.07.2013
+              <i class="icon-sort"></i>
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="button button-calculate" ng-click="showResult()">
+        <div class="label-container">
+          <div class="label-wrapper">
+            <p class="label-calculate">
+              Calculate
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
 </div>
