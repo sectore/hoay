@@ -12,5 +12,10 @@
   "settings":{
     "TITLE": "Settings",
     "LANGUAGE": "Language"
+  },
+  "info":{
+    "TITLE": "Info",
+    "ABOUT": "About this app",
+    "TXT_INFO": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh ..."
   }
 }

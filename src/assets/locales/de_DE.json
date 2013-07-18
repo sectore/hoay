@@ -12,5 +12,10 @@
   "settings":{
     "TITLE": "Einstellungen",
     "LANGUAGE": "Sprache"
+  },
+  "info":{
+    "TITLE": "Info",
+    "ABOUT": "Über diese Anwendung",
+    "TXT_INFO": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh ..."
   }
 }
