@@ -1,6 +1,8 @@
 'use strict'
 
-angular.module('hoay', [
+# module definition
+# ------------------------------------------------------------
+angular.module('hoay.app', [
   'templates.common'
   'templates.app'
   'ajoslin.mobile-navigate'
@@ -8,14 +10,15 @@ angular.module('hoay', [
   'ngCookies'
   'pascalprecht.translate'
   # app related stuff
-  'hoay.services'
-  'hoay.filters'
+  'hoay.dates'
   'hoay.calculate'
   'hoay.result'
   'hoay.info'
   'hoay.settings'
 ])
 
+# configurations
+# ------------------------------------------------------------
 .config([
   '$routeProvider',
   '$locationProvider',

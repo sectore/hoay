@@ -1,17 +1,23 @@
 'use strict'
 
+# module definition
+# ------------------------------------------------------------
 angular.module('hoay.result', [])
 
+# config
+# ------------------------------------------------------------
 .config([
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
     .when '/result',
-      controller: 'ResultController',
+      controller: 'resultController',
       templateUrl: 'result/result.tpl.html'
 ])
 
-.controller 'ResultController'
+# controller
+# ------------------------------------------------------------
+.controller 'resultController'
 , ($scope, $navigate, $log)->
   $log.info "ResultController"
 

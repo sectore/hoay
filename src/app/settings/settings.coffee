@@ -1,17 +1,23 @@
 'use strict'
 
+# module definition
+# ------------------------------------------------------------
 angular.module('hoay.settings', [])
 
+# configuration
+# ------------------------------------------------------------
 .config([
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
     .when '/settings',
-      controller: 'SettingsController',
+      controller: 'settingsController',
       templateUrl: 'settings/settings.tpl.html'
 ])
 
-.controller('SettingsController', [
+# controller
+# ------------------------------------------------------------
+.controller('settingsController', [
     '$scope',
     '$navigate',
     '$translate',
