@@ -9,6 +9,7 @@ angular.module('hoay', [
   'pascalprecht.translate'
   # app related stuff
   'hoay.services'
+  'hoay.filters'
   'hoay.calculate'
   'hoay.result'
   'hoay.info'

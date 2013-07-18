@@ -1,4 +1,8 @@
 {
+  "common":{
+    "FORMAT_DATE_SHORT": "dd.MM.yy",
+    "FORMAT_NUMBER": ""
+  },
   "calculate":{
     "TITLE": "Wie alt bist Du?",
     "LABEL_BUTTON": "Berechnen",

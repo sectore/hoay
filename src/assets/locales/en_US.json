@@ -1,6 +1,6 @@
 {
   "common":{
-    "FORMAT_DATE": "",
+    "FORMAT_DATE_SHORT": "MM/dd/yy",
     "FORMAT_NUMBER": ""
   },
   "calculate":{
