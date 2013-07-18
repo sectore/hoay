@@ -10,7 +10,7 @@ angular.module('hoay.calculate', [])
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
-      .when '/',
+      .when '/calculate',
         controller: 'calculateController',
         templateUrl: 'calculate/calculate.tpl.html'
 ])
