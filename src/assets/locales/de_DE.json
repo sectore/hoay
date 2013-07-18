@@ -4,5 +4,9 @@
     "LABEL_BUTTON": "Berechnen",
     "LABEL_START_DATE": "Startdatum",
     "LABEL_END_DATE": "Enddatum"
+  },
+  "settings":{
+    "TITLE": "Einstellungen",
+    "LANGUAGE": "Sprache"
   }
 }

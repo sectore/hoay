@@ -1,7 +1,19 @@
 <header class="navbar">
   <a class="icon" ng-click="prev()"><i class="icon-chevron-down"></i></a>
-  <h1 class="title">Settings</h1>
+  <h1 class="title" translate>settings.TITLE</h1>
 </header>
 <div class="content-settings">
- <p>Settings</p>
+  <h2 class="subheadline" translate>settings.LANGUAGE</h2>
+  <div class="button-wrapper">
+    <a href
+      class="button"
+      ng-click="setGerman()"
+      ng-class="isGerman() && 'active'"
+      translate>Deutsch</a>
+    <a href
+      class="button"
+      ng-click="setEnglish()"
+      ng-class="isEnglish() && 'active'"
+      translate>English</a>
+  </div>
 </div>

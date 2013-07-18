@@ -5,6 +5,7 @@ angular.module('hoay', [
   'templates.app'
   'ajoslin.mobile-navigate'
   'ngMobile'
+  'ngCookies'
   'pascalprecht.translate'
   # app related stuff
   'hoay.services'
@@ -31,5 +32,6 @@ angular.module('hoay', [
       prefix: 'assets/locales/'
       suffix: '.json'
 
-    $translateProvider.preferredLanguage 'de_DE'
+    $translateProvider.useLocalStorage()
+    $translateProvider.preferredLanguage 'en_US'
 ])

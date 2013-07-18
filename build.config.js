@@ -52,9 +52,14 @@ module.exports = {
       'vendor/angular/angular.js',
       'vendor/angular/angular-mocks.js',
       'vendor/angular/angular-mobile.js',
+      'vendor/angular/angular-cookies.js',
+      'vendor/angular/i18n/angular-locale_en-us.js',
+      'vendor/angular/i18n/angular-locale_de-de.js',
       'vendor/angular-mobile-nav/mobile-nav.js',
       'vendor/angular-translate/angular-translate.js',
-      'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js'
+      'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
+      'vendor/angular-translate-storage-local/angular-translate-storage-local.js'
     ],
     css: [
       'vendor/normalize-css/normalize.css',
@@ -62,7 +67,7 @@ module.exports = {
       'vendor/font-awesome/css/font-awesome.css'
     ],
     fonts: [
-      'vendor/font-awesome/font/*.*',
+      'vendor/font-awesome/font/*.*'
     ]
   }
 };

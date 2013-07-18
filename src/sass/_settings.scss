@@ -1,3 +1,36 @@
 .content-settings{
   background-color: $color_1;
+  padding: em(50) em(30);
+
+  .subheadline{
+    font-family: $font_1;
+    font-weight: normal;
+    font-size: em(45);
+    color: $color_3;
+    padding-bottom: em(15);
+  }
+
+  .button-wrapper{
+    width: 100%;
+    @include clearfix;
+  }
+
+  .button{
+    width: 50%;
+    float: left;
+    font-family: $font_1;
+    font-size: em(45);
+    text-align: center;
+    color: $color_3;
+    background-color: $color_1;
+    border: solid em(1) $color_3;
+    padding: em(20);
+
+    &.active{
+      border: solid em(1) $color_3;
+      background-color: $color_3;
+      color: $color_4;
+    }
+  }
 }
+

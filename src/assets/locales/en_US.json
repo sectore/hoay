@@ -1,8 +1,16 @@
 {
+  "common":{
+    "FORMAT_DATE": "",
+    "FORMAT_NUMBER": ""
+  },
   "calculate":{
     "TITLE": "How old are you?",
     "LABEL_BUTTON": "Calculate",
     "LABEL_START_DATE": "Startdate",
     "LABEL_END_DATE": "Enddate"
+  },
+  "settings":{
+    "TITLE": "Settings",
+    "LANGUAGE": "Language"
   }
 }
