@@ -4,7 +4,7 @@ angular.module('hoay.filters', [])
 .filter 'shortdate', [
   '$filter',
   '$translate',
-  ($log, $filter, $translate)->
+  ($filter, $translate)->
     (data)->
       format = $translate 'common.FORMAT_DATE_SHORT'
       result = $filter('date')(data, format)
