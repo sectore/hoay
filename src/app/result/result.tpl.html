@@ -4,11 +4,39 @@
   <a class="icon" ng-click="next()"><i class="icon-cog"></i></i></a>
 </header>
 <div class="content-result">
-  <p>start: {{dateModel.start | shortdate}}</p>
-  <p>end: {{dateModel.end | shortdate}}</p>
-  <p>days: {{dateModel.days}}</p>
-  <p>months: {{dateModel.months}}</p>
-  <p>years: {{dateModel.years}}</p>
-  <button ng-click="updateStartDate()">Update Startdate 1</button>
-  <button ng-click="updateStartDate2()">Update Startdate 2</button>
+  <div class="dates-container">
+    <div class="dates-wrapper">
+      <div class="date-container">
+        <p class="label-date" translate>calculate.LABEL_START_DATE</p>
+        <p class="date">
+          {{dateModel.start | shortdate}}
+          <i class="icon-sort"></i>
+        </p>
+      </div>
+      <div class="date-container">
+        <p class="label-date" translate>calculate.LABEL_END_DATE</p>
+        <p class="date">
+          {{dateModel.end | shortdate}}
+          <i class="icon-sort"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="viz-container">
+    <div class="chart-container">
+       <div class="chart-wrapper">
+
+       </div>
+    </div>
+    <div class="labels-container">
+      <!--<p>start: {{dateModel.start | shortdate}}</p>-->
+      <!--<p>end: {{dateModel.end | shortdate}}</p>-->
+      <!--<p>days: {{dateModel.days}}</p>-->
+      <!--<p>months: {{dateModel.months}}</p>-->
+      <!--<p>years: {{dateModel.years}}</p>-->
+      <button ng-click="updateStartDate()">Update Startdate 1</button>
+      <button ng-click="updateStartDate2()">Update Startdate 2</button>
+    </div>
+
+  </div>
 </div>

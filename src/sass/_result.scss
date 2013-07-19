@@ -1,4 +1,65 @@
 .content-result{
   background-color: $color_1;
-  padding: em(50) em(30);
+
+  .dates-container{
+    padding: em(20) em(30);
+    background-color: $color_2;
+    display: table;
+    width: 100%;
+  }
+  .dates-wrapper{
+    display: table-cell;
+    @include clearfix;
+  }
+
+  .date-container{
+    width: 50%;
+    font-family: $font_1;
+    color: $color_4;
+    float: left;
+
+    &:last-child{
+      p{
+        text-align: right;
+      }
+    }
+
+    .label-date{
+      font-size: em(20);
+    }
+
+    $font-size-date: 55;
+    .date{
+      font-size: em($font-size-date);
+    }
+
+    .icon-sort{
+      font-size: em(50, $font-size-date);
+    }
+  }
+
+  .viz-container{
+    height: 100%;
+  }
+
+  $labels-container-height: 100;
+  .chart-container{
+    @include size(100%);
+    $padding: 50;
+    padding: em($padding) em($padding) 0 em($padding);
+    background-color: $color_4;
+    position: relative;
+    padding-bottom: em($labels-container-height);
+  }
+
+  .chart-wrapper{
+    @include size(100%);
+    background-color: $color_5;
+  }
+
+  .labels-container{
+    background-color: $color_1;
+    height: em($labels-container-height);
+    @include position(absolute, 0 em(0) em(0) em(0));
+  }
 }

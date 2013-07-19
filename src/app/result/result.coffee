@@ -10,7 +10,7 @@ angular.module('hoay.result', [])
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
-    .when '/result',
+    .when '/',
       controller: 'resultController',
       templateUrl: 'result/result.tpl.html'
 ])
@@ -33,10 +33,12 @@ angular.module('hoay.result', [])
       $navigate.back()
 
     $scope.updateStartDate = ->
-      dateModel.setStart new Date(67,1,3)
+      dateModel.setStart new Date(1967,1,3)
+      dateModel.setEnd new Date(1989,5,17)
 
     $scope.updateStartDate2 = ->
-      dateModel.setStart new Date(88,2,5)
+      dateModel.setStart new Date(1988,2,5)
+      dateModel.setEnd new Date(2013,1,30)
 
 
 ]
