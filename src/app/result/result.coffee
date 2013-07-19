@@ -10,7 +10,7 @@ angular.module('hoay.result', [])
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
-    .when '/',
+    .when '/result',
       controller: 'resultController',
       templateUrl: 'result/result.tpl.html'
 ])
@@ -21,35 +21,22 @@ angular.module('hoay.result', [])
   '$scope',
   '$navigate',
   '$log',
-  'dateModel'
+  'DateModel'
   ($scope, $navigate, $log, dateModel)->
 
-    startDate = dateModel.startDate
-    endDate = dateModel.endDate
-
-    startMoment = moment startDate
-    endMoment = moment endDate
-
-    getDays = ->
-      endMoment.diff startMoment, 'days', true
-
-    getMonths = ->
-      endMoment.diff startMoment, 'months', true
-
-    getYears = ->
-      endMoment.diff startMoment, 'years', true
-
-    $scope.endDate = endDate
-    $scope.startDate = startDate
-
-    $scope.days = getDays()
-    $scope.months = getMonths()
-    $scope.years = getYears()
+    $scope.dateModel = dateModel
 
     $scope.next = ->
       $navigate.go '/settings', 'modal'
 
     $scope.prev = ->
       $navigate.back()
+
+    $scope.updateStartDate = ->
+      dateModel.setStart new Date(67,1,3)
+
+    $scope.updateStartDate2 = ->
+      dateModel.setStart new Date(88,2,5)
+
 
 ]

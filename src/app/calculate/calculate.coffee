@@ -10,7 +10,7 @@ angular.module('hoay.calculate', [])
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
-      .when '/calculate',
+      .when '/',
         controller: 'calculateController',
         templateUrl: 'calculate/calculate.tpl.html'
 ])
@@ -19,12 +19,18 @@ angular.module('hoay.calculate', [])
 # ------------------------------------------------------------
 .controller 'calculateController',[
   '$scope',
-  '$rootScope',
   '$navigate',
   '$log',
   '$translate',
-  'dateModel'
-  ($scope, $rootScope, $navigate, $log, $translate, dateModel)->
+  'DateModel'
+  ($scope, $navigate, $log, $translate, dateModel)->
+
+    init = ->
+      # set initial dates
+      # TODO: using cookies to get prev. dates
+      $scope.dateModel = dateModel
+      dateModel.setStart new Date(79,5,24)
+      dateModel.setEnd new Date()
 
     $scope.showResult = ->
       $navigate.go '/result'
@@ -35,14 +41,7 @@ angular.module('hoay.calculate', [])
     $scope.showInfo = ->
       $navigate.go '/info', 'modal'
 
-    $rootScope.$on 'translationChangeSuccess', ->
-      setDates()
-
-    setDates = ->
-      $scope.endDate = dateModel.endDate
-      $scope.startDate = dateModel.startDate
-
-    setDates()
+    init()
 ]
 
 

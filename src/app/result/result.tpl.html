@@ -4,9 +4,11 @@
   <a class="icon" ng-click="next()"><i class="icon-cog"></i></i></a>
 </header>
 <div class="content-result">
-  <p>start: {{startDate | shortdate}}</p>
-  <p>end: {{endDate | shortdate}}</p>
-  <p>days: {{days}}</p>
-  <p>months: {{months}}</p>
-  <p>years: {{years}}</p>
+  <p>start: {{dateModel.start | shortdate}}</p>
+  <p>end: {{dateModel.end | shortdate}}</p>
+  <p>days: {{dateModel.days}}</p>
+  <p>months: {{dateModel.months}}</p>
+  <p>years: {{dateModel.years}}</p>
+  <button ng-click="updateStartDate()">Update Startdate 1</button>
+  <button ng-click="updateStartDate2()">Update Startdate 2</button>
 </div>

@@ -6,15 +6,26 @@ angular.module('hoay.dates', [])
 #  DateModel to store date data
 #  It is acting as a domain model
 #  to share date beetween controllers
-.factory('dateModel', [
+#  It provides some helper methods
+.service('DateModel', [
   '$log',
   ($log) ->
-    startDate = new Date(79,5,24)
-    endDate = new Date()
-    {
-      startDate,
-      endDate
-    }
+
+    @setStart = (date)->
+      @start = date
+      @updateDifferences()
+
+    @setEnd = (date)->
+      @end = date
+      @updateDifferences()
+
+    @updateDifferences = ->
+      if @start isnt undefined or @end isnt undefined
+        startMoment = moment @start
+        endMoment = moment @end
+        @days = endMoment.diff startMoment, 'days', true
+        @months = endMoment.diff startMoment, 'months', true
+        @years = endMoment.diff startMoment, 'years', true
 ])
 
 #  filters
