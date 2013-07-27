@@ -56,6 +56,7 @@ module.exports = {
       'vendor/angular/i18n/angular-locale_en-us.js',
       'vendor/angular/i18n/angular-locale_de-de.js',
       'vendor/angular-mobile-nav/mobile-nav.js',
+      'vendor/ui-router/angular-ui-router.js',
       'vendor/angular-translate/angular-translate.js',
       'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
       'vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js',

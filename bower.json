@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "angular": "PatternConsulting/bower-angular#1.1.5",
+    "angular-ui-router": "0.0.2",
     "angular-mobile-nav": "1.0.0",
     "angular-translate": "0.9.4",
     "angular-translate-loader-static-files": "0.1.2",
