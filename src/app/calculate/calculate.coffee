@@ -10,7 +10,7 @@ angular.module('hoay.calculate', [])
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
-      .when '/calculate',
+      .when '/',
         controller: 'calculateController',
         templateUrl: 'calculate/calculate.tpl.html'
 ])
@@ -29,7 +29,7 @@ angular.module('hoay.calculate', [])
       # set initial dates
       # TODO: using cookies to get prev. dates
       $scope.dateModel = dateModel
-      dateModel.setStart new Date(79,5,24)
+      dateModel.setStart new Date(1978,6,18)
       dateModel.setEnd new Date()
 
     $scope.showResult = ->

@@ -10,7 +10,7 @@ angular.module('hoay.result', [])
   '$routeProvider',
   ($routeProvider) ->
     $routeProvider
-    .when '/',
+    .when '/result',
       controller: 'resultController',
       templateUrl: 'result/result.tpl.html'
 ])
@@ -25,6 +25,8 @@ angular.module('hoay.result', [])
   ($scope, $navigate, $log, dateModel)->
 
     $scope.dateModel = dateModel
+
+    $scope.monthsPercent = 45
 
     $scope.next = ->
       $navigate.go '/settings', 'modal'

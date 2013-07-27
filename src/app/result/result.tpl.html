@@ -4,39 +4,45 @@
   <a class="icon" ng-click="next()"><i class="icon-cog"></i></i></a>
 </header>
 <div class="content-result">
-  <div class="dates-container">
-    <div class="dates-wrapper">
-      <div class="date-container">
-        <p class="label-date" translate>calculate.LABEL_START_DATE</p>
-        <p class="date">
-          {{dateModel.start | shortdate}}
-          <i class="icon-sort"></i>
-        </p>
-      </div>
-      <div class="date-container">
-        <p class="label-date" translate>calculate.LABEL_END_DATE</p>
-        <p class="date">
-          {{dateModel.end | shortdate}}
-          <i class="icon-sort"></i>
-        </p>
+  <div class="wrapper">
+    <div class="dates-container">
+      <div class="dates-wrapper">
+        <div class="date-container" ng-cloak>
+          <p class="label-date" translate>calculate.LABEL_START_DATE</p>
+          <p class="date">
+            {{dateModel.start | shortdate}}
+            <i class="icon-sort"></i>
+          </p>
+        </div>
+        <div class="date-container" ng-cloak>
+          <p class="label-date" translate>calculate.LABEL_END_DATE</p>
+          <p class="date">
+            {{dateModel.end | shortdate}}
+            <i class="icon-sort"></i>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="viz-container">
     <div class="chart-container">
-       <div class="chart-wrapper">
-
-       </div>
+      <barchart ng-type="years" ng-x="25%" ng-width="50%" ng-height="100%"></barchart>
     </div>
-    <div class="labels-container">
-      <!--<p>start: {{dateModel.start | shortdate}}</p>-->
-      <!--<p>end: {{dateModel.end | shortdate}}</p>-->
-      <!--<p>days: {{dateModel.days}}</p>-->
-      <!--<p>months: {{dateModel.months}}</p>-->
-      <!--<p>years: {{dateModel.years}}</p>-->
-      <button ng-click="updateStartDate()">Update Startdate 1</button>
-      <button ng-click="updateStartDate2()">Update Startdate 2</button>
+      <!--<svg class="chart" xmlns="http://www.w3.org/2000/svg" version="1.1">-->
+        <!--<rect class="bg" width="100%" height="100%"/>-->
+        <!--<rect class="bar-single bar-days" x="25%" width="50%" height="100%"/>-->
+      <!--</svg>-->
+      <!--<svg class="chart" xmlns="http://www.w3.org/2000/svg" version="1.1">-->
+        <!--<rect class="bg" width="100%" height="100%"/>-->
+        <!--<rect class="bar-single bar-years" x="0" width="30%" y="{{dateModel.percentYears}}%" height="{{100-dateModel.percentYears}}%"/>-->
+        <!--<rect class="bar-single bar-months" x="35%" width="30%" y="{{dateModel.percentMonths}}%" height="{{100-dateModel.percentMonths}}%"/>-->
+        <!--<rect class="bar-single bar-days" x="70%" width="30%" y="{{dateModel.percentDays}}%" height="{{100-dateModel.percentDays}}%"/>-->
+      <!--</svg>-->
+    <div class="chart-labels-container">
+      <ul class="chart-labels-list">
+        <li class="chart-label chart-label-years">{{dateModel.years}} Jahre</li>
+        <li class="chart-label chart-label-months">{{dateModel.months}} Monate</li>
+        <li class="chart-label chart-label-days">{{dateModel.days}} Tage</li>
+      </ul>
     </div>
-
+    </div>
   </div>
 </div>

@@ -23,9 +23,22 @@ angular.module('hoay.dates', [])
       if @start isnt undefined or @end isnt undefined
         startMoment = moment @start
         endMoment = moment @end
-        @days = endMoment.diff startMoment, 'days', true
-        @months = endMoment.diff startMoment, 'months', true
-        @years = endMoment.diff startMoment, 'years', true
+        @days = endMoment.diff startMoment, 'days'
+        @months = endMoment.diff startMoment, 'months'
+        @years = endMoment.diff startMoment, 'years'
+        # percent values relative to all days
+        @percentYears = 100
+        # 100/12 = x/8
+        @percentMonths = Math.round(100 * @months / 12)
+        @percentDays = Math.round(100 * @days / 30)
+        $log.info "@percentDays #{@percentDays}"
+        $log.info "@percentMonths #{@percentMonths}"
+        $log.info "@percentYears #{@percentYears}"
+        # days = 100%
+        # months / 30 = monthsDays
+        # 100*monthsDays/days/ = monthsPercent
+        # years / 356 = yearsDays
+        # 100*yearsDays/days/ = yearsPercent
 ])
 
 #  filters

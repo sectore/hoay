@@ -10,6 +10,7 @@ angular.module('hoay.app', [
   'ngCookies'
   'pascalprecht.translate'
   # app related stuff
+  'hoay.directives.charts'
   'hoay.dates'
   'hoay.calculate'
   'hoay.result'

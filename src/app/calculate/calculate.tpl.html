@@ -1,6 +1,6 @@
 <header class="navbar">
   <a class="icon" ng-click="showInfo()"><i class="icon-info"></i></a>
-  <h1 class="title" translate>calculate.TITLE</h1>
+  <h1 class="title" translate ng-cloak>calculate.TITLE</h1>
   <a class="icon" ng-click="showSettings()"><i class="icon-cog"></i></a>
 </header>
 <div class="content-calculate">
@@ -8,7 +8,7 @@
     <li>
       <a class="button">
         <div class="label-container">
-          <div class="label-wrapper">
+          <div class="label-wrapper" ng-cloak>
             <p class="label-date" translate>calculate.LABEL_START_DATE</p>
             <p class="date">
               {{dateModel.start | shortdate}}
@@ -21,7 +21,7 @@
     <li>
       <a class="button">
         <div class="label-container">
-          <div class="label-wrapper">
+          <div class="label-wrapper" ng-cloak>
             <p class="label-date" translate>calculate.LABEL_END_DATE</p>
             <p class="date">
               {{dateModel.end | shortdate}}
@@ -35,7 +35,7 @@
       <a class="button button-calculate" ng-click="showResult()">
         <div class="label-container">
           <div class="label-wrapper">
-            <p class="label-calculate" translate>calculate.LABEL_BUTTON</p>
+            <p class="label-calculate" translate ng-cloak>calculate.LABEL_BUTTON</p>
           </div>
         </div>
       </a>

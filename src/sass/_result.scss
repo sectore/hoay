@@ -1,14 +1,26 @@
 .content-result{
   background-color: $color_1;
 
+
+  .wrapper{
+    @include size(100%);
+    background-color: $color_4;
+    position: relative;
+  }
+
+  $dates-container-height: 150;
+  $labels-container-height: 100;
+  $chart-container-padding: 50;
+
   .dates-container{
-    padding: em(20) em(30);
+    padding: em(0) em(30);
+    @include size(100% em($dates-container-height));
     background-color: $color_2;
     display: table;
-    width: 100%;
   }
   .dates-wrapper{
     display: table-cell;
+    vertical-align: middle;
     @include clearfix;
   }
 
@@ -38,28 +50,63 @@
     }
   }
 
-  .viz-container{
-    height: 100%;
-  }
-
-  $labels-container-height: 100;
   .chart-container{
-    @include size(100%);
-    $padding: 50;
-    padding: em($padding) em($padding) 0 em($padding);
-    background-color: $color_4;
-    position: relative;
-    padding-bottom: em($labels-container-height);
+    @include position(
+      absolute,
+      em($dates-container-height + $chart-container-padding)
+      em($chart-container-padding)
+      em($labels-container-height)
+      em($chart-container-padding)
+    );
   }
 
-  .chart-wrapper{
+  svg.chart{
     @include size(100%);
-    background-color: $color_5;
+    .bg{
+      @include size(100%);
+      fill: $color_5;
+    }
+
+    .bar-days{
+      fill: $color_8;
+    }
+    .bar-months{
+      fill: $color_7;
+    }
+    .bar-years{
+      fill: $color_6;
+    }
   }
 
-  .labels-container{
-    background-color: $color_1;
+  .chart-labels-container{
     height: em($labels-container-height);
     @include position(absolute, 0 em(0) em(0) em(0));
   }
+
+  .chart-labels-list{
+    @include size(100%);
+    display: table;
+    padding: 0 em($chart-container-padding);
+    background-color: $color_1;
+    li{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+
+  .chart-label{
+    font-family: $font_1;
+    font-size: em(30);
+  }
+  .chart-label-years{
+    color: $color_6;
+  }
+  .chart-label-months{
+    color: $color_7;
+  }
+  .chart-label-days{
+    color: $color_8;
+  }
+
 }

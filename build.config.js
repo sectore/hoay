@@ -60,7 +60,11 @@ module.exports = {
       'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
       'vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
       'vendor/angular-translate-storage-local/angular-translate-storage-local.js',
-      'vendor/moment/moment.2.1.0.js'
+      'vendor/zepto/zepto.js',
+      'vendor/moment/moment.2.1.0.js',
+      'vendor/raphael/raphael.js',
+      'vendor/g.raphael/g.raphael.js',
+      'vendor/g.raphael/g.bar.js'
     ],
     css: [
       'vendor/normalize-css/normalize.css',
