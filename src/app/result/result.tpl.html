@@ -23,8 +23,10 @@
         </div>
       </div>
     </div>
-    <div class="chart-container">
-      <barchart ng-type="years" ng-x="25%" ng-width="50%" ng-height="100%"></barchart>
+    <div ng-switch on="chart" class="chart-container" ng-click="nextChart()">
+      <barchart ng-switch-when="years" ng-type="years" ng-x="25%" ng-width="50%" ng-height="100%"></barchart>
+      <barchart ng-switch-when="months" ng-type="months" ng-x="25%" ng-width="50%" ng-height="100%"></barchart>
+      <barchart ng-switch-when="days" ng-type="days" ng-x="25%" ng-width="50%" ng-height="100%"></barchart>
     </div>
       <!--<svg class="chart" xmlns="http://www.w3.org/2000/svg" version="1.1">-->
         <!--<rect class="bg" width="100%" height="100%"/>-->
@@ -36,13 +38,21 @@
         <!--<rect class="bar-single bar-months" x="35%" width="30%" y="{{dateModel.percentMonths}}%" height="{{100-dateModel.percentMonths}}%"/>-->
         <!--<rect class="bar-single bar-days" x="70%" width="30%" y="{{dateModel.percentDays}}%" height="{{100-dateModel.percentDays}}%"/>-->
       <!--</svg>-->
-    <div class="chart-labels-container">
-      <ul class="chart-labels-list">
+    <div ng-switch on="chart" class="chart-labels-container">
+      <ul class="chart-labels-list" ng-switch-when="years">
+        <li class="chart-label chart-label-years">{{dateModel.years}} Jahre</li>
+      </ul>
+      <ul class="chart-labels-list" ng-switch-when="months">
+        <li class="chart-label chart-label-months">{{dateModel.months}} Monate</li>
+      </ul>
+      <ul class="chart-labels-list" ng-switch-when="days">
+        <li class="chart-label chart-label-days">{{dateModel.days}} Tage</li>
+      </ul>
+      <ul class="chart-labels-list" ng-switch-when="all">
         <li class="chart-label chart-label-years">{{dateModel.years}} Jahre</li>
         <li class="chart-label chart-label-months">{{dateModel.months}} Monate</li>
         <li class="chart-label chart-label-days">{{dateModel.days}} Tage</li>
       </ul>
-    </div>
     </div>
   </div>
 </div>

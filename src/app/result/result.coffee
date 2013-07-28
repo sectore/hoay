@@ -34,6 +34,16 @@ angular.module('hoay.result', [])
     $scope.prev = ->
       $navigate.back()
 
+    charts = ["years", "months", "days"]
+    selectedChartIndex = 0
+    $scope.chart = charts[selectedChartIndex]
+    $scope.nextChart = ->
+      if selectedChartIndex is charts.length - 1 then selectedChartIndex = 0 else selectedChartIndex++
+      $scope.chart = charts[selectedChartIndex]
+
+
+
+
     $scope.updateStartDate = ->
       dateModel.setStart new Date(1967,1,3)
       dateModel.setEnd new Date(1989,5,17)
