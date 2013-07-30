@@ -20,25 +20,39 @@ angular.module('hoay.dates', [])
       @updateDifferences()
 
     @updateDifferences = ->
-      if @start isnt undefined or @end isnt undefined
-        startMoment = moment @start
-        endMoment = moment @end
-        @days = endMoment.diff startMoment, 'days'
-        @months = endMoment.diff startMoment, 'months'
-        @years = endMoment.diff startMoment, 'years'
-        # percent values relative to all days
-        @percentYears = 100
-        # 100/12 = x/8
-        @percentMonths = Math.round(100 * @months / 12)
-        @percentDays = Math.round(100 * @days / 30)
-        $log.info "@percentDays #{@percentDays}"
-        $log.info "@percentMonths #{@percentMonths}"
-        $log.info "@percentYears #{@percentYears}"
-        # days = 100%
-        # months / 30 = monthsDays
-        # 100*monthsDays/days/ = monthsPercent
-        # years / 356 = yearsDays
-        # 100*yearsDays/days/ = yearsPercent
+      if @start isnt undefined and @end isnt undefined
+        # Based on
+        # "Counting from a date to today"
+        # http://stackoverflow.com/a/11231806
+        days = @end.getDate() - @start.getDate()
+        months = @end.getMonth() - @start.getMonth()
+        years = @end.getFullYear() - @start.getFullYear()
+        $log.info "before.days #{days}"
+        $log.info "before.months #{months}"
+        $log.info "before.years #{years}"
+
+        if days < 0
+          months -= 1
+          lastMonthNumber = @end.getMonth() - 1
+          if lastMonthNumber < 0
+            lastMonthNumber += 12
+          daysInLastMonth = new Date(@end.getFullYear(), lastMonthNumber, 0).getDate()
+          days += daysInLastMonth
+
+        if months < 0
+          years -= 1
+          months += 12
+
+        if years < 0
+          years = 0
+
+#        diff = new Date( 2012, 0, 1 ).diff( new Date( 2010, 9, 8, 7, 6, 5, 4 ))
+        $log.info "diff.days #{days}"
+        @days = days
+        $log.info "diff.months #{months}"
+        @months = months
+        $log.info "diff.years #{years}"
+        @years = years
 ])
 
 #  filters
