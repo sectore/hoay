@@ -60,21 +60,29 @@
     );
   }
 
-  svg.chart{
+  .chart{
     @include size(100%);
-    .bg{
-      @include size(100%);
-      fill: $color_5;
-    }
+    background-color: $color_5;
+    position: relative;
 
     .bar-days{
-      fill: $color_8;
+      background-color: $color_8;
     }
     .bar-months{
-      fill: $color_7;
+      background-color: $color_7;
     }
     .bar-years{
-      fill: $color_6;
+      background-color: $color_6;
+    }
+
+    .bar-single{
+      height: 100%;
+      @include position(absolute, 0 0 0 0);
+      @include transform(translate(0, 100%) scaleY(0));
+      @include transition-property (transform);
+      @include transition-duration(0.5s);
+      @include transition-timing-function(ease-out);
+      //-webkit-backface-visibility: hidden;
     }
   }
 

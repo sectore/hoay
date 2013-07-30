@@ -6,57 +6,51 @@ angular.module('hoay.directives.charts', [])
 
 .directive 'barchart', [
   '$log',
-  ($log) ->
+  '$timeout'
+  ($log, $timeout) ->
     restrict: 'E'
-    replace: false
+    replace: true
     template: '''
-      <svg class="chart" xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <rect class="bg" width="100%" height="100%"/>
-        <rect class="bar-single" />
-      </svg>
+      <div class="chart">
+        <div class="bar-single" />
+      </div>
       '''
     link: (scope, element, attrs)->
-      # Important note:
-      # Attributes of SVG has to be set "by hand" (not by using {{}}) to avoid JS errors
-      # @see: https://github.com/angular/angular.js/issues/1050
-
       # get bar using Zepto
       bar = $(element[0]).find ".bar-single"
       bar.addClass "bar-#{attrs.ngType}"
 
       scope.$watch attrs.ngPercentX, (value)->
         unless value is undefined
-          bar.attr "x", "#{value}%"
+          bar.css "left", "#{value}%"
 
       scope.$watch attrs.ngPercentWidth, (value)->
         unless value is undefined
-          bar.attr "width", "#{value}%"
+          bar.css "width", "#{value}%"
 
-#      scope.$watch attrs.ngPercentHeight, (value)->
-#        $log.info "watching ngPercentHeight #{value}"
-
-      updateHeight = (value)->
+      scope.$watch attrs.ngPercentHeight, (value)->
         unless value is undefined
-          bar.attr "height", "#{value}%"
-          bar.attr "y", "#{100-value}%"
+          # setting default values
+          t = "translate(0,100%) scaleY(0)"
+          bar.css getTransform(t)
+          # just grabing any css value,
+          # which delays starting animate()
+          # to avoid layout issues setting default values before
+          temp = bar.css "height"
+#          $timeout animate, 1
+          animate()
 
-
-      myTweenable = new Tweenable()
       animate = ->
-#        $log.info "animate #{attrs.ngPercentWidth}"
-        myTweenable.tween
-          from:
-            x: 0
-          to:
-            x: attrs.ngPercentWidth
-          duration: 500
-          easing: 'easeOutQuad'
-          step:(value)->
-            updateHeight value.x
-          callback:(value)->
-            updateHeight value.x
+        value = attrs.ngPercentHeight
+        t = "translate(0, #{(100-value)/2}%) scaleY(#{value/100})"
+        bar.css getTransform(t)
 
-      updateHeight 0
-      animate()
+
+      getTransform = (value)->
+        'transform': value
+        '-moz-transform': value
+        '-webkit-transform': value
+        '-ms-transform': value
+        '-o-transform': value
 
 ]

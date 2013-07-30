@@ -7,6 +7,10 @@
 
 html, body{
   height:100%;
+  // disabling highlight color
+  // @see: https://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/AdjustingtheTextSize/AdjustingtheTextSize.html
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
 }
 
 html{
