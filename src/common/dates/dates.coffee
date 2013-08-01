@@ -21,38 +21,61 @@ angular.module('hoay.dates', [])
 
     @updateDifferences = ->
       if @start isnt undefined and @end isnt undefined
-        # Based on
-        # "Counting from a date to today"
-        # http://stackoverflow.com/a/11231806
-        days = @end.getDate() - @start.getDate()
-        months = @end.getMonth() - @start.getMonth()
-        years = @end.getFullYear() - @start.getFullYear()
-        $log.info "before.days #{days}"
-        $log.info "before.months #{months}"
-        $log.info "before.years #{years}"
+        sum = getSumByDates @start, @end
+        @days = sum.days
+        @months = sum.months
+        @years = sum.years
+        @totalDays = getTotalDaysByDates @start, @end
+        @totalMonths = getTotalMonthsByDates @start, @end
+        @totalYears = getTotalYearsByDates @start, @end
 
-        if days < 0
-          months -= 1
-          lastMonthNumber = @end.getMonth() - 1
-          if lastMonthNumber < 0
-            lastMonthNumber += 12
-          daysInLastMonth = new Date(@end.getFullYear(), lastMonthNumber, 0).getDate()
-          days += daysInLastMonth
 
-        if months < 0
-          years -= 1
-          months += 12
+    getTotalDaysByDates =(startDate, endDate) ->
+      startTime = startDate.getTime()
+      endTime = endDate.getTime()
+      parseInt (endTime-startTime)/(24*3600*1000)
 
-        if years < 0
-          years = 0
+    getTotalMonthsByDates =(startDate, endDate) ->
+      startYear = startDate.getFullYear()
+      endYear = endDate.getFullYear()
+      startMonth = startDate.getMonth()
+      endMonth = endDate.getMonth()
+      (endMonth+12*endYear)-(startMonth+12*startYear)
 
-#        diff = new Date( 2012, 0, 1 ).diff( new Date( 2010, 9, 8, 7, 6, 5, 4 ))
-        $log.info "diff.days #{days}"
-        @days = days
-        $log.info "diff.months #{months}"
-        @months = months
-        $log.info "diff.years #{years}"
-        @years = years
+    getTotalYearsByDates =(startDate, endDate) ->
+      startYear = startDate.getFullYear()
+      endYear = endDate.getFullYear()
+      endYear-startYear
+
+
+    getSumByDates = (startDate, endDate) ->
+      # Based on
+      # "Counting from a date to today"
+      # http://stackoverflow.com/a/11231806
+      days = endDate.getDate() - startDate.getDate()
+      months = endDate.getMonth() - startDate.getMonth()
+      years = endDate.getFullYear() - startDate.getFullYear()
+
+      if days < 0
+        months -= 1
+        lastMonthNumber = endDate.getMonth() - 1
+        if lastMonthNumber < 0
+          lastMonthNumber += 12
+        daysInLastMonth = new Date(endDate.getFullYear(), lastMonthNumber, 0).getDate()
+        days += daysInLastMonth
+
+      if months < 0
+        years -= 1
+        months += 12
+
+      if years < 0
+        years = 0
+
+      {
+        days
+        months
+        years
+      }
 ])
 
 #  filters

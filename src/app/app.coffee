@@ -11,6 +11,7 @@ angular.module('hoay.app', [
   'pascalprecht.translate'
   # app related stuff
   'hoay.directives.charts'
+  'hoay.directives.dates'
   'hoay.dates'
   'hoay.calculate'
   'hoay.result'

@@ -12,6 +12,10 @@
   $labels-container-height: 75;
   $chart-container-padding: 15;
 
+  /**********************************
+    dates
+  **********************************/
+  
   .dates-wrapper{
     padding: em(0) em($chart-container-padding);
     background-color: $color_2;
@@ -51,7 +55,10 @@
       font-size: em(20, $font-size-date);
     }
   }
-
+  /**********************************
+    result
+  **********************************/
+  
   .result-list{
     @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
   }
@@ -115,6 +122,10 @@
     color: $color_2;
   }
 
+  /**********************************
+    total
+  **********************************/
+  
   .total-view{
     @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
     @include transform(translate3d(-100%,0,0));
@@ -140,32 +151,31 @@
     background-color: $color_6;
   }
 
-  .total-result-container{
+  .total-result-wrapper{
     display: table;
     @include size(100%);
   }
 
-  .total-result{
+  .total-result-container{
     display: table-cell;
     vertical-align: middle;
+  }
+
+  .total-result{
     color: $color_4;
-    $font-size-total: 150;
-    $font-size-label: 30;
-    // add padding to center vertical exactly
-    padding-bottom: em($font-size-label, $font-size-total);
+    $font-size-total: 100;
     padding-left: em(20, $font-size-total);
     font-size: em($font-size-total);
     font-family: $font_1;
-
-    span{
-      display: block;
-      font-size: em($font-size-label, $font-size-total);
-      margin-top: em(-1*$font-size-label, $font-size-label);
-    }
   }
 
   .total-label{
-
+    color: $color_4;
+    font-family: $font_1;
+    $font-size-label: 27;
+    padding-left: em(20, $font-size-label);
+    font-size: em($font-size-label);
+    margin-top: em(-19, $font-size-label);
   }
 
 }

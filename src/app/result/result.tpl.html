@@ -27,7 +27,10 @@
       <li class="result-list-item result-list-item-years" ng-click="showTotalYears()">
         <div class="result-wrapper">
           <div class="result-container">
-            <p class="result-txt">{{dateModel.years}}</p>
+            <p class="result-txt"
+              counter
+              counter-max="dateModel.years"
+              ></p>
             <p class="result-label" translate>common.YEARS</p>
           </div>
         </div>
@@ -35,7 +38,7 @@
       <li class="result-list-item result-list-item-months" ng-click="showTotalMonths()">
         <div class="result-wrapper">
           <div class="result-container">
-            <p class="result-txt">{{dateModel.months}}</p>
+            <p class="result-txt" counter-max="dateModel.months" counter></p>
             <p class="result-label" translate>common.MONTHS</p>
           </div>
         </div>
@@ -43,7 +46,7 @@
       <li class="result-list-item result-list-item-days" ng-click="showTotalDays()">
         <div class="result-wrapper">
           <div class="result-container">
-            <p class="result-txt">{{dateModel.days}}</p>
+            <p class="result-txt" counter-max="dateModel.days" counter></p>
             <p class="result-label" translate>common.DAYS</p>
           </div>
         </div>
@@ -51,31 +54,51 @@
     </ul>
     <div class="total-view total-view-years"
       ng-click="showSum()"
-      ng-class="{'total-view-active': subViewState=='total-years'} ">
-      <div class="total-result-container">
-        <p class="total-result">{{dateModel.years}}
-          <span translate>common.YEARS_TOTAL</span>
-        </p>
+      ng-class="{'total-view-active': subViewState=='total-years'}">
+      <div class="total-result-wrapper">
+        <div class="total-result-container">
+          <p
+            class="total-result"
+            counter
+            counter-restart="subViewState=='total-years'"
+            counter-max="dateModel.totalYears"
+            >
+          <p class="total-label" translate>common.YEARS_TOTAL</p>
+          </p>
+        </div>
       </div>
     </div>
     <div
       class="total-view total-view-months"
       ng-click="showSum()"
-      ng-class="{'total-view-active': subViewState=='total-months'} ">
-      <div class="total-result-container">
-        <p class="total-result">{{dateModel.months}}
-          <span translate>common.MONTHS_TOTAL</span>
-        </p>
+      ng-class="{'total-view-active': subViewState=='total-months'}">
+      <div class="total-result-wrapper">
+        <div class="total-result-container">
+          <p
+            class="total-result"
+            counter
+            counter-restart="subViewState=='total-months'"
+            counter-max="dateModel.totalDays"
+            >
+          <p class="total-label" translate>common.MONTHS_TOTAL</p>
+          </p>
+        </div>
       </div>
     </div>
     <div
       class="total-view total-view-days"
       ng-click="showSum()"
-      ng-class="{'total-view-active': subViewState=='total-days'} ">
-      <div class="total-result-container">
-        <p class="total-result">{{dateModel.days}}
-          <span translate>common.DAYS_TOTAL</span>
-        </p>
+      ng-class="{'total-view-active': subViewState=='total-days'}">
+      <div class="total-result-wrapper">
+        <div class="total-result-container">
+          <p class="total-result"
+            counter
+            counter-restart="subViewState=='total-days'"
+            counter-max="dateModel.totalDays"
+            >
+          </p>
+          <p class="total-label" translate>common.DAYS_TOTAL</p>
+        </div>
       </div>
     </div>
 
