@@ -10,8 +10,8 @@
         <div class="label-container">
           <div class="label-wrapper">
             <p class="label-date" translate="common.START_DATE"></p>
-            <p class="date" ng-bind="dateModel.start | shortdate" >
-
+            <p class="date">
+              <span ng-bind="dateModel.start | shortdate"></span>
               <i class="icon-sort"></i>
             </p>
           </div>
@@ -23,7 +23,8 @@
         <div class="label-container">
           <div class="label-wrapper">
             <p class="label-date" translate="common.END_DATE"></p>
-            <p class="date" ng-bind="dateModel.end | shortdate">
+            <p class="date">
+              <span ng-bind="dateModel.end | shortdate"></span>
               <i class="icon-sort"></i>
             </p>
           </div>
