@@ -8,17 +8,19 @@
     position: relative;
   }
 
-  $dates-container-height: 150;
-  $labels-container-height: 100;
-  $chart-container-padding: 50;
+  $dates-container-height: 65;
+  $labels-container-height: 75;
+  $chart-container-padding: 15;
 
-  .dates-container{
-    padding: em(0) em(30);
-    @include size(100% em($dates-container-height));
+  .dates-wrapper{
+    padding: em(0) em($chart-container-padding);
     background-color: $color_2;
     display: table;
+    @include size(100% em($dates-container-height));
+    @include position(absolute, em(0) em(0) em($dates-container-height) em(0));
   }
-  .dates-wrapper{
+
+  .dates-container{
     display: table-cell;
     vertical-align: middle;
     @include clearfix;
@@ -37,84 +39,133 @@
     }
 
     .label-date{
-      font-size: em(20);
+      font-size: em(13);
     }
 
-    $font-size-date: 55;
+    $font-size-date: 27;
     .date{
       font-size: em($font-size-date);
     }
 
     .icon-sort{
-      font-size: em(50, $font-size-date);
+      font-size: em(20, $font-size-date);
     }
   }
 
-  .chart-container{
-    @include position(
-      absolute,
-      em($dates-container-height + $chart-container-padding)
-      em($chart-container-padding)
-      em($labels-container-height)
-      em($chart-container-padding)
-    );
+  .result-list{
+    @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
   }
 
-  .chart{
-    @include size(100%);
-    background-color: $color_5;
-    position: relative;
+  .result-list-item{
+    @include size(100% 33%);
 
-    .bar-days{
+    &:last-child{
+      @include size(100% 34%);
+    }
+  }
+
+  .result-list-item-years{
       background-color: $color_8;
-    }
-    .bar-months{
-      background-color: $color_7;
-    }
-    .bar-years{
-      background-color: $color_6;
-    }
-
-    .bar-single{
-      height: 100%;
-      @include position(absolute, 0 0 0 0);
-      @include transform(translate(0, 100%) scaleY(0));
-      @include transition-property (transform);
-      @include transition-duration(0.5s);
-      @include transition-timing-function(ease-out);
-      //-webkit-backface-visibility: hidden;
+    .result-container{
+      background-color: $color_9;
     }
   }
 
-  .chart-labels-container{
-    height: em($labels-container-height);
-    @include position(absolute, 0 em(0) em(0) em(0));
+  .result-list-item-months{
+    background-color: $color_7;
+    .result-container{
+      background-color: $color_10;
+    }
   }
 
-  .chart-labels-list{
-    @include size(100%);
+  .result-list-item-days{
+    background-color: $color_6;
+    .result-container{
+      background-color: $color_11;
+    }
+  }
+
+  $padding-left-result: 20;
+
+  .result-wrapper{
     display: table;
-    padding: 0 em($chart-container-padding);
-    background-color: $color_1;
-    li{
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
+    @include size(100%);
+    padding-left: em($padding-left-result);
+  }
+  .result-container{
+    display:table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .result-txt{
+    $font-size: 100;
+    font-size: em($font-size);
+    font-family: $font_1;
+    color: $color_2;
+    padding-right: em($padding-left-result, $font-size);
+  }
+
+  .result-label{
+    $font-size: 27;
+    font-size: em($font-size);
+    margin-top: em(-20, $font-size);
+    padding-right: em($padding-left-result, $font-size);
+    font-family: $font_1;
+    color: $color_2;
+  }
+
+  .total-view{
+    @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
+    @include transform(translate3d(-100%,0,0));
+    @include transition-property (transform);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-out);
+
+  }
+
+  .total-view-active{
+      @include transform(translate3d(0,0,0));
+    }
+
+  .total-view-years{
+    background-color: $color_8;
+  }
+
+  .total-view-months{
+    background-color: $color_7;
+  }
+
+  .total-view-days{
+    background-color: $color_6;
+  }
+
+  .total-result-container{
+    display: table;
+    @include size(100%);
+  }
+
+  .total-result{
+    display: table-cell;
+    vertical-align: middle;
+    color: $color_4;
+    $font-size-total: 150;
+    $font-size-label: 30;
+    // add padding to center vertical exactly
+    padding-bottom: em($font-size-label, $font-size-total);
+    padding-left: em(20, $font-size-total);
+    font-size: em($font-size-total);
+    font-family: $font_1;
+
+    span{
+      display: block;
+      font-size: em($font-size-label, $font-size-total);
+      margin-top: em(-1*$font-size-label, $font-size-label);
     }
   }
 
-  .chart-label{
-    font-family: $font_1;
-    font-size: em(30);
-  }
-  .chart-label-years{
-    color: $color_6;
-  }
-  .chart-label-months{
-    color: $color_7;
-  }
-  .chart-label-days{
-    color: $color_8;
+  .total-label{
+
   }
 
 }

@@ -1,13 +1,19 @@
 {
   "common":{
     "FORMAT_DATE_SHORT": "MM/dd/yy",
-    "FORMAT_NUMBER": ""
+    "FORMAT_NUMBER": "",
+    "START_DATE": "start date",
+    "END_DATE": "end date",
+    "YEARS": "years",
+    "MONTHS": "months",
+    "DAYS": "days",
+    "YEARS_TOTAL": "years in total",
+    "MONTHS_TOTAL": "months in total",
+    "DAYS_TOTAL": "days in total"
   },
   "calculate":{
     "TITLE": "How old are you?",
-    "LABEL_BUTTON": "Calculate",
-    "LABEL_START_DATE": "Startdate",
-    "LABEL_END_DATE": "Enddate"
+    "LABEL_BUTTON": "Calculate"
   },
   "settings":{
     "TITLE": "Settings",

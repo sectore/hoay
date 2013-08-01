@@ -1,17 +1,18 @@
 .content-info{
   background-color: $color_1;
-  padding: em(50) em(30);
+  padding: em(30) em(30);
 
   font-family: $font_1;
   color: $color_3;
 
   .subheadline{
     font-weight: normal;
-    font-size: em(45);
-    padding-bottom: em(15);
+    $font-size: 20;
+    font-size: em($font-size);
+    padding-bottom: em(10, $font-size);
   }
 
   p{
-    font-size: em(30);
+    font-size: em(15);
   }
 }

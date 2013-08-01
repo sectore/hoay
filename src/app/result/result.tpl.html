@@ -5,54 +5,79 @@
 </header>
 <div class="content-result">
   <div class="wrapper">
-    <div class="dates-container">
-      <div class="dates-wrapper">
-        <div class="date-container" ng-cloak>
-          <p class="label-date" translate>calculate.LABEL_START_DATE</p>
+    <div class="dates-wrapper">
+      <div class="dates-container">
+        <div class="date-container">
+          <p class="label-date" translate>common.START_DATE</p>
           <p class="date">
             {{dateModel.start | shortdate}}
-            <i class="icon-sort"></i>
+            <!--<i class="icon-sort"></i>-->
           </p>
         </div>
-        <div class="date-container" ng-cloak>
-          <p class="label-date" translate>calculate.LABEL_END_DATE</p>
+        <div class="date-container">
+          <p class="label-date" translate>common.END_DATE</p>
           <p class="date">
             {{dateModel.end | shortdate}}
-            <i class="icon-sort"></i>
+            <!--<i class="icon-sort"></i>-->
           </p>
         </div>
       </div>
     </div>
-    <p>years: {{y}}</p>
-    <div ng-switch on="chart" class="chart-container" ng-click="nextChart()">
-      <svg class="chart" ng-switch-when="all" xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <rect class="bg" width="100%" height="100%"/>
-        <!--<rect class="bar-single bar-years" x="0" width="30%" y="{{dateModel.percentYears}}%" height="{{100-dateModel.percentYears}}%"/>-->
-        <!--<rect class="bar-single bar-months" x="35%" width="30%" y="{{dateModel.percentMonths}}%" height="{{100-dateModel.percentMonths}}%"/>-->
-        <!--<rect class="bar-single bar-days" x="70%" width="30%" y="{{dateModel.percentDays}}%" height="{{100-dateModel.percentDays}}%"/>-->
-        <rect class="bar-single bar-years" x="0" width="30%" y="0%" height="100%"/>
-        <rect class="bar-single bar-months" x="35%" width="30%" y="30%" height="70%"/>
-        <rect class="bar-single bar-days" x="70%" width="30%" y="70%" height="30%"/>
-      </svg>
-      <barchart ng-switch-when="years" ng-type="years" ng-percent-x="10" ng-percent-width="80" ng-percent-height="100"></barchart>
-      <barchart ng-switch-when="months" ng-type="months" ng-percent-x="25" ng-percent-width="50" ng-percent-height="80"></barchart>
-      <barchart ng-switch-when="days" ng-type="days" ng-percent-x="40" ng-percent-width="20" ng-percent-height="50"></barchart>
+    <ul class="result-list">
+      <li class="result-list-item result-list-item-years" ng-click="showTotalYears()">
+        <div class="result-wrapper">
+          <div class="result-container">
+            <p class="result-txt">{{dateModel.years}}</p>
+            <p class="result-label" translate>common.YEARS</p>
+          </div>
+        </div>
+      </li>
+      <li class="result-list-item result-list-item-months" ng-click="showTotalMonths()">
+        <div class="result-wrapper">
+          <div class="result-container">
+            <p class="result-txt">{{dateModel.months}}</p>
+            <p class="result-label" translate>common.MONTHS</p>
+          </div>
+        </div>
+      </li>
+      <li class="result-list-item result-list-item-days" ng-click="showTotalDays()">
+        <div class="result-wrapper">
+          <div class="result-container">
+            <p class="result-txt">{{dateModel.days}}</p>
+            <p class="result-label" translate>common.DAYS</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="total-view total-view-years"
+      ng-click="showSum()"
+      ng-class="{'total-view-active': subViewState=='total-years'} ">
+      <div class="total-result-container">
+        <p class="total-result">{{dateModel.years}}
+          <span translate>common.YEARS_TOTAL</span>
+        </p>
+      </div>
     </div>
-    <div ng-switch on="chart" class="chart-labels-container">
-      <ul class="chart-labels-list" ng-switch-when="all">
-        <li class="chart-label chart-label-years">{{dateModel.years}} Jahre</li>
-        <li class="chart-label chart-label-months">{{dateModel.months}} Monate</li>
-        <li class="chart-label chart-label-days">{{dateModel.days}} Tage</li>
-      </ul>
-      <ul class="chart-labels-list" ng-switch-when="years">
-        <li class="chart-label chart-label-years">{{dateModel.years}} Jahre</li>
-      </ul>
-      <ul class="chart-labels-list" ng-switch-when="months">
-        <li class="chart-label chart-label-months">{{dateModel.months}} Monate</li>
-      </ul>
-      <ul class="chart-labels-list" ng-switch-when="days">
-        <li class="chart-label chart-label-days">{{dateModel.days}} Tage</li>
-      </ul>
+    <div
+      class="total-view total-view-months"
+      ng-click="showSum()"
+      ng-class="{'total-view-active': subViewState=='total-months'} ">
+      <div class="total-result-container">
+        <p class="total-result">{{dateModel.months}}
+          <span translate>common.MONTHS_TOTAL</span>
+        </p>
+      </div>
     </div>
+    <div
+      class="total-view total-view-days"
+      ng-click="showSum()"
+      ng-class="{'total-view-active': subViewState=='total-days'} ">
+      <div class="total-result-container">
+        <p class="total-result">{{dateModel.days}}
+          <span translate>common.DAYS_TOTAL</span>
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -29,7 +29,7 @@ angular.module('hoay.calculate', [])
       # set initial dates
       # TODO: using cookies to get prev. dates
       $scope.dateModel = dateModel
-      dateModel.setStart new Date(1978, 6, 30 )
+      dateModel.setStart new Date(1971, 9, 10)
       dateModel.setEnd new Date()
 
     $scope.showResult = ->

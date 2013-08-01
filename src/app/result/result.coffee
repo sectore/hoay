@@ -28,28 +28,25 @@ angular.module('hoay.result', [])
 
     $scope.monthsPercent = 45
 
+    $scope.subViewState = 'sum'
+
     $scope.next = ->
       $navigate.go '/settings', 'modal'
 
     $scope.prev = ->
       $navigate.back()
 
-    charts = ["all", "years", "months", "days"]
-    selectedChartIndex = 0
-    $scope.chart = charts[selectedChartIndex]
+    $scope.showTotalYears =->
+      $scope.subViewState = 'total-years'
 
-    $scope.nextChart = ->
-      if selectedChartIndex is charts.length - 1
-      then selectedChartIndex = 0
-      else selectedChartIndex++
+    $scope.showTotalMonths =->
+      $scope.subViewState = 'total-months'
 
-      $scope.chart = charts[selectedChartIndex]
+    $scope.showTotalDays =->
+      $scope.subViewState = 'total-days'
 
-    $scope.updateStartDate = ->
-      dateModel.setStart new Date(1967,1,3)
-      dateModel.setEnd new Date(1989,5,17)
+    $scope.showSum = ->
+      $scope.subViewState = 'sum'
 
-    $scope.updateStartDate2 = ->
-      dateModel.setStart new Date(1988,2,5)
-      dateModel.setEnd new Date(2013,1,30)
+
 ]
