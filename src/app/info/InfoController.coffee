@@ -11,9 +11,19 @@ angular.module('hoay.info', [])
       templateUrl: 'info/info.tpl.html'
 ])
 
-.controller 'InfoController'
-, ($scope, $navigate)->
+.controller('InfoController', [
+  '$log',
+  '$scope',
+  '$navigate',
+  'Version',
+  ($log, $scope, $navigate, Version)->
 
-  $scope.prev = ->
-    $navigate.back()
+    $scope.translateValues =
+      version: Version
 
+    $log.info "version #{Version}"
+
+    $scope.prev = ->
+      $navigate.back()
+
+])

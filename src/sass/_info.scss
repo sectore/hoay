@@ -7,12 +7,14 @@
 
   .subheadline{
     font-weight: normal;
-    $font-size: 20;
+    $font-size: 21;
     font-size: em($font-size);
-    padding-bottom: em(10, $font-size);
+    padding-bottom: em(20, $font-size);
   }
 
   p{
-    font-size: em(15);
+    $font-size: 17;
+    font-size: em($font-size);
+    padding-bottom: em($font-size, $font-size);
   }
 }

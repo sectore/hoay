@@ -21,7 +21,10 @@
   },
   "info":{
     "TITLE": "Info",
-    "ABOUT": "About this app",
-    "TXT_INFO": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh ..."
+    "HEADLINE_ABOUT": "About HOAY",
+    "TXT_ABOUT": "<strong>HOAY</strong> (\"How old are you\") a an app to calculate ages in years, months and days.",
+    "TXT_CODE": "It is built with the JavaScript Framework <a href='http://angularjs.org/'>AngularJS</a> and <a href='http://http://phonegap.com/'>PhoneGap</a>. All <a href='https://github.com/sectore/hoay'>source code</a> is available at <a href='https://github.com/sectore/hoay'>GitHub</a>.",
+    "TXT_COPYRIGHT": "Copyright (c) 2013 Jens Krause // <a href='http://websector.de'>WEBSECTOR.DE</a>",
+    "TXT_VERSION": "Version: v.{{version}}"
   }
 }

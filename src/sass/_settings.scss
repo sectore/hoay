@@ -16,19 +16,22 @@
   }
 
   .button{
-    width: 50%;
-    float: left;
-    $button-font-size: 13;
+    display: block;
+    $height: 100;
+    $font-size: 30;
+    width: 100%;
+    //@include size(100% em($height));
+    line-height: em($height, $font-size);
     font-family: $font_1;
-    font-size: em($button-font-size);
+    font-size: em($font-size);
     text-align: center;
     color: $color_3;
     background-color: $color_1;
-    border: solid em(1, $button-font-size) $color_3;
-    padding: em(20);
+    border: solid em(1, $font-size) $color_3;
+    //padding: em(0) em(20);
 
     &.active{
-      border: solid em(1, $button-font-size) $color_3;
+      border: solid em(1, $font-size) $color_3;
       background-color: $color_3;
       color: $color_4;
     }

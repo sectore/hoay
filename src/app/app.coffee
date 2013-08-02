@@ -12,6 +12,7 @@ angular.module('hoay.app', [
   # app related stuff
   'hoay.directives.charts'
   'hoay.directives.dates'
+  'hoay.version'
   'hoay.dates'
   'hoay.calculate'
   'hoay.result'
