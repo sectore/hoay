@@ -62,7 +62,8 @@ module.exports = {
       'vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
       'vendor/angular-translate-storage-local/angular-translate-storage-local.js',
       'vendor/zepto/zepto.js',
-      'vendor/shifty/dist/shifty.js'
+      'vendor/shifty/dist/shifty.js',
+      'vendor/momentjs/moment.js'
     ],
     css: [
       'vendor/normalize-css/normalize.css',

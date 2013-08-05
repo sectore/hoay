@@ -9,10 +9,12 @@ angular.module('hoay.dates', [])
 #  It provides some helper methods
 .service('DateModel', [
   '$log',
-  ($log) ->
+  '$cookies'
+  ($log, $cookies) ->
 
     @setStart = (date)->
       @start = date
+      $cookies.startDate = @start
       @updateDifferences()
 
     @setEnd = (date)->
@@ -31,22 +33,19 @@ angular.module('hoay.dates', [])
 
 
     getTotalDaysByDates =(startDate, endDate) ->
-      startTime = startDate.getTime()
-      endTime = endDate.getTime()
-      parseInt (endTime-startTime)/(24*3600*1000)
+      startMoment = moment startDate
+      endMoment = moment endDate
+      endMoment.diff startMoment, 'days'
 
     getTotalMonthsByDates =(startDate, endDate) ->
-      startYear = startDate.getFullYear()
-      endYear = endDate.getFullYear()
-      startMonth = startDate.getMonth()
-      endMonth = endDate.getMonth()
-      (endMonth+12*endYear)-(startMonth+12*startYear)
+      startMoment = moment startDate
+      endMoment = moment endDate
+      endMoment.diff startMoment, 'months'
 
     getTotalYearsByDates =(startDate, endDate) ->
-      startYear = startDate.getFullYear()
-      endYear = endDate.getFullYear()
-      endYear-startYear
-
+      startMoment = moment startDate
+      endMoment = moment endDate
+      endMoment.diff startMoment, 'years'
 
     getSumByDates = (startDate, endDate) ->
       # Based on
@@ -76,6 +75,17 @@ angular.module('hoay.dates', [])
         months
         years
       }
+
+    init = =>
+      # init default values
+      if $cookies.startDate is undefined
+        @setStart new Date(1971, 9, 10)
+
+      @setEnd new Date()
+
+    init()
+
+
 ])
 
 #  filters
