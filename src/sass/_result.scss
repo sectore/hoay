@@ -1,16 +1,20 @@
 .content-result{
+  
   background-color: $color_1;
-
-
-  .wrapper{
-    @include size(100%);
-    background-color: $color_4;
-    position: relative;
-  }
 
   $dates-container-height: 65;
   $labels-container-height: 75;
   $chart-container-padding: 15;
+
+  /**********************************
+    wrapper
+  **********************************/
+  
+  .content-wrapper{
+    @include size(100%);
+    background-color: $color_4;
+    position: relative;
+  }
 
   /**********************************
     dates

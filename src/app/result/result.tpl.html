@@ -3,8 +3,8 @@
   <h1 class="title">Result</h1>
   <a class="icon" ng-click="next()"><i class="icon-cog"></i></i></a>
 </header>
-<div class="content-result">
-  <div class="wrapper">
+<div class="content content-result">
+  <div class="content-wrapper">
     <div class="dates-wrapper">
       <div class="dates-container">
         <div class="date-container">
@@ -78,7 +78,7 @@
             class="total-result"
             counter
             counter-restart="subViewState=='total-months'"
-            counter-max="dateModel.totalDays"
+            counter-max="dateModel.totalMonths"
             >
           <p class="total-label" translate>common.MONTHS_TOTAL</p>
           </p>
