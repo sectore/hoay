@@ -3,42 +3,67 @@
   <h1 class="title" translate="calculate.TITLE"></h1>
   <a class="icon" ng-click="showSettings()"><i class="icon-cog"></i></a>
 </header>
-<div class="content-calculate">
-  <ul>
-    <li>
-      <a class="button">
-        <div class="label-container">
-          <div class="label-wrapper">
-            <p class="label-date" translate="common.START_DATE"></p>
-            <p class="date">
-              <span ng-bind="dateModel.start | shortdate"></span>
-              <i class="icon-sort"></i>
-            </p>
+<div class="content content-calculate">
+  <div class="content-wrapper">
+    <ul class="button-list">
+      <li>
+        <a class="button">
+          <div class="label-container">
+            <div class="label-wrapper">
+              <p class="label-date" translate="common.START_DATE"></p>
+              <p class="date">
+                <span ng-bind="dateModel.start | shortdate"></span>
+                <i class="icon-sort"></i>
+              </p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="button">
+          <div class="label-container">
+            <div class="label-wrapper">
+              <p class="label-date" translate="common.END_DATE"></p>
+              <p class="date">
+                <span ng-bind="dateModel.end | shortdate"></span>
+                <i class="icon-sort"></i>
+              </p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="button button-calculate"
+           ng-click="showResult()"
+            >
+          <div class="label-container">
+            <div class="label-wrapper">
+              <p class="label-calculate" translate="calculate.LABEL_BUTTON"></p>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="error-view-cover"
+         ng-class="{'error-view-cover-active': hasError()}"
+          ng-click="hideError()"
+        ></div>
+
+    <div class="error-view"
+      ng-class="{'error-view-active': hasError()}"
+      ng-click="hideError()"
+        >
+      <div class="error-txt-outer-wrapper">
+        <div class="error-txt-inner-wrapper">
+          <div class="error-txt-container">
+            <p class="error-headline" translate="common.NOTE"></p>
+            <p class="error-message">{{errorMessage}}</p>
+            <p class="error-button">OK</p>
           </div>
         </div>
-      </a>
-    </li>
-    <li>
-      <a class="button">
-        <div class="label-container">
-          <div class="label-wrapper">
-            <p class="label-date" translate="common.END_DATE"></p>
-            <p class="date">
-              <span ng-bind="dateModel.end | shortdate"></span>
-              <i class="icon-sort"></i>
-            </p>
-          </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="button button-calculate" ng-click="showResult()">
-        <div class="label-container">
-          <div class="label-wrapper">
-            <p class="label-calculate" translate="calculate.LABEL_BUTTON"></p>
-          </div>
-        </div>
-      </a>
-    </li>
-  </ul>
+      </div>
+    </div>
+
+  </div>
 </div>

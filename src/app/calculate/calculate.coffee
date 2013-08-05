@@ -26,11 +26,7 @@ angular.module('hoay.calculate', [])
   ($scope, $navigate, $log, $translate, dateModel)->
 
     init = ->
-      # set initial dates
-      # TODO: using cookies to get prev. dates
       $scope.dateModel = dateModel
-      dateModel.setStart new Date(1971, 9, 10)
-      dateModel.setEnd new Date()
 
     $scope.showResult = ->
       $navigate.go '/result'
@@ -40,6 +36,17 @@ angular.module('hoay.calculate', [])
 
     $scope.showInfo = ->
       $navigate.go '/info', 'modal'
+
+
+    $scope.showError = ->
+      $scope.errorMessage = $translate 'common.EROR_ENDDATE_BEFORE_STARTDATE'
+
+    $scope.hideError = ->
+      $scope.errorMessage = ''
+
+    $scope.hasError = ->
+      $scope.errorMessage isnt undefined and $scope.errorMessage isnt ''
+
 
     init()
 ]

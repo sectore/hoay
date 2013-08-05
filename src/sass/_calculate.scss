@@ -1,16 +1,38 @@
+
+
 .content-calculate{
 
-  ul>li{
-    @include size(100% 33%);
+  /**********************************
+    wrapper
+  **********************************/
 
-    &:first-child{
-      .button{
-        border-bottom: solid em(1) $color_1
+  .content-wrapper{
+    @include size(100%);
+    background-color: $color_4;
+    position: relative;
+  }
+
+  /**********************************
+    vertical-button-bar
+  **********************************/
+
+
+  .button-list{
+
+    @include position(absolute, em(0) em(0) em(0) em(0));
+
+    li{
+      @include size(100% 33%);
+
+      &:first-child{
+        .button{
+          border-bottom: solid em(1) $color_1
+        }
       }
-    }
 
-    &:last-child{
-      @include size(100% 34%);
+      &:last-child{
+        @include size(100% 34%);
+      }
     }
   }
 
@@ -77,6 +99,81 @@
     color: $color_2;
     font-family: $font_1;
     font-size: em(50);
+  }
+
+  /**********************************
+    error
+  **********************************/
+  $error-ani-duration: 0.25s;
+
+  .error-view-cover{
+    @include position(absolute, em(0) em(0) em(0) em(0));
+    background-color: rgba($color_2, 0);
+    @include transform(translate3d(0,-100%,0));
+    @include transition(background-color $error-ani-duration);
+  }
+
+  .error-view-cover-active{
+    @include transform(translate3d(0,0,0));
+    background-color: rgba($color_2, 0.75);
+  }
+
+  .error-view{
+    @include position(absolute, em(0) em(0) em(0) em(0));
+    @include transform(translate3d(0,-100%,0));
+    // Note: transform can not be used as shorthand mixin with transition() - Bourbon bug??
+    @include transition-property (transform);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-out);
+  }
+
+  .error-view-active{
+    @include transform(translate3d(0,0,0));
+  }
+
+  .error-txt-outer-wrapper{
+    display: table;
+    @include size(100%);
+  }
+
+  .error-txt-inner-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .error-txt-container{
+    background-color: $color_4;
+    padding: em(30);
+    text-align: center;
+  }
+
+  .error-headline,
+  .error-message,
+  .error-button{
+    font-family: $font_1;
+  }
+
+  .error-headline{
+    color: $color_2;
+    $font-size: 40;
+    margin-bottom: em(20, $font-size);
+    font-size: em($font-size);
+  }
+
+  .error-message{
+    color: $color_2;
+    $font-size: 21;
+    font-size: em($font-size);
+  }
+
+  .error-button{
+    display: inline-block;
+    background-color: $color_3;
+    color: $color_4;
+    $font-size: 30;
+    font-size: em($font-size);
+    margin-top: em(30, $font-size);
+    padding: em(20, $font-size) em(50, $font-size);
   }
 
 }
