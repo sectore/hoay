@@ -1,17 +1,12 @@
-'use strict'
-
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.app', [
-  'templates.common'
-  'templates.app'
   'ajoslin.mobile-navigate'
   'ngMobile'
   'ngCookies'
   'pascalprecht.translate'
   # app related stuff
-  'hoay.directives.charts'
-  'hoay.directives.dates'
+  'hoay.templates'
   'hoay.version'
   'hoay.dates'
   'hoay.calculate'

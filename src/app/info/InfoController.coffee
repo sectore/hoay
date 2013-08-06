@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('hoay.info', [])
 
 .config([
