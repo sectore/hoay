@@ -15,6 +15,7 @@ module.exports = (grunt) ->
       assets: 'src/assets'
       coffeeapp: 'src/app/**/*.coffee'
       coffeecommon: 'src/common/**/*.coffee'
+      coffeetest: 'test/**/*.coffee'
       sass: 'src/sass'
       debug: 'bin-debug'
       release: 'bin-release'
@@ -45,6 +46,9 @@ module.exports = (grunt) ->
       ]
       release: [
         '<%= pathes.release %>/*'
+      ]
+      test: [
+        '<%= pathes.test %>/_tmp/*'
       ]
       tmp: [
         '<%= pathes.tmp %>/*'
@@ -170,6 +174,15 @@ module.exports = (grunt) ->
             '<%= pathes.src %>/app/app.coffee'
           ]
 
+      test:
+        options:
+          join: true
+          bare: true
+        files:
+          '<%= pathes.test %>/_tmp/<%= pkg.name %>.spec.js': [
+            '<%= pathes.test %>/unit/**/**.coffee'
+          ]
+
     # html2js
     # ------------------------------------------------------------
     html2js:
@@ -260,6 +273,11 @@ module.exports = (grunt) ->
             '<%= pathes.coffeeapp %>'
             '<%= pathes.coffeecommon %>'
           ]
+      test:
+        files:
+          src: [
+            '<%= pathes.coffeetest %>'
+          ]
       grunt:
         files:
           src: 'Gruntfile.coffee'
@@ -332,6 +350,13 @@ module.exports = (grunt) ->
           'copy:debugassets'
         ]
 
+    # karma
+    # ------------------------------------------------------------
+    karma:
+      unit:
+        configFile: 'test/karma.conf.coffee'
+
+
   )
 
 
@@ -350,6 +375,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-htmlrefs'
   grunt.loadNpmTasks 'grunt-html2js'
   grunt.loadNpmTasks 'grunt-coffeelint'
+  grunt.loadNpmTasks 'grunt-karma'
 
   # debug tasks
   # ------------------------------------------------------------
@@ -364,6 +390,7 @@ module.exports = (grunt) ->
     'sass:debug'
     'copydebug'
     'connect:debug'
+    'karma:unit'
     'watch'
   ]
 
@@ -392,6 +419,21 @@ module.exports = (grunt) ->
     'copy:releaseassets'
     'copy:releasefontawesome'
     'connect:release'
+  ]
+
+  # test tasks
+  # ------------------------------------------------------------
+  grunt.registerTask 'test:unit', [
+    'clean'
+    'replacer:version'
+    'html2js'
+    'coffee:app'
+    'coffeelint:app'
+    'coffeelint:test'
+    'coffee:test'
+    'concat:jslib'
+    'copy:debugjs'
+    'karma:unit'
   ]
 
   # default tasks

@@ -1,5 +1,8 @@
 'use strict'
-angular.module('hoay.dates', [])
+angular.module('hoay.dates', [
+  'ngCookies'
+  'pascalprecht.translate'
+])
 
 #  models
 # ------------------------------------------------------------
