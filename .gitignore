@@ -16,3 +16,5 @@ phonegap
 
 .idea
 *.iml
+
+.DS_Store

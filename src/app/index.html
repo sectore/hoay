@@ -8,13 +8,16 @@
     <link rel="stylesheet" type="text/css" href="styles/hoay.lib.css" />
     <link rel="stylesheet" type="text/css" href="styles/hoay.css" />
     <!-- endref -->
+  </head>
+  <body>
+    <mobile-view></mobile-view>
     <!-- ref:js js/hoay.<%= version %>.min.js -->
     <script type="text/javascript" src="js/hoay.lib.js"></script>
     <script type="text/javascript" src="js/hoay.tmpl.js"></script>
     <script type="text/javascript" src="js/hoay.js"></script>
     <!-- endref -->
-  </head>
-  <body ng-app="hoay.app">
-    <mobile-view></mobile-view>
+    <script type="text/javascript">
+      hoay.bootstrap.init();
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-@include font-face('#{$font_1}', '/assets/fonts/SourceSansPro-Regular');
-@include font-face('#{$font_2}', '/assets/fonts/SourceSansPro-Bold', bold);
+@include font-face('#{$font_1}', '../assets/fonts/SourceSansPro-Regular');
+@include font-face('#{$font_2}', '../assets/fonts/SourceSansPro-Bold', bold);
 
 * {
   @include box-sizing(border-box);

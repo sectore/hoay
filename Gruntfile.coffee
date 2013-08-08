@@ -19,6 +19,7 @@ module.exports = (grunt) ->
       sass: 'src/sass'
       debug: 'bin-debug'
       release: 'bin-release'
+      phonegap: 'phonegap/www'
       test: 'test'
 
     meta:
@@ -52,6 +53,14 @@ module.exports = (grunt) ->
       ]
       tmp: [
         '<%= pathes.tmp %>/*'
+      ]
+      phonegap: [
+        '<%= pathes.phonegap %>/css/'
+        '<%= pathes.phonegap %>/img/'
+        '<%= pathes.phonegap %>/styles/'
+        '<%= pathes.phonegap %>/js/'
+        '<%= pathes.phonegap %>/spec/'
+        '<%= pathes.phonegap %>/*.html'
       ]
 
     # replace
@@ -154,6 +163,28 @@ module.exports = (grunt) ->
           dest: '<%= pathes.release %>/'
         ]
 
+      debugphonegap:
+        files: [
+          expand: true,
+          cwd: '<%= pathes.debug %>/'
+          src: [
+            '**/*.*'
+            '!index.html'
+          ],
+          dest: '<%= pathes.phonegap %>/'
+        ]
+      debugphonegapindex:
+      # index.html
+        files:[
+          expand: true,
+          cwd: '<%= pathes.src %>/phonegap/'
+          src: [
+            'index.html'
+          ],
+          dest: '<%= pathes.phonegap %>/',
+          filter: 'isFile'
+        ]
+
 
     # coffee
     # ------------------------------------------------------------
@@ -172,6 +203,7 @@ module.exports = (grunt) ->
             '<%= pathes.src %>/app/result/**/**.coffee'
             '<%= pathes.src %>/app/settings/**/**.coffee'
             '<%= pathes.src %>/app/app.coffee'
+            '<%= pathes.src %>/app/bootstrap.coffee'
           ]
 
       test:
@@ -419,6 +451,22 @@ module.exports = (grunt) ->
     'copy:releaseassets'
     'copy:releasefontawesome'
     'connect:release'
+  ]
+
+  # phonegap tasks
+  # ------------------------------------------------------------
+  grunt.registerTask 'phonegap:debug', [
+    'clean'
+    'replacer:version'
+    'html2js'
+    'coffee:app'
+    'coffeelint:app'
+    'concat:jslib'
+    'concat:csslib'
+    'sass:debug'
+    'copydebug'
+    'copy:debugphonegap'
+    'copy:debugphonegapindex'
   ]
 
   # test tasks
