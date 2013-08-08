@@ -12,5 +12,5 @@ hoay.bootstrap = (->
     if window.cordova
       document.addEventListener 'deviceready', deviceReadyHandler, false
     else
-      $ @boot()
+      $ boot()
 )()
