@@ -42,6 +42,7 @@
 
     &:last-child{
       p{
+        border-left: solid em(1) $color_4;
         text-align: right;
       }
     }
@@ -65,13 +66,14 @@
   
   .result-list{
     @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
+    background-color: green;
   }
 
   .result-list-item{
-    @include size(100% 33%);
+    @include size(100% 34%);
 
     &:last-child{
-      @include size(100% 34%);
+      @include size(100% 33%);
     }
   }
 
