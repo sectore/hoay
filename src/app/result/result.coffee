@@ -24,8 +24,6 @@ angular.module('hoay.result', [])
 
     $scope.dateModel = dateModel
 
-    $scope.monthsPercent = 45
-
     $scope.subViewState = 'sum'
 
     $scope.next = ->

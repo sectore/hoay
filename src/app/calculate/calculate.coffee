@@ -26,6 +26,9 @@ angular.module('hoay.calculate', [])
     init = ->
       $scope.dateModel = dateModel
 
+    # navigation
+    # ------------------------------------------------------------
+
     $scope.showResult = ->
       $navigate.go '/result'
 
@@ -35,6 +38,35 @@ angular.module('hoay.calculate', [])
     $scope.showInfo = ->
       $navigate.go '/info', 'modal'
 
+    # date handling
+    # ------------------------------------------------------------
+
+    $scope.changeStartDate = ->
+      options =
+        date: $scope.dateModel.start
+        mode: 'date'
+
+      datePicker.show options, changeStartDateHandler
+
+    changeStartDateHandler = (date) ->
+      # TODO: check selected date
+      $scope.dateModel.setStart date
+      $scope.$apply()
+
+    $scope.changeEndDate = ->
+      options =
+        date: $scope.dateModel.end
+        mode: 'date'
+
+      datePicker.show options, changeEndDateHandler
+
+    changeEndDateHandler = (date) ->
+      # TODO: check selected date
+      $scope.dateModel.setEnd date
+      $scope.$apply()
+
+    # error handling
+    # ------------------------------------------------------------
 
     $scope.showError = ->
       $scope.errorMessage = $translate 'common.EROR_ENDDATE_BEFORE_STARTDATE'

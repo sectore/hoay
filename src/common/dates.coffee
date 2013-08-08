@@ -25,6 +25,7 @@ angular.module('hoay.dates', [
       @updateDifferences()
 
     @updateDifferences = ->
+      $log.info "updateDifferences"
       if @start isnt undefined and @end isnt undefined
         sum = getSumByDates @start, @end
         @days = sum.days
@@ -33,6 +34,8 @@ angular.module('hoay.dates', [
         @totalDays = getTotalDaysByDates @start, @end
         @totalMonths = getTotalMonthsByDates @start, @end
         @totalYears = getTotalYearsByDates @start, @end
+
+      $log.info "updateDifferences @totalYears: #{@totalYears}"
 
 
     getTotalDaysByDates =(startDate, endDate) ->
@@ -133,7 +136,6 @@ angular.module('hoay.dates', [
 
       tweenable = new Tweenable()
       animate = ->
-#        $log.info "animate #{scope.$eval(attrs.max)}"
         updateElement 0
         tweenable.tween
           from:
