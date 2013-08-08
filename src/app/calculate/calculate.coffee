@@ -50,8 +50,9 @@ angular.module('hoay.calculate', [])
 
     changeStartDateHandler = (date) ->
       # TODO: check selected date
-      $scope.dateModel.setStart date
-      $scope.$apply()
+      $scope.$apply( ->
+        $scope.dateModel.setStart date
+      )
 
     $scope.changeEndDate = ->
       options =
@@ -62,8 +63,9 @@ angular.module('hoay.calculate', [])
 
     changeEndDateHandler = (date) ->
       # TODO: check selected date
-      $scope.dateModel.setEnd date
-      $scope.$apply()
+      $scope.$apply( ->
+        $scope.dateModel.setEnd date
+      )
 
     # error handling
     # ------------------------------------------------------------
