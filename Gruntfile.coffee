@@ -60,7 +60,9 @@ module.exports = (grunt) ->
         '<%= pathes.phonegap %>/styles/'
         '<%= pathes.phonegap %>/js/'
         '<%= pathes.phonegap %>/spec/'
+        '<%= pathes.phonegap %>/res/'
         '<%= pathes.phonegap %>/*.html'
+        '<%= pathes.phonegap %>/config.xml'
       ]
 
     # replace
@@ -163,7 +165,7 @@ module.exports = (grunt) ->
           dest: '<%= pathes.release %>/'
         ]
 
-      debugphonegap:
+      debugpphonegapwww:
         files: [
           expand: true,
           cwd: '<%= pathes.debug %>/'
@@ -173,16 +175,14 @@ module.exports = (grunt) ->
           ],
           dest: '<%= pathes.phonegap %>/'
         ]
-      debugphonegapindex:
-      # index.html
+      debugphoneassets:
         files:[
           expand: true,
           cwd: '<%= pathes.src %>/phonegap/'
           src: [
-            'index.html'
+            '**/**'
           ],
-          dest: '<%= pathes.phonegap %>/',
-          filter: 'isFile'
+          dest: '<%= pathes.phonegap %>/'
         ]
 
 
@@ -366,6 +366,13 @@ module.exports = (grunt) ->
         tasks: [
           'coffeelint:grunt'
         ]
+      sass:
+        files: [
+          '<%= pathes.sass %>/**/*.scss'
+        ],
+        tasks: [
+          'sass:debug'
+        ]
       html:
         files: [
           '<%= pathes.src %>/index.html'
@@ -465,8 +472,8 @@ module.exports = (grunt) ->
     'concat:csslib'
     'sass:debug'
     'copydebug'
-    'copy:debugphonegap'
-    'copy:debugphonegapindex'
+    'copy:debugpphonegapwww'
+    'copy:debugphoneassets'
   ]
 
   # test tasks
