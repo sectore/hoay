@@ -8,10 +8,10 @@
     <ul class="button-list">
       <li>
         <a class="button" ng-click="changeStartDate()">
-          <div class="label-container">
-            <div class="label-wrapper">
-              <p class="label-date" translate="common.START_DATE"></p>
-              <p class="date">
+          <div class="button-content-wrapper">
+            <div class="button-content-container">
+              <p class="date-label" translate="common.START_DATE"></p>
+              <p class="date-txt">
                 <span ng-bind="dateModel.start | translatedate"></span>
                 <i class="icon-sort"></i>
               </p>
@@ -21,10 +21,10 @@
       </li>
       <li>
         <a class="button">
-          <div class="label-container" ng-click="changeEndDate()">
-            <div class="label-wrapper">
-              <p class="label-date" translate="common.END_DATE"></p>
-              <p class="date">
+          <div class="button-content-wrapper" ng-click="changeEndDate()">
+            <div class="button-content-container">
+              <p class="date-label" translate="common.END_DATE"></p>
+              <p class="date-txt">
                 <span ng-bind="dateModel.end | translatedate"></span>
                 <i class="icon-sort"></i>
               </p>
@@ -36,8 +36,8 @@
         <a class="button button-calculate"
            ng-click="showResult()"
             >
-          <div class="label-container">
-            <div class="label-wrapper">
+          <div class="button-content-wrapper">
+            <div class="button-content-container">
               <p class="label-calculate" translate="calculate.LABEL_BUTTON"></p>
             </div>
           </div>

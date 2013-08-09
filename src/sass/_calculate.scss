@@ -48,57 +48,86 @@
     position: relative;
 
     &:after{
-      $arrow-size: 25;
       position: absolute;
       bottom: 100%;
       border: solid transparent;
       content: " ";
       @include size(0);
       border-bottom-color: $color_1;
-      border-width: em($arrow-size);
       left: 50%;
+
+      $arrow-size: 32;
+      $arrow-size-small: 17;
+      border-width: em($arrow-size);
       margin-left: em($arrow-size * -1);
+
+      @include respond-to(small){
+        border-width: em($arrow-size-small);
+        margin-left: em($arrow-size-small * -1);
+      }
     }
   }
 
-  .label-container{
+  .button-content-wrapper{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
   }
 
-  .label-wrapper{
+  .button-content-container{
     display: inline-block;
     text-align: left;
   }
 
-  .label-date,
-  .date{
+  .date-label,
+  .date-txt{
     padding: 0;
     font-family: $font_1;
     color: $color_4;
   }
-  .label-date{
-    font-size: em(19);
+
+
+  .date-label{
+    $font-size-label: 27;
+    $font-size-label-small: 19;
+    font-size: em($font-size-label);
+    @include respond-to(small){
+      font-size: em($font-size-label-small);
+    }
   }
 
-  $font-size-date: 53;
+  $font-size-date: 80;
+  $font-size-date-small: 55;
 
-  .date{
+  .date-txt{
     font-size: em($font-size-date);
+
+    @include respond-to(small){
+      font-size: em($font-size-date-small);
+    }
   }
 
 
   .icon-sort{
-    $icon-size: 30;
     color: $color_4;
+
+    $icon-size: 65;
+    $icon-size-small: 40;
     font-size: em($icon-size, $font-size-date);
+    @include respond-to(small){
+      font-size: em($icon-size-small, $font-size-date-small);
+    }
   }
 
   .label-calculate{
     color: $color_2;
     font-family: $font_1;
-    font-size: em(50);
+
+    font-size: em(100);
+
+    @include respond-to(small){
+      font-size: em(55);
+    }
   }
 
   /**********************************
