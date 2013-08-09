@@ -1,4 +1,3 @@
-'use strict'
 angular.module('hoay.dates', [
   'ngCookies'
   'pascalprecht.translate'
@@ -25,7 +24,6 @@ angular.module('hoay.dates', [
       @updateDifferences()
 
     @updateDifferences = ->
-      $log.info "updateDifferences"
       if @start isnt undefined and @end isnt undefined
         sum = getSumByDates @start, @end
         @days = sum.days
@@ -34,9 +32,6 @@ angular.module('hoay.dates', [
         @totalDays = getTotalDaysByDates @start, @end
         @totalMonths = getTotalMonthsByDates @start, @end
         @totalYears = getTotalYearsByDates @start, @end
-
-      $log.info "updateDifferences @totalYears: #{@totalYears}"
-
 
     getTotalDaysByDates =(startDate, endDate) ->
       startMoment = moment startDate
@@ -122,6 +117,7 @@ angular.module('hoay.dates', [
 
       recount = attrs.counterRestart or false
       max = scope.$eval(attrs.counterMax)
+      timeoutPromise = null
 
       scope.$watch max, (value)->
         if max isnt undefined
@@ -132,7 +128,7 @@ angular.module('hoay.dates', [
           restart()
 
       restart = ->
-        $timeout animate, 200
+        timeoutPromise = $timeout animate, 200
 
       tweenable = new Tweenable()
       animate = ->
@@ -151,5 +147,12 @@ angular.module('hoay.dates', [
 
       updateElement = (value)->
         $(element)[0].text parseInt(value)
+
+      element.bind '$destroy', ->
+        # cancel timeout
+        $timeout.cancel timeoutPromise
+        # cancel tween
+        tweenable.stop()
+
 
 ]
