@@ -1,6 +1,6 @@
 {
   "common":{
-    "FORMAT_DATE_SHORT": "MM/dd/yy",
+    "FORMAT_DATE_SHORT": "MM/dd/yyyy",
     "FORMAT_NUMBER": "",
     "START_DATE": "start date",
     "END_DATE": "end date",

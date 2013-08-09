@@ -22,7 +22,7 @@
     @include position(absolute, em(0) em(0) em(0) em(0));
 
     li{
-      @include size(100% 33%);
+      @include size(100% 34%);
 
       &:first-child{
         .button{
@@ -31,7 +31,7 @@
       }
 
       &:last-child{
-        @include size(100% 34%);
+        @include size(100% 32%);
       }
     }
   }
@@ -79,10 +79,10 @@
     color: $color_4;
   }
   .label-date{
-    font-size: em(21);
+    font-size: em(19);
   }
 
-  $font-size-date: 60;
+  $font-size-date: 53;
 
   .date{
     font-size: em($font-size-date);
@@ -90,7 +90,7 @@
 
 
   .icon-sort{
-    $icon-size: 40;
+    $icon-size: 30;
     color: $color_4;
     font-size: em($icon-size, $font-size-date);
   }

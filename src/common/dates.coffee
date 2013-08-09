@@ -100,7 +100,7 @@ angular.module('hoay.dates', [
 #  using pattern defined in locales
 #  Locales are handled by
 #  angular-translate ($translate)
-.filter('shortdate', [
+.filter('translatedate', [
   '$filter',
   '$translate',
   ($filter, $translate)->
