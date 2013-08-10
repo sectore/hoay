@@ -28,7 +28,7 @@ angular.module('hoay.helper', [
       $scope.openUrl = ->
         $log.info "target #{target}"
         $log.info "url #{$scope.url}"
-        window.open $scope.url, target
+        $window.open $scope.url, target
 
 
 ]
