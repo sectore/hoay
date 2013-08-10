@@ -18,6 +18,9 @@
     "TITLE": "How old are you?",
     "LABEL_BUTTON": "Calculate"
   },
+  "result":{
+    "TITLE": "Result"
+  },
   "settings":{
     "TITLE": "Settings",
     "LANGUAGE": "Language"
@@ -25,9 +28,9 @@
   "info":{
     "TITLE": "Info",
     "HEADLINE_ABOUT": "About HOAY",
-    "TXT_ABOUT": "<strong>HOAY</strong> (\"How old are you\") a an app to calculate ages in years, months and days.",
-    "TXT_CODE": "It is built with the JavaScript Framework <a href='http://angularjs.org/'>AngularJS</a> and <a href='http://http://phonegap.com/'>PhoneGap</a>. All <a href='https://github.com/sectore/hoay'>source code</a> is available at <a href='https://github.com/sectore/hoay'>GitHub</a>.",
-    "TXT_COPYRIGHT": "Copyright (c) 2013 Jens Krause // <a href='http://websector.de'>WEBSECTOR.DE</a>",
+    "TXT_ABOUT": "<strong>HOAY</strong> (\"How old are you\") is an app to calculate ages in years, months and days.",
+    "TXT_CODE": "It is built with the JavaScript Framework <open-external url='http://angularjs.org/'>AngularJS</open-external> and <open-external url='http://phonegap.com/'>PhoneGap</open-external>. All <open-external url='https://github.com/sectore/hoay'>source code</open-external> is available at <open-external url='https://github.com/sectore/hoay'>GitHub</open-external>.",
+    "TXT_COPYRIGHT": "Copyright (c) 2013 Jens Krause // <open-external url='http://websector.de'>WEBSECTOR.DE</open-external>",
     "TXT_VERSION": "Version: v.{{version}}"
   }
 }
