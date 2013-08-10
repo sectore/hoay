@@ -1,6 +1,8 @@
 # module definition
 # ------------------------------------------------------------
-angular.module('hoay.calculate', [])
+angular.module('hoay.calculate', [
+  'jm.i18next'
+])
 
 # config
 # ------------------------------------------------------------
@@ -19,9 +21,9 @@ angular.module('hoay.calculate', [])
   '$scope',
   '$navigate',
   '$log',
-  '$translate',
+  '$i18next',
   'DateModel'
-  ($scope, $navigate, $log, $translate, dateModel)->
+  ($scope, $navigate, $log, $i18next, dateModel)->
 
     init = ->
       $scope.dateModel = dateModel
@@ -71,7 +73,7 @@ angular.module('hoay.calculate', [])
     # ------------------------------------------------------------
 
     $scope.showError = ->
-      $scope.errorMessage = $translate 'common.EROR_ENDDATE_BEFORE_STARTDATE'
+      $scope.errorMessage = $i18next 'common.EROR_ENDDATE_BEFORE_STARTDATE'
 
     $scope.hideError = ->
       $scope.errorMessage = ''

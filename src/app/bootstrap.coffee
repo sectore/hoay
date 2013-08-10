@@ -6,6 +6,9 @@ hoay.bootstrap = (->
     boot()
 
   boot = ->
+    # adding appController 'by hand'
+    $('body').attr 'ng-controller', 'appController'
+    # bootstrap angular
     angular.bootstrap(document, ["hoay.app"])
 
   init: ->

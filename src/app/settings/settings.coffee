@@ -1,6 +1,9 @@
 # module definition
 # ------------------------------------------------------------
-angular.module('hoay.settings', [])
+angular.module('hoay.settings', [
+  'ngMobile'
+  'jm.i18next'
+])
 
 # configuration
 # ------------------------------------------------------------
@@ -16,25 +19,25 @@ angular.module('hoay.settings', [])
 # controller
 # ------------------------------------------------------------
 .controller('settingsController', [
+    '$log'
     '$scope',
+    '$window',
     '$navigate',
-    '$translate',
-    ($scope, $navigate, $translate)->
+    '$i18next'
+    ($log, $scope, $window, $navigate, $i18next)->
 
       $scope.prev = ->
         $navigate.back()
 
       $scope.setGerman = ->
-        $translate.uses 'de_DE'
+        $i18next.options.lng = 'de-DE'
 
       $scope.isGerman = ->
-        $translate.uses() is 'de_DE'
+        $i18next.options.lng is 'de-DE'
 
       $scope.setEnglish = ->
-        $translate.uses 'en_US'
+        $i18next.options.lng = 'en-US'
 
       $scope.isEnglish = ->
-        $translate.uses() is 'en_US'
-
-
+        $i18next.options.lng is 'en-US'
 ])

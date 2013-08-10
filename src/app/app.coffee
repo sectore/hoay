@@ -4,10 +4,11 @@ angular.module('hoay.app', [
   'ajoslin.mobile-navigate'
   'ngMobile'
   'ngCookies'
-  'pascalprecht.translate'
+  'jm.i18next'
   # app related stuff
   'hoay.templates'
   'hoay.version'
+  'hoay.helper'
   'hoay.dates'
   'hoay.calculate'
   'hoay.result'
@@ -28,12 +29,32 @@ angular.module('hoay.app', [
 ])
 
 .config([
-  '$translateProvider'
-  ($translateProvider) ->
-    $translateProvider.useStaticFilesLoader
-      prefix: 'assets/locales/'
-      suffix: '.json'
-
-    $translateProvider.useLocalStorage()
-    $translateProvider.preferredLanguage 'en_US'
+  '$i18nextProvider'
+  ($i18nextProvider) ->
+    $i18nextProvider.options =
+      useCookie: true
+      useLocalStorage: false
+      detectLngFromHeaders: false
+      fallbackLng: 'en-US'
+      resGetPath: 'assets/locales/__lng__.json'
 ])
+
+# controller
+# ------------------------------------------------------------
+.controller 'appController',[
+  '$log',
+  '$window'
+  '$i18next'
+
+  ($log, $window, $i18next)->
+
+    init = ->
+      # Important note:
+      # Set 'lng' of $i18next.options using i18n directly
+      # because $i18next provides not an api
+      # to get the current lang at the moment...
+      if $i18next.options.lng is undefined
+        $i18next.options.lng = $window.i18n.lng()
+
+    init()
+]

@@ -1,6 +1,6 @@
 angular.module('hoay.dates', [
   'ngCookies'
-  'pascalprecht.translate'
+  'jm.i18next'
 ])
 
 #  models
@@ -97,10 +97,10 @@ angular.module('hoay.dates', [
 #  angular-translate ($translate)
 .filter('translatedate', [
   '$filter',
-  '$translate',
-  ($filter, $translate)->
+  '$i18next',
+  ($filter, $i18next)->
     (data)->
-      format = $translate 'common.FORMAT_DATE_SHORT'
+      format = $i18next 'common.FORMAT_DATE_SHORT'
       result = $filter('date')(data, format)
       result
 ])

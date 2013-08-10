@@ -16,12 +16,12 @@ angular.module('hoay.info', [])
   'Version',
   ($log, $scope, $navigate, Version)->
 
-    $scope.translateValues =
-      version: Version
-
-    $log.info "version #{Version}"
+    $scope.version = Version
 
     $scope.prev = ->
       $navigate.back()
+
+    $scope.sayHello = ->
+      alert('hello')
 
 ])

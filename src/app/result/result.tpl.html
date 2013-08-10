@@ -1,6 +1,6 @@
 <header class="navbar">
   <a class="icon" ng-click="prev()"><i class="icon-chevron-left"></i></a>
-  <h1 class="title">Result</h1>
+  <h1 class="title" ng-i18next>result.TITLE</h1>
   <a class="icon" ng-click="next()"><i class="icon-cog"></i></i></a>
 </header>
 <div class="content content-result">
@@ -8,14 +8,14 @@
     <div class="dates-wrapper">
       <div class="dates-container">
         <div class="date-container">
-          <p class="label-date" translate>common.START_DATE</p>
+          <p class="label-date" ng-i18next>common.START_DATE</p>
           <p class="date">
             {{dateModel.start | translatedate}}
             <!--<i class="icon-sort"></i>-->
           </p>
         </div>
         <div class="date-container">
-          <p class="label-date" translate>common.END_DATE</p>
+          <p class="label-date" ng-i18next>common.END_DATE</p>
           <p class="date">
             {{dateModel.end | translatedate}}
             <!--<i class="icon-sort"></i>-->
@@ -31,7 +31,7 @@
               counter
               counter-max="dateModel.years"
               ></p>
-            <p class="result-label" translate>common.YEARS</p>
+            <p class="result-label" ng-i18next>common.YEARS</p>
           </div>
         </div>
       </li>
@@ -39,7 +39,7 @@
         <div class="result-wrapper">
           <div class="result-container">
             <p class="result-txt" counter-max="dateModel.months" counter></p>
-            <p class="result-label" translate>common.MONTHS</p>
+            <p class="result-label" ng-i18next>common.MONTHS</p>
           </div>
         </div>
       </li>
@@ -47,7 +47,7 @@
         <div class="result-wrapper">
           <div class="result-container">
             <p class="result-txt" counter-max="dateModel.days" counter></p>
-            <p class="result-label" translate>common.DAYS</p>
+            <p class="result-label" ng-i18next>common.DAYS</p>
           </div>
         </div>
       </li>
@@ -63,7 +63,7 @@
             counter-restart="subViewState=='total-years'"
             counter-max="dateModel.totalYears"
             >
-          <p class="total-label" translate>common.YEARS_TOTAL</p>
+          <p class="total-label" ng-i18next>common.YEARS_TOTAL</p>
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@
             counter-restart="subViewState=='total-months'"
             counter-max="dateModel.totalMonths"
             >
-          <p class="total-label" translate>common.MONTHS_TOTAL</p>
+          <p class="total-label" ng-i18next>common.MONTHS_TOTAL</p>
           </p>
         </div>
       </div>
@@ -97,7 +97,7 @@
             counter-max="dateModel.totalDays"
             >
           </p>
-          <p class="total-label" translate>common.DAYS_TOTAL</p>
+          <p class="total-label" ng-i18next>common.DAYS_TOTAL</p>
         </div>
       </div>
     </div>

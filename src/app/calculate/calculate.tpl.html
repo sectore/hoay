@@ -1,6 +1,6 @@
 <header class="navbar">
   <a class="icon" ng-click="showInfo()"><i class="icon-info"></i></a>
-  <h1 class="title" translate="calculate.TITLE"></h1>
+  <h1 class="title" ng-i18next="calculate.TITLE"></h1>
   <a class="icon" ng-click="showSettings()"><i class="icon-cog"></i></a>
 </header>
 <div class="content content-calculate">
@@ -10,7 +10,7 @@
         <a class="button" ng-click="changeStartDate()">
           <div class="button-content-wrapper">
             <div class="button-content-container">
-              <p class="date-label" translate="common.START_DATE"></p>
+              <p class="date-label" ng-i18next="common.START_DATE"></p>
               <p class="date-txt">
                 <span ng-bind="dateModel.start | translatedate"></span>
                 <i class="icon-sort"></i>
@@ -23,7 +23,7 @@
         <a class="button">
           <div class="button-content-wrapper" ng-click="changeEndDate()">
             <div class="button-content-container">
-              <p class="date-label" translate="common.END_DATE"></p>
+              <p class="date-label" ng-i18next="common.END_DATE"></p>
               <p class="date-txt">
                 <span ng-bind="dateModel.end | translatedate"></span>
                 <i class="icon-sort"></i>
@@ -38,7 +38,7 @@
             >
           <div class="button-content-wrapper">
             <div class="button-content-container">
-              <p class="label-calculate" translate="calculate.LABEL_BUTTON"></p>
+              <p class="label-calculate" ng-i18next="calculate.LABEL_BUTTON"></p>
             </div>
           </div>
         </a>
@@ -57,7 +57,7 @@
       <div class="error-txt-outer-wrapper">
         <div class="error-txt-inner-wrapper">
           <div class="error-txt-container">
-            <p class="error-headline" translate="common.NOTE"></p>
+            <p class="error-headline" ng-i18next="common.NOTE"></p>
             <p class="error-message">{{errorMessage}}</p>
             <p class="error-button">OK</p>
           </div>
