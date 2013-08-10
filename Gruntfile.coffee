@@ -232,6 +232,10 @@ module.exports = (grunt) ->
     concat:
       jslib:
         src: [
+          '<%= pathes.vendor %>/zepto/zepto.js'
+          '<%= pathes.vendor %>/shifty/dist/shifty.js'
+          '<%= pathes.vendor %>/momentjs/moment.js'
+          '<%= pathes.vendor %>/i18next/release/i18next-1.6.3.js'
           '<%= pathes.vendor %>/angular/angular.js'
           '<%= pathes.vendor %>/angular/angular-mocks.js'
           '<%= pathes.vendor %>/angular/angular-mobile.js'
@@ -244,9 +248,7 @@ module.exports = (grunt) ->
           '<%= pathes.vendor %>/angular-translate-loader-static-files/angular-translate-loader-static-files.js'
           '<%= pathes.vendor %>/angular-translate-storage-cookie/angular-translate-storage-cookie.js'
           '<%= pathes.vendor %>/angular-translate-storage-local/angular-translate-storage-local.js'
-          '<%= pathes.vendor %>/zepto/zepto.js'
-          '<%= pathes.vendor %>/shifty/dist/shifty.js'
-          '<%= pathes.vendor %>/momentjs/moment.js'
+          '<%= pathes.vendor %>/ng-i18next/dist/ng-i18next.js'
           ]
         dest:
           '<%= pathes.tmp %>/js/<%= pkg.name %>.lib.js'
@@ -373,13 +375,21 @@ module.exports = (grunt) ->
         tasks: [
           'sass:debug'
         ]
-      html:
+      index:
         files: [
-          '<%= pathes.src %>/index.html'
+          '<%= pathes.src %>/app/index.html'
+        ],
+        tasks: [
+          'htmlrefs'
+          'copy:debugindex'
+        ]
+      htmltemplates:
+        files: [
+          '<%= pathes.src %>/app/**/*.tpl.html'
         ],
         tasks: [
           'html2js'
-          'copy:debugindex'
+          'copy:debugjs'
         ]
       assets:
         files: [
