@@ -11,7 +11,6 @@
     <author email="info@websector.de" href="http://websector.de">
         Jens Krause
     </author>
-    <!-- @doc: https://build.phonegap.com/docs/config-xml -->
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
@@ -36,6 +35,15 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <access origin="http://127.0.0.1*" />
+    <access origin="*" />
+    <!--<access origin="http://websector.de" />-->
+    <!--<access origin="http://angularjs.org" />-->
+    <!--<access origin="http://phonegap.com" />-->
+    <!--<access origin="http://https://github.com" />-->
+    <!-- @doc: https://build.phonegap.com/docs/config-xml -->
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
     <feature name="DatePicker">
         <param name="ios-package" value="DatePicker"/>
     </feature>
