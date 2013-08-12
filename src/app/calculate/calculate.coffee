@@ -44,27 +44,34 @@ angular.module('hoay.calculate', [
     # ------------------------------------------------------------
 
     $scope.changeStartDate = ->
+      date = $scope.dateModel.start
+      maxMoment = moment($scope.dateModel.end).subtract 'days', 1
+      maxDate = new Date maxMoment
       options =
-        date: $scope.dateModel.start
+        date: date
+        maxDate: maxDate
         mode: 'date'
 
       datePicker.show options, changeStartDateHandler
 
     changeStartDateHandler = (date) ->
-      # TODO: check selected date
       $scope.$apply( ->
         $scope.dateModel.setStart date
       )
 
     $scope.changeEndDate = ->
+      date = $scope.dateModel.end
+      minMoment = moment($scope.dateModel.start).add 'days', 1
+      minDate = new Date minMoment
       options =
-        date: $scope.dateModel.end
+        date: date
+        allowOldDates: false
+        minDate: minDate
         mode: 'date'
 
       datePicker.show options, changeEndDateHandler
 
     changeEndDateHandler = (date) ->
-      # TODO: check selected date
       $scope.$apply( ->
         $scope.dateModel.setEnd date
       )
