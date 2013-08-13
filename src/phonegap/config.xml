@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget
     id="de.websector.hoay"
-    version="1.0.0"
+    version="0.9.0"
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:gap="http://phonegap.com/ns/1.0">
     <name>HOAY</name>
@@ -17,23 +17,24 @@
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
-    <preference name="prerendered-icon" value="false" />
+    <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
+    <preference name="detect-data-types" value="false" />
+    <preference name="exit-on-suspend" value="true" />
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <icon src="icon.png" />
-    <icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
-    <icon gap:platform="ios" height="72" src="res/icon/ios/icon-72.png" width="72" />
-    <icon gap:platform="ios" height="114" src="res/icon/ios/icon-57-2x.png" width="114" />
-    <icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
-    <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-iphone-portrait.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
-    <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
+    <icon gap:platform="ios" width="57" height="57" src="res/icon/ios/icon.png" />
+    <icon gap:platform="ios" width="114" height="114" src="res/icon/ios/icon@2x.png" />
+    <icon gap:platform="ios" width="72" height="72" src="res/icon/ios/icon-72.png" />
+    <icon gap:platform="ios" width="144" height="144" src="res/icon/ios/icon-72@2x.png" />
+    <gap:splash gap:platform="ios" width="320" height="480" src="res/screen/ios/Default~iphone.png" />
+    <gap:splash gap:platform="ios" width="640" height="960" src="res/screen/ios/Default@2x~iphone.png" />
+    <gap:splash gap:platform="ios" width="640" height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" />
+    <gap:splash gap:platform="ios" width="768" height="1004" src="res/screen/ios/screen-ipad-portrait.png" />
+    <gap:splash gap:platform="ios" width="1536" height="2008" src="res/screen/ios/Default-Portrait@2x~ipad.png" />
     <access origin="http://127.0.0.1*" />
     <access origin="*" />
     <!--<access origin="http://websector.de" />-->
@@ -41,10 +42,14 @@
     <!--<access origin="http://phonegap.com" />-->
     <!--<access origin="http://https://github.com" />-->
     <!-- @doc: https://build.phonegap.com/docs/config-xml -->
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
     <feature name="DatePicker">
         <param name="ios-package" value="DatePicker"/>
     </feature>
+    <gap:plugin name="org.apache.cordova.core.datepicker" />
 </widget>
