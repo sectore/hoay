@@ -28,13 +28,22 @@
     color: $color_3;
     background-color: $color_1;
     border: solid em(1, $font-size) $color_3;
-    //padding: em(0) em(20);
+    padding-right: em(45, $font-size);
 
     &.active{
       border: solid em(1, $font-size) $color_3;
       background-color: $color_3;
       color: $color_4;
     }
+
+    .icon-ok{
+      color: $color_1;
+      padding-right: em(5);
+      &.active{
+        color: $color_4;
+      }
+    }
   }
+
 }
 
