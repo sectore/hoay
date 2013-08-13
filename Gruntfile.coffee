@@ -377,6 +377,15 @@ module.exports = (grunt) ->
           ]
         ]
 
+    # shell
+    # ------------------------------------------------------------
+    shell:
+      options:
+        stdout: true
+        stderr: true
+      phonegaprunios:
+        command: 'cd ./phonegap && phonegap run ios'
+
 
     # watch
     # ------------------------------------------------------------
@@ -457,6 +466,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-html2js'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-karma'
+  grunt.loadNpmTasks 'grunt-shell'
 
   # debug tasks
   # ------------------------------------------------------------
@@ -470,9 +480,6 @@ module.exports = (grunt) ->
     'concat:csslib'
     'sass:debug'
     'copydebug'
-    'connect:debug'
-    'karma:unit'
-    'watch'
   ]
 
   grunt.registerTask 'copydebug', [
@@ -502,21 +509,23 @@ module.exports = (grunt) ->
     'connect:release'
   ]
 
+  # web tasks
+  # ------------------------------------------------------------
+  grunt.registerTask 'web:debug', [
+    'debug'
+    'connect:debug'
+    'karma:unit'
+    'watch'
+  ]
+
   # phonegap tasks
   # ------------------------------------------------------------
   grunt.registerTask 'phonegap:debug', [
-    'clean'
-    'replacer:version'
-    'html2js'
-    'coffee:app'
-    'coffeelint:app'
-    'concat:jslib'
-    'concat:csslib'
-    'sass:debug'
-    'copydebug'
+    'debug'
     'copy:debugphonegapwww'
     'copy:debugphonegapassets'
     'compress:phonegap'
+    'shell:phonegaprunios'
   ]
 
   # test tasks
