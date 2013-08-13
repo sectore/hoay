@@ -31,6 +31,7 @@
     "grunt-replacer": "~0.1.0",
     "grunt-htmlrefs": "~0.4.2",
     "grunt-contrib-connect": "~0.3.0",
-    "grunt-contrib-cssmin": "~0.6.1"
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-compress": "~0.5.2"
   }
 }

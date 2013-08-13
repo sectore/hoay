@@ -365,6 +365,19 @@ module.exports = (grunt) ->
             '<%= pathes.tmp %>/js/<%= pkg.name %>.js'
           ]
 
+    # compress
+    # ------------------------------------------------------------
+    compress:
+      phonegap:
+        options:
+          archive: 'hoay_phonegap_<%= pkg.version %>.zip'
+        files: [
+          src: [
+            '<%= pathes.phonegap %>/www/**/*'
+          ]
+        ]
+
+
     # watch
     # ------------------------------------------------------------
     watch:
@@ -438,6 +451,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-cssmin'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-replacer'
   grunt.loadNpmTasks 'grunt-htmlrefs'
   grunt.loadNpmTasks 'grunt-html2js'
@@ -502,6 +516,7 @@ module.exports = (grunt) ->
     'copydebug'
     'copy:debugphonegapwww'
     'copy:debugphonegapassets'
+    'compress:phonegap'
   ]
 
   # test tasks
