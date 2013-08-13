@@ -520,7 +520,7 @@ module.exports = (grunt) ->
 
   # phonegap tasks
   # ------------------------------------------------------------
-  grunt.registerTask 'phonegap:debug', [
+  grunt.registerTask 'phonegap:debugios', [
     'debug'
     'copy:debugphonegapwww'
     'copy:debugphonegapassets'
