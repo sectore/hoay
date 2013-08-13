@@ -511,7 +511,7 @@ module.exports = (grunt) ->
 
   # web tasks
   # ------------------------------------------------------------
-  grunt.registerTask 'web:debug', [
+  grunt.registerTask 'debug:web', [
     'debug'
     'connect:debug'
     'karma:unit'
@@ -520,7 +520,7 @@ module.exports = (grunt) ->
 
   # phonegap tasks
   # ------------------------------------------------------------
-  grunt.registerTask 'phonegap:debugios', [
+  grunt.registerTask 'debug:ios', [
     'debug'
     'copy:debugphonegapwww'
     'copy:debugphonegapassets'

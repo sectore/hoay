@@ -1,7 +1,7 @@
 #Still in progress...
 
 ##About
-HOAY ("How old are you") is a web application to calculate your ages in years, month and days built with [AngularJS](http://angularjs.org) and other great stuff.
+HOAY ("How old are you") is a web application to calculate your ages in years, month and days built with [AngularJS](http://angularjs.org) and [other great stuff](#tools-and-libraries-in-alphabetical-order).
 It can be run as a hybrid mobile application on mobile devices using [Phonegap](http://phonegap.com) or as a web application using [a modern browser](http://www.google.com/chrome/).
 
 
@@ -42,19 +42,19 @@ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin
 phonegap local plugin add https://github.com/sectore/phonegap3-ios-datepicker-plugin
 ```
 
-Build and run debug version on iOS simulator
+Debug version on iOS simulator:
 
 ```bash
-grunt phonegap:debugios
+grunt debug:ios
 ```
 
 ### Web version
 
-```bash
-grunt web:debug
-```
+Debug version on [http://localhost:9001](http://localhost:9001):
 
-Open [http://localhost:9001](http://localhost:9001) with your Browser.
+```bash
+grunt debug:web
+```
 
 
 ### Unit tests
