@@ -19,7 +19,7 @@ module.exports = (grunt) ->
       sass: 'src/sass'
       debug: 'bin-debug'
       release: 'bin-release'
-      phonegap: 'phonegap/www'
+      phonegap: 'phonegap'
       test: 'test'
 
     meta:
@@ -55,14 +55,14 @@ module.exports = (grunt) ->
         '<%= pathes.tmp %>/*'
       ]
       phonegap: [
-        '<%= pathes.phonegap %>/css/'
-        '<%= pathes.phonegap %>/img/'
-        '<%= pathes.phonegap %>/styles/'
-        '<%= pathes.phonegap %>/js/'
-        '<%= pathes.phonegap %>/spec/'
-        '<%= pathes.phonegap %>/res/'
-        '<%= pathes.phonegap %>/*.html'
-        '<%= pathes.phonegap %>/config.xml'
+        '<%= pathes.phonegap %>/www/css/'
+        '<%= pathes.phonegap %>/www/img/'
+        '<%= pathes.phonegap %>/www/styles/'
+        '<%= pathes.phonegap %>/www/js/'
+        '<%= pathes.phonegap %>/www/spec/'
+        '<%= pathes.phonegap %>/www/res/'
+        '<%= pathes.phonegap %>/www/*.html'
+        '<%= pathes.phonegap %>/www/config.xml'
       ]
 
     # replace
@@ -165,7 +165,7 @@ module.exports = (grunt) ->
           dest: '<%= pathes.release %>/'
         ]
 
-      debugpphonegapwww:
+      debugphonegapwww:
         files: [
           expand: true,
           cwd: '<%= pathes.debug %>/'
@@ -173,16 +173,34 @@ module.exports = (grunt) ->
             '**/*.*'
             '!index.html'
           ],
-          dest: '<%= pathes.phonegap %>/'
+          dest: '<%= pathes.phonegap %>/www/'
         ]
-      debugphoneassets:
+      debugphonegapassets:
         files:[
           expand: true,
           cwd: '<%= pathes.src %>/phonegap/'
           src: [
-            '**/**'
+            '**/*'
           ],
-          dest: '<%= pathes.phonegap %>/'
+          dest: '<%= pathes.phonegap %>/www/'
+        ]
+      iosicons:
+        files:[
+          expand: true,
+          cwd: '<%= pathes.src %>/phonegap/res/icon/ios'
+          src: [
+            '**'
+          ],
+          dest: '<%= pathes.phonegap %>/platforms/ios/HOAY/Resources/icons/'
+        ]
+      iossplash:
+        files:[
+          expand: true,
+          cwd: '<%= pathes.src %>/phonegap/res/screen/ios'
+          src: [
+            '**'
+          ],
+          dest: '<%= pathes.phonegap %>/platforms/ios/HOAY/Resources/splash/'
         ]
 
 
@@ -482,8 +500,8 @@ module.exports = (grunt) ->
     'concat:csslib'
     'sass:debug'
     'copydebug'
-    'copy:debugpphonegapwww'
-    'copy:debugphoneassets'
+    'copy:debugphonegapwww'
+    'copy:debugphonegapassets'
   ]
 
   # test tasks
@@ -499,6 +517,13 @@ module.exports = (grunt) ->
     'concat:jslib'
     'copy:debugjs'
     'karma:unit'
+  ]
+
+  # xcode tasks
+  # ------------------------------------------------------------
+  grunt.registerTask 'xcodeassets', [
+   'copy:iosicons'
+   'copy:iossplash'
   ]
 
   # default tasks
