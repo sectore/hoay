@@ -13,6 +13,7 @@ npm-debug.log
 
 phonegap/**
 *.zip
+layout/
 
 .idea
 *.iml
