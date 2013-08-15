@@ -21,7 +21,10 @@ angular.module('hoay.app', [
 .constant 'HOAY.CONSTANTS',
   LANG_DE_DE: 'de-DE'
   LANG_EN_US: 'en-US'
-  START_DATE_DEFAULT: new Date 1971, 9, 10
+  # Do you know what 1980/05/22 is about?
+  # It is the release date of PAC-MAN in Japan :)
+  # @see: http://history1900s.about.com/od/1980s/qt/Pac-Man.htm
+  START_DATE_DEFAULT: new Date 1980, 4, 22
   END_DATE_DEFAULT: new Date()
 
 # configurations
