@@ -26,8 +26,7 @@
     "LANGUAGE": "Sprache"
   },
   "info":{
-    "TITLE": "Info",
-    "HEADLINE_ABOUT": "Über diese Anwendung",
+    "TITLE": "Über HOAY",
     "TXT_ABOUT": "<strong>HOAY</strong> ist die Abkürzung für \"How old are you\" (zu deutsch \"Wie alt bist Du\"). Mit HOAY ist es möglich, das genaue Alter zu berechnen, egal ob in Tagen, Monaten oder Jahren.",
     "TXT_CODE": "Die Anwendung <strong>HOAY</strong> wurde mit dem JavaScript Framework <open-external url='http://angularjs.org/'>AngularJS</open-external> und <open-external url='http://phonegap.com/'>PhoneGap</open-external> entwickelt. Der <open-external url='https://github.com/sectore/hoay'>gesamte Code</open-external> dieser Anwendung steht bei <open-external url='https://github.com/sectore/hoay'>GitHub</open-external> zu Verfügung.",
     "TXT_COPYRIGHT": "Copyright (c) 2013 Jens Krause // <open-external url='http://websector.de'>WEBSECTOR.DE</open-external>",
