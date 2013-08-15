@@ -3,6 +3,7 @@
 angular.module('hoay.settings', [
   'ngMobile'
   'jm.i18next'
+  'ngStorage'
 ])
 
 # configuration
@@ -23,21 +24,25 @@ angular.module('hoay.settings', [
     '$scope',
     '$window',
     '$navigate',
-    '$i18next'
-    ($log, $scope, $window, $navigate, $i18next)->
+    '$i18next',
+    '$localStorage'
+    'HOAY.CONSTANTS'
+    ($log, $scope, $window, $navigate, $i18next, $localStorage, hoayConstants)->
 
       $scope.prev = ->
         $navigate.back()
 
       $scope.setGerman = ->
-        $i18next.options.lng = 'de-DE'
+        $i18next.options.lng = hoayConstants.LANG_DE_DE
+        $localStorage.langID = hoayConstants.LANG_DE_DE
 
       $scope.isGerman = ->
-        $i18next.options.lng is 'de-DE'
+        $i18next.options.lng is hoayConstants.LANG_DE_DE
 
       $scope.setEnglish = ->
-        $i18next.options.lng = 'en-US'
+        $i18next.options.lng = hoayConstants.LANG_EN_US
+        $localStorage.langID = hoayConstants.LANG_EN_US
 
       $scope.isEnglish = ->
-        $i18next.options.lng is 'en-US'
+        $i18next.options.lng is hoayConstants.LANG_EN_US
 ])

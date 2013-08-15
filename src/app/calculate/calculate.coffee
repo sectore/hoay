@@ -18,12 +18,13 @@ angular.module('hoay.calculate', [
 # controller
 # ------------------------------------------------------------
 .controller 'calculateController',[
+  '$window',
   '$scope',
   '$navigate',
   '$log',
   '$i18next',
   'DateModel'
-  ($scope, $navigate, $log, $i18next, dateModel)->
+  ($window, $scope, $navigate, $log, $i18next, dateModel)->
 
     init = ->
       $scope.dateModel = dateModel
@@ -45,14 +46,17 @@ angular.module('hoay.calculate', [
 
     $scope.changeStartDate = ->
       date = $scope.dateModel.start
-      maxMoment = moment($scope.dateModel.end).subtract 'days', 1
-      maxDate = new Date maxMoment
-      options =
-        date: date
-        maxDate: maxDate
-        mode: 'date'
+      if $window.cordova
+        maxMoment = moment($scope.dateModel.end).subtract 'days', 1
+        maxDate = new Date maxMoment
+        options =
+          date: date
+          maxDate: maxDate
+          mode: 'date'
 
-      datePicker.show options, changeStartDateHandler
+        datePicker.show options, changeStartDateHandler
+      else
+        #TODO: Add date picker for web
 
     changeStartDateHandler = (date) ->
       $scope.$apply( ->
@@ -61,15 +65,18 @@ angular.module('hoay.calculate', [
 
     $scope.changeEndDate = ->
       date = $scope.dateModel.end
-      minMoment = moment($scope.dateModel.start).add 'days', 1
-      minDate = new Date minMoment
-      options =
-        date: date
-        allowOldDates: false
-        minDate: minDate
-        mode: 'date'
+      if $window.cordova
+        minMoment = moment($scope.dateModel.start).add 'days', 1
+        minDate = new Date minMoment
+        options =
+          date: date
+          allowOldDates: false
+          minDate: minDate
+          mode: 'date'
 
-      datePicker.show options, changeEndDateHandler
+        datePicker.show options, changeEndDateHandler
+      else
+        #TODO: Add date picker for web
 
     changeEndDateHandler = (date) ->
       $scope.$apply( ->

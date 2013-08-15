@@ -1,5 +1,5 @@
 angular.module('hoay.dates', [
-  'ngCookies'
+  'ngStorage'
   'jm.i18next'
 ])
 
@@ -11,16 +11,18 @@ angular.module('hoay.dates', [
 #  It provides some helper methods
 .service('DateModel', [
   '$log',
-  '$cookies'
-  ($log, $cookies) ->
+  '$localStorage'
+  'HOAY.CONSTANTS'
+  ($log, $localStorage, hoayConstants) ->
 
     @setStart = (date)->
       @start = date
-      $cookies.startDate = @start
+      $localStorage.startDate = @start
       @updateDifferences()
 
     @setEnd = (date)->
       @end = date
+      $localStorage.endDate = @end
       @updateDifferences()
 
     @updateDifferences = ->
@@ -78,14 +80,13 @@ angular.module('hoay.dates', [
       }
 
     init = =>
-      # init default values
-      if $cookies.startDate is undefined
-        @setStart new Date(1971, 9, 10)
-
-      @setEnd new Date()
+      startStored = $localStorage.startDate
+      endStored = $localStorage.endDate
+      @start = if startStored then new Date(startStored) else hoayConstants.START_DATE_DEFAULT
+      @end = if endStored then new Date(endStored) else hoayConstants.END_DATE_DEFAULT
+      @updateDifferences()
 
     init()
-
 
 ])
 
