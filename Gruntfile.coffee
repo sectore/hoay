@@ -268,6 +268,8 @@ module.exports = (grunt) ->
           '<%= pathes.vendor %>/angular-translate-storage-local/angular-translate-storage-local.js'
           '<%= pathes.vendor %>/ng-i18next/dist/ng-i18next.js'
           '<%= pathes.vendor %>/ngstorage/ngStorage.js'
+          '<%= pathes.vendor %>/iscroll/src/iscroll.js'
+          '<%= pathes.vendor %>/ng-iScroll/src/ng-iscroll.js'
           ]
         dest:
           '<%= pathes.tmp %>/js/<%= pkg.name %>.lib.js'

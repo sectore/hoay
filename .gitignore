@@ -4,7 +4,6 @@ bin-release/
 src/_tmp/
 src/app/version.coffee
 vendor/*
-!vendor/moment/
 test/_tmp/
 
 node_modules/

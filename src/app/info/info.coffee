@@ -1,4 +1,6 @@
-angular.module('hoay.info', [])
+angular.module('hoay.info', [
+  'ng-iscroll'
+])
 
 .config([
   '$routeProvider',
