@@ -73,6 +73,7 @@ grunt test:unit
 * [Grunt](http://gruntjs.com/)
 * [MomentJS](http://momentjs.com/)
 * [ng-i18next](https://github.com/archer96/ng-i18next/)
+* [ngStorage](https://github.com/gsklee/ngStorage)
 * [Phonegap](http://phonegap.com)
 * [Sass](http://sass-lang.com/)
 * [Shifty](http://jeremyckahn.github.io/shifty/)
