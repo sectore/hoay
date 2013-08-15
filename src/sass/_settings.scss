@@ -1,11 +1,24 @@
 .content-settings{
   background-color: $color_1;
-  padding: em(30) em(30);
+
+  $padding: 50;
+  padding: em($padding);
+
+  $padding-small: 30;
+  @include respond-to(small){
+    padding: em($padding-small) em(15);
+  }
 
   .subheadline{
     font-family: $font_1;
     font-weight: normal;
-    font-size: em(21);
+
+    $font-size: 27;
+    $font-size-small: 21;
+    font-size: em($font-size);
+    @include respond-to(small){
+      font-size: em($font-size-small);
+    }
     color: $color_3;
     padding-bottom: em(15);
   }
