@@ -48,12 +48,24 @@ Debug version on iOS simulator:
 grunt debug:ios
 ```
 
+Release version on iOS simulator:
+
+```bash
+grunt release:ios
+```
+
 ### Web version
 
 Debug version on [http://localhost:9001](http://localhost:9001):
 
 ```bash
 grunt debug:web
+```
+
+Release version on [http://localhost:9001](http://localhost:9001):
+
+```bash
+grunt release:web
 ```
 
 
