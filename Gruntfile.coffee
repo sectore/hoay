@@ -164,7 +164,6 @@ module.exports = (grunt) ->
           ],
           dest: '<%= pathes.release %>/'
         ]
-
       debugphonegapwww:
         files: [
           expand: true,
@@ -175,7 +174,17 @@ module.exports = (grunt) ->
           ],
           dest: '<%= pathes.phonegap %>/www/'
         ]
-      debugphonegapassets:
+      releasephonegapwww:
+        files: [
+          expand: true,
+          cwd: '<%= pathes.release %>/'
+          src: [
+            '**/*.*'
+            '!index.html'
+          ],
+          dest: '<%= pathes.phonegap %>/www/'
+        ]
+      phonegapassets:
         files:[
           expand: true,
           cwd: '<%= pathes.src %>/phonegap/'
@@ -355,11 +364,11 @@ module.exports = (grunt) ->
     uglify:
       options:
         banner: '<%=meta.banner%>'
+        mangle: false
         compress:
           dead_code: false
           unused: false
           if_return: true
-          warnings: true
       release:
         files:
           '<%= pathes.release %>/js/<%= pkg.name %>.<%= pkg.version %>.min.js': [
@@ -372,13 +381,22 @@ module.exports = (grunt) ->
     # ------------------------------------------------------------
     compress:
       phonegap:
-        options:
-          archive: 'hoay_phonegap_<%= pkg.version %>.zip'
-        files: [
-          src: [
-            '<%= pathes.phonegap %>/www/**/*'
+        debug:
+          options:
+            archive: 'hoay_phonegap_<%= pkg.version %>_debug.zip'
+          files: [
+            src: [
+              '<%= pathes.phonegap %>/www/**/*'
+            ]
           ]
-        ]
+        release:
+          options:
+            archive: 'hoay_phonegap_<%= pkg.version %>_release.zip'
+          files: [
+            src: [
+              '<%= pathes.phonegap %>/www/**/*'
+            ]
+          ]
 
     # shell
     # ------------------------------------------------------------
@@ -509,7 +527,6 @@ module.exports = (grunt) ->
     'htmlrefs:release'
     'copy:releaseassets'
     'copy:releasefontawesome'
-    'connect:release'
   ]
 
   # web tasks
@@ -521,13 +538,26 @@ module.exports = (grunt) ->
     'watch'
   ]
 
+  grunt.registerTask 'release:web', [
+    'release'
+    'connect:release'
+  ]
+
   # phonegap tasks
   # ------------------------------------------------------------
   grunt.registerTask 'debug:ios', [
     'debug'
     'copy:debugphonegapwww'
-    'copy:debugphonegapassets'
-    'compress:phonegap'
+    'copy:phonegapassets'
+    'compress:phonegap:debug'
+    'shell:phonegaprunios'
+  ]
+
+  grunt.registerTask 'release:ios', [
+    'release'
+    'copy:releasephonegapwww'
+    'copy:phonegapassets'
+    'compress:phonegap:release'
     'shell:phonegaprunios'
   ]
 
@@ -556,5 +586,5 @@ module.exports = (grunt) ->
   # default tasks
   # ------------------------------------------------------------
   grunt.registerTask 'default', [
-   'debug'
+   'debug:web'
   ]
