@@ -380,23 +380,22 @@ module.exports = (grunt) ->
     # compress
     # ------------------------------------------------------------
     compress:
-      phonegap:
-        debug:
-          options:
-            archive: 'hoay_phonegap_<%= pkg.version %>_debug.zip'
-          files: [
-            src: [
-              '<%= pathes.phonegap %>/www/**/*'
-            ]
+      debugphonegap:
+        options:
+          archive: 'hoay_phonegap_<%= pkg.version %>_debug.zip'
+        files: [
+          src: [
+            '<%= pathes.phonegap %>/www/**/*'
           ]
-        release:
-          options:
-            archive: 'hoay_phonegap_<%= pkg.version %>_release.zip'
-          files: [
-            src: [
-              '<%= pathes.phonegap %>/www/**/*'
-            ]
+        ]
+      releasephonegap:
+        options:
+          archive: 'hoay_phonegap_<%= pkg.version %>_release.zip'
+        files: [
+          src: [
+            '<%= pathes.phonegap %>/www/**/*'
           ]
+        ]
 
     # shell
     # ------------------------------------------------------------
@@ -549,7 +548,7 @@ module.exports = (grunt) ->
     'debug'
     'copy:debugphonegapwww'
     'copy:phonegapassets'
-    'compress:phonegap:debug'
+    'compress:debugphonegap'
     'shell:phonegaprunios'
   ]
 
@@ -557,7 +556,7 @@ module.exports = (grunt) ->
     'release'
     'copy:releasephonegapwww'
     'copy:phonegapassets'
-    'compress:phonegap:release'
+    'compress:releasephonegap'
     'shell:phonegaprunios'
   ]
 
