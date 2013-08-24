@@ -4,6 +4,9 @@ bin-release/
 src/_tmp/
 src/app/version.coffee
 vendor/*
+# angular-touch#1.2.0rc1 is not ready for bower
+!vendor/angular-touch/
+
 test/_tmp/
 
 node_modules/

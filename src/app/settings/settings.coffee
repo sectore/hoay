@@ -1,9 +1,9 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.settings', [
-  'ngMobile'
-  'jm.i18next'
+  'ngRoute'
   'ngStorage'
+  'jm.i18next'
 ])
 
 # configuration

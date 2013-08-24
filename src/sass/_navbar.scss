@@ -14,8 +14,9 @@
 
   .title{
     @include position(absolute, 0 em(30) 0 em(30));
+    height: 100%;
     font-family: $font_1;
-    $font-size: 21;
+    $font-size: 22;
     font-size: em($font-size);
     line-height: em($navbar-height, $font-size);
     text-align: center;

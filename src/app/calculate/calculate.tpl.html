@@ -7,9 +7,9 @@
   <div class="content-wrapper">
     <ul class="button-list">
       <li>
-        <a class="button" ng-click="changeStartDate()">
+        <a class="button">
           <div class="button-content-wrapper">
-            <div class="button-content-container">
+            <div class="button-content-container" ng-click="changeStartDate($event)">
               <p class="date-label" ng-i18next="common.START_DATE"></p>
               <p class="date-txt">
                 <span ng-bind="dateModel.start | translatedate"></span>
@@ -21,8 +21,8 @@
       </li>
       <li>
         <a class="button">
-          <div class="button-content-wrapper" ng-click="changeEndDate()">
-            <div class="button-content-container">
+          <div class="button-content-wrapper">
+            <div class="button-content-container" ng-click="changeEndDate($event)">
               <p class="date-label" ng-i18next="common.END_DATE"></p>
               <p class="date-txt">
                 <span ng-bind="dateModel.end | translatedate"></span>

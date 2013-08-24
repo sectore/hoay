@@ -81,6 +81,7 @@ grunt test:unit
 * [Bourbon](http://bourbon.io/)
 * [Bower](http://bower.io/)
 * [CoffeeScript](http://coffeescript.org/)
+* [DatePicker iOS Plugin](https://github.com/sectore/phonegap3-ios-datepicker-plugin)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Grunt](http://gruntjs.com/)
 * [iScroll](https://github.com/cubiq/iscroll)

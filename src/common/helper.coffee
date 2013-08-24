@@ -26,8 +26,8 @@ angular.module('hoay.helper', [
     controller: ($scope) ->
       target = if $window.cordova then "_system" else "_blank"
       $scope.openUrl = ->
-        $log.info "target #{target}"
-        $log.info "url #{$scope.url}"
+#        $log.info "target #{target}"
+#        $log.info "url #{$scope.url}"
         $window.open $scope.url, target
 
 

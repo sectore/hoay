@@ -1,6 +1,7 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.calculate', [
+  'ngRoute'
   'jm.i18next'
 ])
 
@@ -44,7 +45,7 @@ angular.module('hoay.calculate', [
     # date handling
     # ------------------------------------------------------------
 
-    $scope.changeStartDate = ->
+    $scope.changeStartDate = (event)->
       date = $scope.dateModel.start
       if $window.cordova
         maxMoment = moment($scope.dateModel.end).subtract 'days', 1
@@ -53,6 +54,10 @@ angular.module('hoay.calculate', [
           date: date
           maxDate: maxDate
           mode: 'date'
+          doneButtonLabel: $i18next 'common.DONE'
+          cancelButtonLabel: $i18next 'common.CANCEL'
+          x: event.changedTouches[0].pageX
+          y: event.changedTouches[0].pageY
 
         datePicker.show options, changeStartDateHandler
       else
@@ -63,7 +68,7 @@ angular.module('hoay.calculate', [
         $scope.dateModel.setStart date
       )
 
-    $scope.changeEndDate = ->
+    $scope.changeEndDate = (event) ->
       date = $scope.dateModel.end
       if $window.cordova
         minMoment = moment($scope.dateModel.start).add 'days', 1
@@ -73,6 +78,10 @@ angular.module('hoay.calculate', [
           allowOldDates: false
           minDate: minDate
           mode: 'date'
+          doneButtonLabel: $i18next 'common.DONE'
+          cancelButtonLabel: $i18next 'common.CANCEL'
+          x: event.changedTouches[0].pageX
+          y: event.changedTouches[0].pageY
 
         datePicker.show options, changeEndDateHandler
       else

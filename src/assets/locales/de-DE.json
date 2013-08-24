@@ -12,7 +12,9 @@
     "DAYS_TOTAL": "Tage insgesamt",
     "NOTE": "Hinweis",
     "EROR_ENDDATE_BEFORE_STARTDATE": "Das Enddatum sollte nach dem Startdatum liegen.",
-    "EROR_STARTDATE_BEFORE_ENDDATE": "Das Startdatum sollte vor dem Enddatum liegen."
+    "EROR_STARTDATE_BEFORE_ENDDATE": "Das Startdatum sollte vor dem Enddatum liegen.",
+    "DONE": "Übernehmen",
+    "CANCEL": "Abbrechen"
   },
   "calculate":{
     "TITLE": "Wie alt bist Du?",

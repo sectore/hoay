@@ -1,6 +1,8 @@
 # module definition
 # ------------------------------------------------------------
-angular.module('hoay.result', [])
+angular.module('hoay.result', [
+  'ngRoute'
+])
 
 # config
 # ------------------------------------------------------------

@@ -55,14 +55,7 @@ module.exports = (grunt) ->
         '<%= pathes.tmp %>/*'
       ]
       phonegap: [
-        '<%= pathes.phonegap %>/www/css/'
-        '<%= pathes.phonegap %>/www/img/'
-        '<%= pathes.phonegap %>/www/styles/'
-        '<%= pathes.phonegap %>/www/js/'
-        '<%= pathes.phonegap %>/www/spec/'
-        '<%= pathes.phonegap %>/www/res/'
-        '<%= pathes.phonegap %>/www/*.html'
-        '<%= pathes.phonegap %>/www/config.xml'
+        '<%= pathes.phonegap %>/www/**/*'
       ]
 
     # replace
@@ -84,6 +77,11 @@ module.exports = (grunt) ->
       release:
         src: '<%= pathes.src %>/app/index.html'
         dest: '<%= pathes.release %>/'
+        options:
+          version: '<%= pkg.version %>'
+      phonegap:
+        src: '<%= pathes.src %>/phonegap/index.html'
+        dest: '<%= pathes.phonegap %>/www/'
         options:
           version: '<%= pkg.version %>'
 
@@ -169,7 +167,7 @@ module.exports = (grunt) ->
           expand: true,
           cwd: '<%= pathes.debug %>/'
           src: [
-            '**/*.*'
+            '**/*'
             '!index.html'
           ],
           dest: '<%= pathes.phonegap %>/www/'
@@ -179,7 +177,7 @@ module.exports = (grunt) ->
           expand: true,
           cwd: '<%= pathes.release %>/'
           src: [
-            '**/*.*'
+            '**'
             '!index.html'
           ],
           dest: '<%= pathes.phonegap %>/www/'
@@ -264,11 +262,9 @@ module.exports = (grunt) ->
           '<%= pathes.vendor %>/momentjs/moment.js'
           '<%= pathes.vendor %>/i18next/release/i18next-1.6.3.js'
           '<%= pathes.vendor %>/angular/angular.js'
-          '<%= pathes.vendor %>/angular/angular-mocks.js'
-          '<%= pathes.vendor %>/angular/angular-mobile.js'
-          '<%= pathes.vendor %>/angular/angular-cookies.js'
-          '<%= pathes.vendor %>/angular/i18n/angular-locale_en-us.js'
-          '<%= pathes.vendor %>/angular/i18n/angular-locale_de-de.js'
+          '<%= pathes.vendor %>/angular-route/angular-route.js'
+          '<%= pathes.vendor %>/angular-resource/angular-resource.js'
+          '<%= pathes.vendor %>/angular-touch/angular-touch.js'
           '<%= pathes.vendor %>/angular-mobile-nav/mobile-nav.js'
           '<%= pathes.vendor %>/ui-router/angular-ui-router.js'
           '<%= pathes.vendor %>/angular-translate/angular-translate.js'
@@ -556,6 +552,7 @@ module.exports = (grunt) ->
     'release'
     'copy:releasephonegapwww'
     'copy:phonegapassets'
+    'htmlrefs:phonegap'
     'compress:releasephonegap'
     'shell:phonegaprunios'
   ]

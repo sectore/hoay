@@ -94,8 +94,6 @@ angular.module('hoay.dates', [
 # ------------------------------------------------------------
 #  Custom filter to format Date
 #  using pattern defined in locales
-#  Locales are handled by
-#  angular-translate ($translate)
 .filter('translatedate', [
   '$filter',
   '$i18next',
@@ -108,7 +106,7 @@ angular.module('hoay.dates', [
 
 # directives
 # ------------------------------------------------------------
-.directive 'counter', [
+.directive('counter', [
   '$log'
   '$timeout'
   ($log, $timeout) ->
@@ -156,4 +154,68 @@ angular.module('hoay.dates', [
         tweenable.stop()
 
 
-]
+])
+
+.directive('datepicker', [
+  '$log'
+  '$filter'
+  ($log, $filter)->
+
+    tmpl = '''
+      <div>
+        <p class="date-txt"
+          ng-click="setEnable()"
+          ng-hide="enabled">
+          <span>{{date | translatedate }}</span>
+          <i class="icon-sort"></i>
+        </p>
+        <input type="date"
+          id="inp"
+          name="date"
+          class="date-txt"
+          max="2013-08-26"
+          value="{{pickerValue}}"
+          />
+      </div>
+      '''
+
+    $inputElement = undefined
+
+    linkFn = (scope, element, attrs)->
+
+      $inputElement = $(element[0]).find "#inp"
+
+      scope.$watch attrs.date, (date)->
+        $log.info "linkFn -> date #{date}"
+        if date isnt undefined
+          scope.filteredDate = $filter('translatedate')(date)
+          scope.date = date
+          scope.pickerValue = "#{date.toJSON().slice(0,10)}"
+          $log.info "linkFn -> pickerValue #{scope.pickerValue}"
+    #      bar = $(element[0]).find ".bar-single"
+
+#      $inputElement.one 'blur change', =>
+#        $log.info("value changed")
+#        scope.setDisable()
+
+    ctrlFn = ($scope)->
+
+      $scope.setEnable = ->
+#        $scope.enabled = true
+        $inputElement.blur()
+        $inputElement.focus()
+
+      $scope.setDisable = ->
+        $scope.enabled = false
+
+
+
+    {
+      restrict: 'E'
+      scope: true
+      replace: true
+      template: tmpl
+      link: linkFn
+      controller: ctrlFn
+    }
+])

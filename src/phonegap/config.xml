@@ -35,7 +35,6 @@
     <gap:splash gap:platform="ios" width="640" height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" />
     <gap:splash gap:platform="ios" width="768" height="1004" src="res/screen/ios/screen-ipad-portrait.png" />
     <gap:splash gap:platform="ios" width="1536" height="2008" src="res/screen/ios/Default-Portrait@2x~ipad.png" />
-    <access origin="http://127.0.0.1*" />
     <access origin="*" />
     <!--<access origin="http://websector.de" />-->
     <!--<access origin="http://angularjs.org" />-->
@@ -51,5 +50,5 @@
     <feature name="DatePicker">
         <param name="ios-package" value="DatePicker"/>
     </feature>
-    <gap:plugin name="org.apache.cordova.core.datepicker" />
+    <!--<gap:plugin name="de.websector.datepicker" />-->
 </widget>

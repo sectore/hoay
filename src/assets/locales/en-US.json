@@ -12,7 +12,9 @@
     "DAYS_TOTAL": "days in total",
     "NOTE": "Please note",
     "EROR_ENDDATE_BEFORE_STARTDATE": "End date cannot be earlier than start date.",
-    "EROR_STARTDATE_BEFORE_ENDDATE": "Start date cannot be after end date."
+    "EROR_STARTDATE_BEFORE_ENDDATE": "Start date cannot be after end date.",
+    "DONE": "Done",
+    "CANCEL": "Cancel"
   },
   "calculate":{
     "TITLE": "How old are you?",

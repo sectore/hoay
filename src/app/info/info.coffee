@@ -1,4 +1,5 @@
 angular.module('hoay.info', [
+  'ngRoute'
   'ng-iscroll'
 ])
 

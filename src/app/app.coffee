@@ -1,11 +1,14 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.app', [
+  # angular modules
+  'ngRoute'
+  'ngTouch'
+  # angular libs
   'ajoslin.mobile-navigate'
-  'ngMobile'
   'jm.i18next'
   'ngStorage'
-  # app related stuff
+  # hoay modules
   'hoay.templates'
   'hoay.version'
   'hoay.helper'
@@ -29,14 +32,22 @@ angular.module('hoay.app', [
 
 # configurations
 # ------------------------------------------------------------
+#.config([
+#  '$compileProvider'
+#  ($compileProvider) ->
+#    $compileProvider.urlSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
+#])
+
+
 .config([
   '$routeProvider',
-  '$locationProvider',
+  '$locationProvider'
   ($routeProvider, $locationProvider) ->
     $routeProvider.otherwise
       redirectTo: '/'
-    # html5Mode
-    $locationProvider.html5Mode true
+
+    # html5Mode (deactivated by using cordova)
+    $locationProvider.html5Mode !window.cordova
 ])
 
 .config([
@@ -48,6 +59,7 @@ angular.module('hoay.app', [
       detectLngFromHeaders: false
       fallbackLng: false # disabling fallbacks
       load: 'current' # avoid uneeded loading of fallback files
+      getAsync: false
       resGetPath: 'assets/locales/__lng__.json'
 ])
 
