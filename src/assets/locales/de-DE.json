@@ -11,8 +11,6 @@
     "MONTHS_TOTAL": "Monate insgesamt",
     "DAYS_TOTAL": "Tage insgesamt",
     "NOTE": "Hinweis",
-    "EROR_ENDDATE_BEFORE_STARTDATE": "Das Enddatum sollte nach dem Startdatum liegen.",
-    "EROR_STARTDATE_BEFORE_ENDDATE": "Das Startdatum sollte vor dem Enddatum liegen.",
     "DONE": "Übernehmen",
     "CANCEL": "Abbrechen"
   },
@@ -29,8 +27,8 @@
   },
   "info":{
     "TITLE": "Über HOAY",
-    "TXT_ABOUT": "<strong>HOAY</strong> ist die Abkürzung für \"How old are you\" (zu deutsch \"Wie alt bist Du\"). Mit HOAY ist es möglich, das genaue Alter zu berechnen, egal ob in Tagen, Monaten oder Jahren.",
-    "TXT_CODE": "Die Anwendung <strong>HOAY</strong> wurde mit dem JavaScript Framework <open-external url='http://angularjs.org/'>AngularJS</open-external> und <open-external url='http://phonegap.com/'>PhoneGap</open-external> entwickelt. Der <open-external url='https://github.com/sectore/hoay'>gesamte Code</open-external> dieser Anwendung steht bei <open-external url='https://github.com/sectore/hoay'>GitHub</open-external> zu Verfügung.",
+    "TXT_ABOUT": "<strong>HOAY</strong> ist die Abkürzung für \"How old are you\" (zu deutsch \"Wie alt bist Du\"). Mit HOAY ist es möglich, das genaue Alter zu berechnen, egal ob in Tagen, Monaten oder Jahren. Viel Spass!",
+    "TXT_CODE": "Die Anwendung <strong>HOAY</strong> wurde mit <open-external url='http://angularjs.org/'>AngularJS</open-external> und <open-external url='http://phonegap.com/'>PhoneGap</open-external> entwickelt. Der <open-external url='https://github.com/sectore/hoay'>gesamte Code</open-external> dieser Anwendung steht bei <open-external url='https://github.com/sectore/hoay'>GitHub</open-external> zu Verfügung.",
     "TXT_COPYRIGHT": "Copyright (c) 2013 Jens Krause // <open-external url='http://websector.de'>WEBSECTOR.DE</open-external>",
     "TXT_VERSION": "Version: v.{{version}}"
   }

@@ -44,26 +44,5 @@
         </a>
       </li>
     </ul>
-
-    <div class="error-view-cover"
-         ng-class="{'error-view-cover-active': hasError()}"
-          ng-click="hideError()"
-        ></div>
-
-    <div class="error-view"
-      ng-class="{'error-view-active': hasError()}"
-      ng-click="hideError()"
-        >
-      <div class="error-txt-outer-wrapper">
-        <div class="error-txt-inner-wrapper">
-          <div class="error-txt-container">
-            <p class="error-headline" ng-i18next="common.NOTE"></p>
-            <p class="error-message">{{errorMessage}}</p>
-            <p class="error-button">OK</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>

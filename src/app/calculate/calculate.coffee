@@ -92,18 +92,6 @@ angular.module('hoay.calculate', [
         $scope.dateModel.setEnd date
       )
 
-    # error handling
-    # ------------------------------------------------------------
-
-    $scope.showError = ->
-      $scope.errorMessage = $i18next 'common.EROR_ENDDATE_BEFORE_STARTDATE'
-
-    $scope.hideError = ->
-      $scope.errorMessage = ''
-
-    $scope.hasError = ->
-      $scope.errorMessage isnt undefined and $scope.errorMessage isnt ''
-
 
     init()
 ]
