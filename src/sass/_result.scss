@@ -28,6 +28,7 @@
     @include position(absolute, em(0) em(0) em($dates-container-height) em(0));
 
     @include respond-to(small){
+      padding: em(0) em(20);
       @include size(100% em($dates-container-height-small));
       @include position(absolute, em(0) em(0) em($dates-container-height-small) em(0));
     }
@@ -46,7 +47,7 @@
     color: $color_4;
     float: left;
 
-    $font-size-date-label:19;
+    $font-size-date-label:21;
     $font-size-date-label-small:13;
 
     .label-date{
@@ -56,7 +57,7 @@
       }
     }
 
-    $font-size-date: 35;
+    $font-size-date: 42;
     $font-size-date-small: 27;
     .date{
       font-size: em($font-size-date);
@@ -221,12 +222,15 @@
   }
 
   .total-result{
+    $font-size-total: 210;
+    $font-size-total-small: 90;
+
     color: $color_4;
-    font-size: em($font-size-result);
-    padding-left: em(20, $font-size-result);
+    font-size: em($font-size-total);
+    padding-left: em(20, $font-size-total);
     @include respond-to(small){
-      font-size: em($font-size-result-small);
-      padding-left: em(20, $font-size-result-small);
+      font-size: em($font-size-total-small);
+      padding-left: em(20, $font-size-total-small);
     }
     font-family: $font_1;
   }
@@ -235,13 +239,16 @@
     color: $color_4;
     font-family: $font_1;
 
-    font-size: em($font-size-result-label);
-    padding-left: em(20, $font-size-result-label);
-    margin-top: em(-19, $font-size-result-label);
+    $font-size-total-label: 35;
+    $font-size-total-label-small: 27;
+
+    font-size: em($font-size-total-label);
+    padding-left: em(20, $font-size-total-label);
+    margin-top: em(-19, $font-size-total-label);
     @include respond-to(small){
-      font-size: em($font-size-result-label-small);
-      padding-left: em(20, $font-size-result-label-small);
-      margin-top: em(-19, $font-size-result-label-small);
+      font-size: em($font-size-total-label-small);
+      padding-left: em(20, $font-size-total-label-small);
+      margin-top: em(-19, $font-size-total-label-small);
     }
   }
 
