@@ -1,4 +1,4 @@
-#Still in progress...
+#HOAY
 
 ##About
 HOAY ("How old are you") is a web application to calculate your ages in years, month and days built with [AngularJS](http://angularjs.org) and [other great stuff](#tools-and-libraries-in-alphabetical-order).
@@ -6,6 +6,14 @@ It can be run as a hybrid mobile application on mobile devices using [Phonegap](
 
 
 ## Screen shots
+
+[![screen shot](https://raw.github.com/sectore/hoay/master/wiki/screenshot_iphone_0.png)](https://github.com/sectore/hoay)
+
+[![screen shot](https://raw.github.com/sectore/hoay/master/wiki/screenshot_iphone_1.png)](https://github.com/sectore/hoay)
+
+[![screen shot](https://raw.github.com/sectore/hoay/master/wiki/screenshot_iphone_2.png)](https://github.com/sectore/hoay)
+
+## iTunes Store
 Coming soon
 
 
