@@ -5,13 +5,9 @@ HOAY ("How old are you") is a web application to calculate your ages in years, m
 It can be run as a hybrid mobile application on mobile devices using [Phonegap](http://phonegap.com) or as a web application using [a modern browser](http://www.google.com/chrome/).
 
 
-## Screen shots
+## Demo (YouTube)
 
-[![screen shot](https://raw.github.com/sectore/hoay/master/wiki/screenshot_iphone_0.png)](https://github.com/sectore/hoay)
-
-[![screen shot](https://raw.github.com/sectore/hoay/master/wiki/screenshot_iphone_1.png)](https://github.com/sectore/hoay)
-
-[![screen shot](https://raw.github.com/sectore/hoay/master/wiki/screenshot_iphone_2.png)](https://github.com/sectore/hoay)
+[![Video on YoutTube](https://raw.github.com/sectore/hoay/master/wiki/screenshot_youtube.png)](http://youtu.be/lHYvqiaXEDY)
 
 ## iTunes Store
 Coming soon
