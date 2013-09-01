@@ -10,8 +10,8 @@ It can be run as a hybrid mobile application on mobile devices using [Phonegap](
 [![Video on YoutTube](https://raw.github.com/sectore/hoay/master/wiki/screenshot_youtube.png)](http://youtu.be/lHYvqiaXEDY)
 
 ## iTunes Store
-Coming soon
-
+* [iTunes - US](https://itunes.apple.com/us/app/hoay/id693621393)
+* [iTunes - DE](https://itunes.apple.com/de/app/hoay/id693621393)
 
 ## Build and run
 Make sure that you have [Node](http://nodejs.org/), [Bower](http://bower.io/) and [Phonegap CLI](https://github.com/phonegap/phonegap-cli) installed on your machine.
