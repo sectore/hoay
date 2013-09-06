@@ -11,42 +11,51 @@
           <p class="label-date" ng-i18next>common.START_DATE</p>
           <p class="date">
             {{dateModel.start | translatedate}}
-            <!--<i class="icon-sort"></i>-->
           </p>
         </div>
         <div class="date-container">
           <p class="label-date" ng-i18next>common.END_DATE</p>
           <p class="date">
             {{dateModel.end | translatedate}}
-            <!--<i class="icon-sort"></i>-->
           </p>
         </div>
       </div>
     </div>
     <ul class="result-list">
-      <li class="result-list-item result-list-item-years" ng-click="showTotalYears()">
+      <li class="result-list-item result-list-item-years"
+          ng-click="showTotalYears()">
         <div class="result-wrapper">
           <div class="result-container">
-            <p class="result-txt"
-              counter
-              counter-max="dateModel.years"
-              ></p>
+            <div class="result-txt-container">
+              <i class="result-more-icon icon-plus-sign pull-right"></i>
+              <p class="result-txt"
+                counter
+                counter-max="dateModel.years"></p>
+            </div>
             <p class="result-label" ng-i18next>common.YEARS</p>
           </div>
         </div>
       </li>
-      <li class="result-list-item result-list-item-months" ng-click="showTotalMonths()">
+      <li class="result-list-item result-list-item-months"
+          ng-click="showTotalMonths()">
         <div class="result-wrapper">
           <div class="result-container">
-            <p class="result-txt" counter-max="dateModel.months" counter></p>
+            <div class="result-txt-container">
+              <i class="result-more-icon icon-plus-sign pull-right"></i>
+              <p class="result-txt" counter-max="dateModel.months" counter></p>
+            </div>
             <p class="result-label" ng-i18next>common.MONTHS</p>
           </div>
         </div>
       </li>
-      <li class="result-list-item result-list-item-days" ng-click="showTotalDays()">
+      <li class="result-list-item result-list-item-days"
+          ng-click="showTotalDays()">
         <div class="result-wrapper">
           <div class="result-container">
-            <p class="result-txt" counter-max="dateModel.days" counter></p>
+            <div class="result-txt-container">
+              <i class="result-more-icon icon-plus-sign pull-right"></i>
+              <p class="result-txt" counter-max="dateModel.days" counter></p>
+            </div>
             <p class="result-label" ng-i18next>common.DAYS</p>
           </div>
         </div>
@@ -57,12 +66,15 @@
       ng-class="{'total-view-active': subViewState=='total-years'}">
       <div class="total-result-wrapper">
         <div class="total-result-container">
-          <p
-            class="total-result"
-            counter
-            counter-restart="subViewState=='total-years'"
-            counter-max="dateModel.totalYears"
-            >
+          <div class="total-result-txt-container">
+            <i class="total-result-back-icon icon-minus-sign pull-right"></i>
+            <p
+              class="total-result-txt"
+              counter
+              counter-restart="subViewState=='total-years'"
+              counter-max="dateModel.totalYears"
+              >
+          </div>
           <p class="total-label" ng-i18next>common.YEARS_TOTAL</p>
           </p>
         </div>
@@ -74,12 +86,15 @@
       ng-class="{'total-view-active': subViewState=='total-months'}">
       <div class="total-result-wrapper">
         <div class="total-result-container">
-          <p
-            class="total-result"
-            counter
-            counter-restart="subViewState=='total-months'"
-            counter-max="dateModel.totalMonths"
-            >
+          <div class="total-result-txt-container">
+            <i class="total-result-back-icon icon-minus-sign pull-right"></i>
+            <p
+              class="total-result-txt"
+              counter
+              counter-restart="subViewState=='total-months'"
+              counter-max="dateModel.totalMonths"
+              >
+          </div>
           <p class="total-label" ng-i18next>common.MONTHS_TOTAL</p>
           </p>
         </div>
@@ -91,12 +106,16 @@
       ng-class="{'total-view-active': subViewState=='total-days'}">
       <div class="total-result-wrapper">
         <div class="total-result-container">
-          <p class="total-result"
-            counter
-            counter-restart="subViewState=='total-days'"
-            counter-max="dateModel.totalDays"
-            >
-          </p>
+          <div class="total-result-txt-container">
+            <i class="total-result-back-icon icon-minus-sign pull-right"></i>
+            <p
+              class="total-result-txt"
+              counter
+              counter-restart="subViewState=='total-days'"
+              counter-max="dateModel.totalDays"
+              >
+            </p>
+          </div>
           <p class="total-label" ng-i18next>common.DAYS_TOTAL</p>
         </div>
       </div>
