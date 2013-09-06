@@ -2,9 +2,10 @@
   "name": "hoay",
   "version": "0.0.1",
   "devDependencies": {
-    "angular": "1.2.0-rc.1",
-    "angular-resource": "1.2.0-rc.1",
-    "angular-route": "1.2.0-rc.1",
+    "angular": "1.2.0-rc.2",
+    "angular-resource": "1.2.0-rc.2",
+    "angular-route": "1.2.0-rc.2",
+    "angular-touch": "1.2.0-rc.2",
     "angular-mobile-nav": "latest",
     "font-awesome": "~3.2.1",
     "bourbon": "~3.1.8",
