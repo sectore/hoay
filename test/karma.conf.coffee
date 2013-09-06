@@ -20,7 +20,8 @@ module.exports = (karma) ->
       'bin-debug/js/hoay.lib.js'
       'bin-debug/js/hoay.tmpl.js'
       'bin-debug/js/hoay.js'
-      'test/tmp/hoay.spec.js'
+      'vendor/angular-mocks/angular-mocks.js'
+      'test/_tmp/hoay.spec.js'
     ]
 
     # list of files to exclude

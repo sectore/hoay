@@ -1,4 +1,5 @@
 angular.module('hoay.dates', [
+  'hoay.app'
   'ngStorage'
   'jm.i18next'
 ])

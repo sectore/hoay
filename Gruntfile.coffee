@@ -492,6 +492,8 @@ module.exports = (grunt) ->
     'html2js'
     'coffee:app'
     'coffeelint:app'
+    'coffeelint:test'
+    'coffee:test'
     'concat:jslib'
     'concat:csslib'
     'sass:debug'
