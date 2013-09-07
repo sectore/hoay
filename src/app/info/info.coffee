@@ -1,4 +1,5 @@
 angular.module('hoay.info', [
+  'hoay.app'
   'ngRoute'
   'ng-iscroll'
 ])
@@ -23,8 +24,5 @@ angular.module('hoay.info', [
 
     $scope.prev = ->
       $navigate.back()
-
-    $scope.sayHello = ->
-      alert('hello')
 
 ])
