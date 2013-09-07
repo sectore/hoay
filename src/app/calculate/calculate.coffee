@@ -1,6 +1,7 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.calculate', [
+  'hoay.app'
   'ngRoute'
   'jm.i18next'
 ])
