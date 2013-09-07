@@ -88,20 +88,25 @@ grunt test:unit
 * [DatePicker iOS Plugin](https://github.com/sectore/phonegap3-ios-datepicker-plugin)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Grunt](http://gruntjs.com/)
+* [i18next](http://i18next.com/)
 * [iScroll](https://github.com/cubiq/iscroll)
 * [MomentJS](http://momentjs.com/)
 * [ng-i18next](https://github.com/archer96/ng-i18next/)
 * [ng-iScroll](https://github.com/ibspoof/ng-iScroll)
 * [ngStorage](https://github.com/gsklee/ngStorage)
+* [normalize.css](https://github.com/necolas/normalize.css)
 * [Phonegap](http://phonegap.com)
 * [Sass](http://sass-lang.com/)
 * [Shifty](http://jeremyckahn.github.io/shifty/)
 * [Zepto](http://zeptojs.com/)
 
 For testing purposes:
+
 * [Jasmine](http://pivotal.github.io/jasmine/)
+* [jasmine-sinon](https://github.com/froots/jasmine-sinon)
 * [Karma](http://karma-runner.github.io/)
 * [PhantomJS](http://phantomjs.org/)
+* [Sinon](http://sinonjs.org/)
 
 
 ##License
