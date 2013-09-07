@@ -21,6 +21,17 @@ module.exports = (karma) ->
       'bin-debug/js/hoay.tmpl.js'
       'bin-debug/js/hoay.js'
       'vendor/angular-mocks/angular-mocks.js'
+      'vendor/sinon/lib/sinon.js'
+      'vendor/sinon/lib/sinon/spy.js'
+      'vendor/sinon/lib/sinon/call.js'
+      'vendor/sinon/lib/sinon/stub.js'
+      'vendor/sinon/lib/sinon/mock.js'
+      'vendor/sinon/lib/sinon/collection.js'
+      'vendor/sinon/lib/sinon/assert.js'
+      'vendor/sinon/lib/sinon/sandbox.js'
+      'vendor/sinon/lib/sinon/test_case.js'
+      'vendor/sinon/lib/sinon/match.js'
+      'vendor/jasmine-sinon/lib/jasmine-sinon.js'
       'test/_tmp/hoay.spec.js'
     ]
 

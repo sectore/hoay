@@ -17,7 +17,9 @@
     "ng-i18next": "~0.2.6",
     "ngstorage": "~0.2.2",
     "iscroll": "https://github.com/cubiq/iscroll.git#4.2.5",
-    "ng-iScroll": "latest"
+    "ng-iScroll": "latest",
+    "sinon": "~1.7.3",
+    "jasmine-sinon": "~0.1.0"
   },
   "dependencies": {},
 
