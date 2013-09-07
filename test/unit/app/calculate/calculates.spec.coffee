@@ -1,9 +1,8 @@
-describe 'dates', ->
+describe 'module hoay.calculate', ->
 
   beforeEach module('hoay.calculate')
 
-
-  describe 'CalculateController', ->
+  describe '- CalculateController', ->
 
     beforeEach inject ($rootScope, $controller) ->
       @scope = $rootScope.$new()
@@ -46,4 +45,17 @@ describe 'dates', ->
         @scope.changeEndDate @eventMock
         expect(spy.calledOnce).toBeTruthy()
 
+    describe '- routes', ->
+
+      beforeEach inject ($route) ->
+        @routes = $route.routes
+
+      afterEach ->
+        @routes = undefined
+
+      it 'should uses calculateController', ->
+        expect(@routes['/'].controller).toBe 'calculateController'
+
+      it 'should have a valid templateUrl', ->
+        expect(@routes['/'].templateUrl).toEqual 'calculate/calculate.tpl.html'
 
