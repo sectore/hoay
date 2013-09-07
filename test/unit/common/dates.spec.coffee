@@ -17,6 +17,9 @@ describe 'dates', ->
     it 'should have a start date by default', ->
       expect(@model.start).not.toBeUndefined()
 
+    it 'should have an end date by default', ->
+      expect(@model.start).toBeDefined()
+
     it 'should update a start date', ->
       date = new Date()
       @model.setStart date
