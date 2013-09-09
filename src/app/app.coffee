@@ -5,7 +5,6 @@ angular.module('hoay.app', [
   'ngRoute'
   'ngTouch'
   # angular libs
-  'ajoslin.mobile-navigate'
   'jm.i18next'
   'ngStorage'
   # hoay modules
