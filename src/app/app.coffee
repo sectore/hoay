@@ -21,7 +21,7 @@ angular.module('hoay.app', [
 
 # constants
 # ------------------------------------------------------------
-.constant 'HOAY.CONSTANTS',
+.constant 'HOAYCONSTANTS',
   LANG_DE_DE: 'de-DE'
   LANG_EN_US: 'en-US'
   # Do you know what 1980/05/22 is about?
@@ -29,6 +29,10 @@ angular.module('hoay.app', [
   # @see: http://history1900s.about.com/od/1980s/qt/Pac-Man.htm
   START_DATE_DEFAULT: new Date 1980, 4, 22
   END_DATE_DEFAULT: new Date()
+
+.constant 'CON_M',
+  LANG_DE_DE: 'de-DE'
+  LANG_EN_US: 'en-US'
 
 # configurations
 # ------------------------------------------------------------
@@ -70,7 +74,7 @@ angular.module('hoay.app', [
   '$window'
   '$i18next'
   '$localStorage'
-  'HOAY.CONSTANTS'
+  'HOAYCONSTANTS'
   ($log, $window, $i18next, $localStorage, hoayConstants)->
 
     init = ->

@@ -1,6 +1,7 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.settings', [
+  'hoay.app'
   'ngRoute'
   'ngStorage'
   'jm.i18next'
@@ -20,13 +21,13 @@ angular.module('hoay.settings', [
 # controller
 # ------------------------------------------------------------
 .controller('settingsController', [
-    '$log'
+    '$log',
     '$scope',
     '$window',
     '$navigate',
     '$i18next',
     '$localStorage'
-    'HOAY.CONSTANTS'
+    'HOAYCONSTANTS'
     ($log, $scope, $window, $navigate, $i18next, $localStorage, hoayConstants)->
 
       $scope.prev = ->

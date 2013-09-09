@@ -13,7 +13,7 @@ angular.module('hoay.dates', [
 .service('DateModel', [
   '$log',
   '$localStorage'
-  'HOAY.CONSTANTS'
+  'HOAYCONSTANTS'
   ($log, $localStorage, hoayConstants) ->
 
     @setStart = (date)->
