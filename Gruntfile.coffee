@@ -223,6 +223,7 @@ module.exports = (grunt) ->
           '<%= pathes.tmp %>/js/<%= pkg.name %>.js': [
             '<%= pathes.src %>/app/version.coffee'
             '<%= pathes.src %>/common/**/**.coffee'
+            '<%= pathes.src %>/app/constants/**/**.coffee'
             '<%= pathes.src %>/app/calculate/**/**.coffee'
             '<%= pathes.src %>/app/info/**/**.coffee'
             '<%= pathes.src %>/app/result/**/**.coffee'

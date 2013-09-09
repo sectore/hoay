@@ -1,8 +1,18 @@
+# module definition
+# ------------------------------------------------------------
 angular.module('hoay.dates', [
-  'hoay.app'
   'ngStorage'
   'jm.i18next'
 ])
+
+# constants
+# ------------------------------------------------------------
+.constant 'DEFAULTS',
+  # Do you know what 1980/05/22 is about?
+  # It is the release date of PAC-MAN in Japan :)
+  # @see: http://history1900s.about.com/od/1980s/qt/Pac-Man.htm
+  START: new Date 1980, 4, 22
+  END: new Date()
 
 #  models
 # ------------------------------------------------------------
@@ -13,8 +23,8 @@ angular.module('hoay.dates', [
 .service('DateModel', [
   '$log',
   '$localStorage'
-  'HOAYCONSTANTS'
-  ($log, $localStorage, hoayConstants) ->
+  'DEFAULTS'
+  ($log, $localStorage, DEFAULTS) ->
 
     @setStart = (date)->
       @start = date
@@ -83,8 +93,8 @@ angular.module('hoay.dates', [
     init = =>
       startStored = $localStorage.startDate
       endStored = $localStorage.endDate
-      @start = if startStored then new Date(startStored) else hoayConstants.START_DATE_DEFAULT
-      @end = if endStored then new Date(endStored) else hoayConstants.END_DATE_DEFAULT
+      @start = if startStored then new Date(startStored) else DEFAULTS.START
+      @end = if endStored then new Date(endStored) else DEFAULTS.END
       @updateDifferences()
 
     init()

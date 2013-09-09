@@ -1,11 +1,17 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.settings', [
-  'hoay.app'
+  'ajoslin.mobile-navigate'
   'ngRoute'
   'ngStorage'
   'jm.i18next'
 ])
+
+# constants
+# ------------------------------------------------------------
+.constant 'LANG_ID',
+  DE_DE: 'de-DE'
+  EN_US: 'en-US'
 
 # configuration
 # ------------------------------------------------------------
@@ -27,23 +33,23 @@ angular.module('hoay.settings', [
     '$navigate',
     '$i18next',
     '$localStorage'
-    'HOAYCONSTANTS'
-    ($log, $scope, $window, $navigate, $i18next, $localStorage, hoayConstants)->
+    'LANG_ID'
+    ($log, $scope, $window, $navigate, $i18next, $localStorage, LANG_ID)->
 
       $scope.prev = ->
         $navigate.back()
 
       $scope.setGerman = ->
-        $i18next.options.lng = hoayConstants.LANG_DE_DE
-        $localStorage.langID = hoayConstants.LANG_DE_DE
+        $i18next.options.lng = LANG_ID.DE_DE
+        $localStorage.langID = LANG_ID.DE_DE
 
       $scope.isGerman = ->
-        $i18next.options.lng is hoayConstants.LANG_DE_DE
+        $i18next.options.lng is LANG_ID.DE_DE
 
       $scope.setEnglish = ->
-        $i18next.options.lng = hoayConstants.LANG_EN_US
-        $localStorage.langID = hoayConstants.LANG_EN_US
+        $i18next.options.lng = LANG_ID.EN_US
+        $localStorage.langID = LANG_ID.EN_US
 
       $scope.isEnglish = ->
-        $i18next.options.lng is hoayConstants.LANG_EN_US
+        $i18next.options.lng is LANG_ID.EN_US
 ])

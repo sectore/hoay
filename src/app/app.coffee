@@ -19,30 +19,8 @@ angular.module('hoay.app', [
   'hoay.settings'
 ])
 
-# constants
+# config
 # ------------------------------------------------------------
-.constant 'HOAYCONSTANTS',
-  LANG_DE_DE: 'de-DE'
-  LANG_EN_US: 'en-US'
-  # Do you know what 1980/05/22 is about?
-  # It is the release date of PAC-MAN in Japan :)
-  # @see: http://history1900s.about.com/od/1980s/qt/Pac-Man.htm
-  START_DATE_DEFAULT: new Date 1980, 4, 22
-  END_DATE_DEFAULT: new Date()
-
-.constant 'CON_M',
-  LANG_DE_DE: 'de-DE'
-  LANG_EN_US: 'en-US'
-
-# configurations
-# ------------------------------------------------------------
-#.config([
-#  '$compileProvider'
-#  ($compileProvider) ->
-#    $compileProvider.urlSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-#])
-
-
 .config([
   '$routeProvider',
   '$locationProvider'
