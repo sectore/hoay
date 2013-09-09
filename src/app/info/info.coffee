@@ -2,6 +2,7 @@ angular.module('hoay.info', [
   'hoay.app'
   'ngRoute'
   'ng-iscroll'
+  'hoay.version'
 ])
 
 .config([

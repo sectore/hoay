@@ -1,9 +1,10 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.calculate', [
-  'hoay.app'
+  'ajoslin.mobile-navigate'
   'ngRoute'
   'jm.i18next'
+  'hoay.dates'
 ])
 
 # config
