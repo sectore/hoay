@@ -9,10 +9,9 @@ angular.module('hoay.app', [
   'jm.i18next'
   'ngStorage'
   # hoay modules
-  'hoay.templates'
-  'hoay.version'
-  'hoay.helper'
   'hoay.dates'
+  'hoay.templates'
+  'hoay.helper'
   'hoay.calculate'
   'hoay.result'
   'hoay.info'
@@ -52,20 +51,21 @@ angular.module('hoay.app', [
   '$window'
   '$i18next'
   '$localStorage'
-  'HOAYCONSTANTS'
-  ($log, $window, $i18next, $localStorage, hoayConstants)->
+  'DATE_DEFAULT'
+  'LANG_ID'
+  ($log, $window, $i18next, $localStorage, DATE_DEFAULT, LANG_ID)->
 
     init = ->
       # setting default values
       $localStorage.$default
-        startDate: hoayConstants.START_DATE_DEFAULT
-        endDate: hoayConstants.END_DATE_DEFAULT
-        langID: hoayConstants.LANG_EN_US
+        startDate: DATE_DEFAULT.START
+        endDate: DATE_DEFAULT.END
+        langID: LANG_ID.EN_US
 
       # Important note:
       # Set 'lng' of $i18next.options here using localStore or default lang
       # because it is not possible to inject $localStorage earlier into .config()
-      $i18next.options.lng = $localStorage.langID or hoayConstants.LANG_EN_US
+      $i18next.options.lng = $localStorage.langID or LANG_ID.EN_US
 
     init()
 ]
