@@ -17,6 +17,7 @@ describe 'module hoay.settings', ->
     afterEach ->
       @scope =
       @controller =
+      @i18Mock =
       @storageMock =
       undefined
 
