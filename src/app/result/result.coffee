@@ -1,8 +1,18 @@
 # module definition
 # ------------------------------------------------------------
 angular.module('hoay.result', [
+  'ajoslin.mobile-navigate'
   'ngRoute'
+  'hoay.dates'
 ])
+
+# constants
+# ------------------------------------------------------------
+  .constant 'RESULT_SUB_VIEW_STATE',
+    YEARS_TOTAL: 'years-total'
+    MONTHS_TOTAL: 'months-total'
+    DAYS_TOTAL: 'days-total'
+    SUM: 'sum'
 
 # config
 # ------------------------------------------------------------
@@ -22,11 +32,12 @@ angular.module('hoay.result', [
   '$navigate',
   '$log',
   'DateModel'
-  ($scope, $navigate, $log, dateModel)->
+  'RESULT_SUB_VIEW_STATE'
+  ($scope, $navigate, $log, dateModel, SUB_VIEW_STATE)->
 
-    $scope.dateModel = dateModel
-
-    $scope.subViewState = 'sum'
+    init = ->
+      $scope.dateModel = dateModel
+      $scope.subViewState = SUB_VIEW_STATE.SUM
 
     $scope.next = ->
       $navigate.go '/settings', 'modal'
@@ -34,17 +45,31 @@ angular.module('hoay.result', [
     $scope.prev = ->
       $navigate.back()
 
-    $scope.showTotalYears =->
-      $scope.subViewState = 'total-years'
+    $scope.showTotalYears = ->
+      $scope.subViewState = SUB_VIEW_STATE.YEARS_TOTAL
 
-    $scope.showTotalMonths =->
-      $scope.subViewState = 'total-months'
+    $scope.isYearsTotalViewState = ->
+      $scope.subViewState is SUB_VIEW_STATE.YEARS_TOTAL
 
-    $scope.showTotalDays =->
-      $scope.subViewState = 'total-days'
+    $scope.showTotalMonths = ->
+      $scope.subViewState = SUB_VIEW_STATE.MONTHS_TOTAL
+
+    $scope.isMonthsTotalViewState = ->
+      $scope.subViewState is SUB_VIEW_STATE.MONTHS_TOTAL
+
+    $scope.showTotalDays = ->
+      $scope.subViewState = SUB_VIEW_STATE.DAYS_TOTAL
+
+    $scope.isDaysTotalViewState = ->
+      $scope.subViewState is SUB_VIEW_STATE.DAYS_TOTAL
 
     $scope.showSum = ->
-      $scope.subViewState = 'sum'
+      $scope.subViewState = SUB_VIEW_STATE.SUM
+
+    $scope.isSumViewState = ->
+      $scope.subViewState is SUB_VIEW_STATE.SUM
+
+    init()
 
 
-]
+  ]

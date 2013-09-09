@@ -63,7 +63,7 @@
     </ul>
     <div class="total-view total-view-years"
       ng-click="showSum()"
-      ng-class="{'total-view-active': subViewState=='total-years'}">
+      ng-class="{'total-view-active': isYearsTotalViewState()}">
       <div class="total-result-wrapper">
         <div class="total-result-container">
           <div class="total-result-txt-container">
@@ -71,7 +71,7 @@
             <p
               class="total-result-txt"
               counter
-              counter-restart="subViewState=='total-years'"
+              counter-restart="isYearsTotalViewState()"
               counter-max="dateModel.totalYears"
               >
           </div>
@@ -83,7 +83,7 @@
     <div
       class="total-view total-view-months"
       ng-click="showSum()"
-      ng-class="{'total-view-active': subViewState=='total-months'}">
+      ng-class="{'total-view-active': isMonthsTotalViewState()}">
       <div class="total-result-wrapper">
         <div class="total-result-container">
           <div class="total-result-txt-container">
@@ -91,7 +91,7 @@
             <p
               class="total-result-txt"
               counter
-              counter-restart="subViewState=='total-months'"
+              counter-restart="isMonthsTotalViewState()"
               counter-max="dateModel.totalMonths"
               >
           </div>
@@ -103,7 +103,7 @@
     <div
       class="total-view total-view-days"
       ng-click="showSum()"
-      ng-class="{'total-view-active': subViewState=='total-days'}">
+      ng-class="{'total-view-active': isDaysTotalViewState()}">
       <div class="total-result-wrapper">
         <div class="total-result-container">
           <div class="total-result-txt-container">
@@ -111,7 +111,7 @@
             <p
               class="total-result-txt"
               counter
-              counter-restart="subViewState=='total-days'"
+              counter-restart="isDaysTotalViewState()"
               counter-max="dateModel.totalDays"
               >
             </p>
