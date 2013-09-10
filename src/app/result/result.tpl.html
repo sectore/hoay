@@ -10,13 +10,13 @@
         <div class="date-container">
           <p class="label-date" ng-i18next>common.START_DATE</p>
           <p class="date">
-            {{dateModel.start | translatedate}}
+            {{dateModel.start | formatdate:dateFormat()}}
           </p>
         </div>
         <div class="date-container">
           <p class="label-date" ng-i18next>common.END_DATE</p>
           <p class="date">
-            {{dateModel.end | translatedate}}
+            {{dateModel.end | formatdate:dateFormat()}}
           </p>
         </div>
       </div>

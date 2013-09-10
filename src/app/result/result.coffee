@@ -32,8 +32,9 @@ angular.module('hoay.result', [
   '$navigate',
   '$log',
   'DateModel'
+  '$i18next'
   'RESULT_SUB_VIEW_STATE'
-  ($scope, $navigate, $log, dateModel, SUB_VIEW_STATE)->
+  ($scope, $navigate, $log, dateModel, $i18next, SUB_VIEW_STATE)->
 
     init = ->
       $scope.dateModel = dateModel
@@ -44,6 +45,9 @@ angular.module('hoay.result', [
 
     $scope.prev = ->
       $navigate.back()
+
+    $scope.dateFormat = ->
+      $i18next 'common.FORMAT_DATE_SHORT'
 
     $scope.showTotalYears = ->
       $scope.subViewState = SUB_VIEW_STATE.YEARS_TOTAL

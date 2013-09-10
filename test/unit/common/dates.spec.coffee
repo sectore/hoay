@@ -9,7 +9,7 @@ describe 'dates', ->
       @model = _DateModel_
 
     afterEach ->
-      @model = null
+      @model = undefined
 
     it 'should be injectable', ->
       expect(@model).toBeDefined()
@@ -92,3 +92,26 @@ describe 'dates', ->
       @model.setStart start
       @model.setEnd end
       expect(@model.totalYears).toEqual 11
+
+  describe 'filter', ->
+
+    beforeEach inject ($filter) ->
+      @filter = $filter
+
+    afterEach ->
+      @filter = undefined
+
+    it 'should have a formatdate filter', ->
+      expect(@filter('formatdate')).not.toBeUndefined()
+
+    it 'should format a date using EN format by default', ->
+      date = new Date 1980, 4, 22
+      result = @filter('formatdate')(date)
+      expect(result).toEqual '05/22/1980'
+
+    it 'should format a date using a custom format', ->
+      date = new Date 1980, 4, 22
+      format = "dd.MM.yyyy"
+      result = @filter('formatdate')(date,format)
+      expect(result).toEqual '22.05.1980'
+

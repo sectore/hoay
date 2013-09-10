@@ -105,12 +105,11 @@ angular.module('hoay.dates', [
 # ------------------------------------------------------------
 #  Custom filter to format Date
 #  using pattern defined in locales
-.filter('translatedate', [
+.filter('formatdate', [
   '$filter',
-  '$i18next',
-  ($filter, $i18next)->
-    (data)->
-      format = $i18next 'common.FORMAT_DATE_SHORT'
+  ($filter)->
+    (data, format)->
+      format = format or "MM/dd/yyyy"
       result = $filter('date')(data, format)
       result
 ])

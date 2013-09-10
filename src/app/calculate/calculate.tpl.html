@@ -12,7 +12,7 @@
             <div class="button-content-container">
               <p class="date-label" ng-i18next="common.START_DATE"></p>
               <p class="date-txt">
-                <span ng-bind="dateModel.start | translatedate"></span>
+                <span ng-bind="dateModel.start | formatdate:dateFormat()"></span>
                 <i class="icon-sort"></i>
               </p>
             </div>
@@ -25,7 +25,7 @@
             <div class="button-content-container">
               <p class="date-label" ng-i18next="common.END_DATE"></p>
               <p class="date-txt">
-                <span ng-bind="dateModel.end | translatedate"></span>
+                <span ng-bind="dateModel.end | formatdate:dateFormat()"></span>
                 <i class="icon-sort"></i>
               </p>
             </div>

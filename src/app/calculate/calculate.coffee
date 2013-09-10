@@ -94,6 +94,9 @@ angular.module('hoay.calculate', [
         $scope.dateModel.setEnd date
       )
 
+    $scope.dateFormat = ->
+      $i18next 'common.FORMAT_DATE_SHORT'
+
 
     init()
 ]
