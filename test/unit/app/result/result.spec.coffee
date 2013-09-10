@@ -50,7 +50,6 @@ describe 'module hoay.result', ->
 
       it 'should be total days state', ->
         @scope.showTotalDays()
-        console.log "$scope.subViewState #{@scope.subViewState}"
         expect(@scope.isDaysTotalViewState()).toBeTruthy()
 
 
