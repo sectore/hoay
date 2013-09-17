@@ -22,11 +22,6 @@ git clone https://github.com/sectore/hoay
 cd hoay
 npm install
 bower install
-phonegap create phonegap de.websector.hoay HOAY
-cd phonegap
-phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
-phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
-phonegap local plugin add https://github.com/sectore/phonegap3-ios-datepicker-plugin
 ```
 
 ### Phonegap version
@@ -46,16 +41,23 @@ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin
 phonegap local plugin add https://github.com/sectore/phonegap3-ios-datepicker-plugin
 ```
 
-Debug version on iOS simulator:
+Build and run debug version on iOS simulator:
 
 ```bash
 grunt debug:ios
 ```
 
-Release version on iOS simulator:
+Build and run release version on iOS simulator:
 
 ```bash
 grunt release:ios
+```
+
+Copy iOS assets (Note: debug or release version have to build before once):
+
+```bash
+grunt copy:iosicons
+grunt copy:iossplash
 ```
 
 ### Web version
