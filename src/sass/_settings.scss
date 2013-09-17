@@ -56,6 +56,16 @@
         color: $color_4;
       }
     }
+
+    /* state active
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      background-color: $color_4;
+
+      .icon-ok{
+        color: $color_4;
+      }
+    }
   }
 
 }

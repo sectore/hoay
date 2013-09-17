@@ -36,9 +36,14 @@
 
   }
 
-  a{
+  .btn{
     color: $color_3;
     text-decoration: underline;
+    /* state active
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      color: $color_12;
+    }
   }
 
 }

@@ -28,6 +28,7 @@
     @include size($navbar-height);
     cursor: pointer;
 
+
     i{
       $icon-height: 22;
       font-size: em($icon-height);
@@ -45,6 +46,12 @@
       @include position(absolute, em(0) em(0) 0 0);
     }
 
+  }
+
+  /* state active
+  ------------------------------------------------------------ */
+  .ng-click-active [class^="icon-"]{
+    color: $color_12;
   }
 
 }
