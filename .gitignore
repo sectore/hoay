@@ -4,6 +4,7 @@ bin-release/
 src/_tmp/
 src/app/version.coffee
 vendor/*
+!vendor/zepto/
 
 test/_tmp/
 
