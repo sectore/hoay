@@ -116,3 +116,6 @@ For testing purposes:
 Copyright (c) 2013 "sectore" Jens Krause // [WEBSECTOR.DE](http://www.websector.de)
 
 HOAY is free software and it may be redistributed under the terms specified in the [MIT-LICENSE file](https://raw.github.com/sectore/hoay/master/LICENSE.txt).
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sectore/hoay/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
