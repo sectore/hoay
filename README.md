@@ -113,6 +113,6 @@ For testing purposes:
 
 
 ##License
-Copyright (c) 2013 "sectore" Jens Krause // [WEBSECTOR.DE](http://www.websector.de)
+Copyright (c) 2013-2015 "sectore" Jens Krause // [WEBSECTOR.DE](http://www.websector.de)
 
 HOAY is free software and it may be redistributed under the terms specified in the [MIT-LICENSE file](https://raw.github.com/sectore/hoay/master/LICENSE.txt).
