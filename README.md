@@ -38,6 +38,7 @@ phonegap create phonegap de.websector.hoay HOAY
 cd phonegap
 phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
 phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+phonegap local plugin add https://github.com/phonegap-build/StatusBarPlugin.git
 phonegap local plugin add https://github.com/sectore/phonegap3-ios-datepicker-plugin
 ```
 
