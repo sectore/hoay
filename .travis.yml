@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "0.10"
+
+notifications:
+  email: false
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install -g typescript
+  - npm install tsd@next -g
+  - npm install -g gulp
+  - npm install -g ionic
+  - npm install -g bower
+  - npm install -g protractor
+  - npm install -g cucumber
+  - npm run update-webdriver
+  - npm run travis-server > /dev/null &
+#  - npm run web-driver > /dev/null &
+  - npm run setup
+  - sleep 3 # give server time to start
+
+script:
+  - gulp
+  - ./node_modules/karma/bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  - protractor protractor.conf.js --browser=firefox
+#  - protractor cucumber.conf.js --browser=firefox
