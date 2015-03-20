@@ -1,11 +1,5 @@
 /// <reference path='./definitions.d.ts' />
 
-// this hide message errors from compiler
-interface Window {
-    cordova: any;
-    StatusBar: any;
-}
-
 module typeScriptIonicApp {
     export var app:ng.IModule = angular.module('typeScriptIonicApp', [
         'ionic',

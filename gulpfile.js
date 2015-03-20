@@ -15,7 +15,12 @@ var testFilePattern = 'src/**/*.spec.ts';
 var paths = {
   e2e: ['src/**/*.e2e.ts', './lib/definitions/e2e-definitions/**/*.d.ts'],
   sass: ['./assets/scss/**/*.scss', './assets/scss/*.scss'],
-  ts: ['src/*.ts', 'src/**/*.ts', 'lib/**/*.ts', '!lib/definitions/e2e-definitions/**/*.d.ts'],
+  ts: [
+    'src/*.ts',
+    'src/**/*.ts',
+    'lib/**/*.ts',
+    '!lib/definitions/e2e-definitions/**/*.d.ts'
+  ],
   tsds: ['*.d.ts', 'tsd/**/*.d.ts', 'src/*.d.ts', 'src/**/*.d.ts', 'lib/definitions/**/*.d.ts', '!lib/definitions/e2e-definitions/**/*.d.ts', '!src/**/*.e2e.ts'],
   tsSpec: ['src/**/*.spec.ts'],
   html: ['src/**/*.html'],

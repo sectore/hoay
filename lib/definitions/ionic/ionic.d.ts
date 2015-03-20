@@ -1,3 +1,11 @@
+// WARNING! This is still a work in progress!
+
+/**
+ *
+ * Ionic v.1.0.0-beta14
+ *
+ */
+
 
 /**
  * Define a global ionic object
@@ -145,6 +153,82 @@ declare module Ionic
          * @param shouldPrefetch Whether Ionic should prefetch templateUrls defined in $stateProvider.state(). Default true.
          */
         prefetchTemplates(shouldPrefetch: boolean): boolean;
+
+
+        //#region Added 1.0.0-beta14
+        views: IConfigViews;
+
+        backButton: IConfigBackButton;
+
+        tabs: IConfigTabs;
+
+        templates: IConfigTemplates;
+
+        navBar: IConfigNavBar;
+        //#endregion
+    }
+    //#endregion
+
+    //#region Views (Config Provider)
+    // Added 1.0.0-beta14
+    interface IConfigViews
+    {
+        /**
+         * Animation style when transitioning between views. Default 'platform'.
+         *
+         * @param transition Which style of view transitioning to use.
+         */
+        transition(transition: string): string;
+        transition(transition: "platform"): string;
+        transition(transition: "ios"): string;
+        transition(transition: "android"): string;
+        transition(transition: "none"): string;
+
+        /**
+         * Maximum number of view elements to cache in the DOM. When the max number is exceeded, the view with the longest time period since it was accessed is removed. Views that stay in the DOM cache the view's scope, current state, and scroll position. The scope is disconnected from the $watch cycle when it is cached and reconnected when it enters again. When the maximum cache is 0, the leaving view's element will be removed from the DOM after each view transition, and the next time the same view is shown, it will have to re-compile, attach to the DOM, and link the element again. This disables caching, in effect.
+         * Returns how many views Ionic will hold onto until the a view is removed.
+         *
+         * @param maxNumber Maximum number of views to retain. Default 10.
+         */
+        maxCache(maxNumber: number): number;
+
+        // TODO: 
+    }
+    //#endregion
+
+    //#region Back Button (Config Provider)
+    // Added 1.0.0-beta14
+    interface IConfigBackButton
+    {
+        // TODO:
+    }
+    //#endregion
+
+    //#region Tabs (Config Provider)
+    // Added 1.0.0-beta14
+    interface IConfigTabs
+    {
+        // TODO:
+
+        position(value: string): string;
+        position(value: "top"): string;
+        position(value: "bottom"): string;
+    }
+    //#endregion
+
+    //#region Templates (Config Provider)
+    // Added 1.0.0-beta14
+    interface IConfigTemplates
+    {
+        // TODO:
+    }
+    //#endregion
+
+    //#region NavBar (Config Provider)
+    // Added 1.0.0-beta14
+    interface IConfigNavBar
+    {
+        // TODO:
     }
     //#endregion
 
@@ -207,7 +291,7 @@ declare module Ionic
          * Set the grade of the device: 'a', 'b', or 'c'. 'a' is the best (most css features enabled),
          * 'c' is the worst. By default, sets the grade depending on the current device.
          */
-        setGrade(grade): void;
+        setGrade(grade: string): void;
 
         /**
          * Return the current device (given by Cordova).
@@ -357,6 +441,15 @@ declare module Ionic
          * @param y2
          */
         rectContains(x: number, y: number, x1: number, y1: number, x2: number, y2: number): boolean;
+
+        /**
+         * Blurs any currently focused input element
+         *
+         * Returns the element blurred or null
+         *
+         */
+        // Added 1.0.0-beta14
+        blurAll(): Element;
     }
     //#endregion
 
@@ -542,7 +635,7 @@ declare module Ionic
          * Called when one of the non-destructive buttons is clicked, with the index of the button that was clicked and the button object.
          * Return true to close the action sheet, or false to keep it opened.
          */
-        buttonClicked?: () => boolean;
+        buttonClicked?: (index?: number) => any;
 
         /**
          * Called when the destructive button is clicked. Return true to close the action sheet, or false to keep it opened.
@@ -707,25 +800,41 @@ declare module Ionic
          */
         initialize(options: IModalOptions): void;
 
-        // TODO: add Promise object as returns
+        /**
+         * Returns an instance of an ionicModal controller.
+         *
+         * @param templateString The template string to use as the modal's content.
+         * @param options Options to be passed to the initialize method.
+         */
+        fromTemplate(templateString: string, options: IModalOptions): IModal;
+
+
+        /**
+         * Returns a promise that will be resolved with an instance of an ionicModal controller.
+         *
+         * @param templateUrl The url to load the template from.
+         * @param options Options to be passed to the initialize method.
+         */
+        fromTemplateUrl(templateUrl: string, options: IModalOptions): ng.IPromise<IModal>;
+
 
         /**
          * Show this modal instance
          * Returns a promise which is resolved when the modal is finished animating in
          */
-        show(): any;
+        show(): ng.IPromise<any>;
 
         /**
          * Hide this modal instance
          * Returns a promise which is resolved when the modal is finished animating out
          */
-        hide(): any;
+        hide(): ng.IPromise<any>;
 
         /**
          * Remove this modal instance from the DOM and clean up
          * Returns a promise which is resolved when the modal is finished animating out
          */
-        remove(): any;
+        remove(): ng.IPromise<any>;
 
         /**
          * Returns whether this modal is currently shown.
@@ -749,7 +858,9 @@ declare module Ionic
          *
          * @param event The event object (eg from a tap event)
          */
-        back(event?: Event): void;
+        // Removed 1.0.0-beta14
+        //back(event?: Event): void;
+
 
         /**
          * Aligns the title with the buttons in a given direction
@@ -812,6 +923,28 @@ declare module Ionic
 
     //#endregion
 
+    //#region History
+
+    /**
+     * Angular service: $ionicHistory
+     *
+     * Delegate for controlling the ionNavBar directive.
+     */
+        // Added 1.0.0-beta14
+    interface IHistory
+    {
+
+        /**
+         * Navigates the app to the back view, if a back view exists.
+         */
+        goBack(): void;
+
+        // TODO
+    }
+
+    //#endregion
+
+
     //#region Popover
 
     interface IPopoverOptions
@@ -853,14 +986,13 @@ declare module Ionic
          */
         fromTemplate(templateString: string, options: IPopoverOptions): IPopover;
 
-        // TODO: promise
         /**
          * Returns a promise that will be resolved with an instance of an ionicPopover controller ($ionicPopover is built on top of $ionicPopover).
          *
          * @param templateUrl The url to load the template from
          * @param Options to be passed to the initialize method
          */
-        fromTemplateUrl(templateUrl: string, options: IPopoverOptions): any;
+        fromTemplateUrl(templateUrl: string, options: IPopoverOptions): ng.IPromise<IPopover>;
 
         /**
          * Creates a new popover controller instance
@@ -868,28 +1000,25 @@ declare module Ionic
          */
         initialize(options: IPopoverOptions): void;
 
-        // TODO: promise
         /**
          * Show this popover instance.
          * Returns a promise which is resolved when the popover is finished animating in.
          *
          * @param $event The $event or target element which the popover should align itself next to.
          */
-        show($event: any): any;
+        show($event: any): ng.IPromise<any>;
 
-        // TODO: promise
         /**
          * Hide this popover instance.
          * Returns a promise which is resolved when the popover is finished animating out.
          */
-        hide(): any;
+        hide(): ng.IPromise<any>;
 
-        // TODO: promise
         /**
          * Remove this popover instance from the DOM and clean up.
          * Returns a promise which is resolved when the popover is finished animating out.
          */
-        remove(): any;
+        remove(): ng.IPromise<any>;
 
         /**
          * Returns whether this popover is currently shown.
@@ -904,8 +1033,8 @@ declare module Ionic
     interface IPopupButton
     {
         text: string;
-        type: string;
-        onTap(e: Event): void;
+        type?: string;
+        onTap?(e: Event): void;
     }
 
     interface IPopupOptions
@@ -1082,7 +1211,6 @@ declare module Ionic
      */
     interface IPopup
     {
-        // TODO: promise
         /**
          * Show a complex popup. This is the master show function for all popups.
          * A complex popup has a buttons array, with each button having a text and type field, in addition to an onTap function.
@@ -1094,7 +1222,7 @@ declare module Ionic
          *
          * @param options The options for the new popup
          */
-        show(options: IPopupOptions): any;
+        show(options: IPopupOptions): ng.IPromise<any>;
 
         /**
          * Show a simple alert popup with a message and one button that the user can tap to close the popup.
@@ -1103,7 +1231,7 @@ declare module Ionic
          *
          * @param options The options for showing the alert
          */
-        alert(options: IPopupAlertOptions): any;
+        alert(options: IPopupAlertOptions): ng.IPromise<any>;
 
         /**
          * Show a simple confirm popup with a Cancel and OK button.
@@ -1113,7 +1241,7 @@ declare module Ionic
          *
          * @parma options The options for showing the confirm popup
          */
-        confirm(options: IPopupConfirmOptions): any;
+        confirm(options: IPopupConfirmOptions): ng.IPromise<any>;
 
         /**
          * Show a simple prompt popup, which has an input, OK button, and Cancel button. Resolves the promise with the value of the input if the user presses OK, and with undefined if the user presses Cancel.
@@ -1122,7 +1250,7 @@ declare module Ionic
          *
          * @param options The options for showing the prompt popup
          */
-        prompt(options: IPopupPromptOptions): any;
+        prompt(options: IPopupPromptOptions): ng.IPromise<any>;
     }
 
     //#endregion

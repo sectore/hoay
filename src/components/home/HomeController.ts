@@ -12,7 +12,7 @@ module typeScriptIonicApp.components.home {
     export class HomeController {
         public data:string;
 
-        constructor(public $scope:IHomeScope, private $state:ng.ui.IStateService, private $ionicHistory, private SampleDataService) {
+        constructor(public $scope:IHomeScope, private $state:angular.ui.IStateService, private $ionicHistory, private SampleDataService) {
             console.log('home loaded!');
             // 'vm' stands for 'view model'. An additional benefit to this is to prevent primatives getting
             // assigned to the scope directly
