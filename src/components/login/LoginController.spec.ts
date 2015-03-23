@@ -1,6 +1,6 @@
 /// <reference path='../../definitions.d.ts' />
 
-module typeScriptIonicApp.components.login {
+module hoay.components.login {
     describe('Login Controller', function () {
         var controller:LoginController;
         var scope:ILoginScope;
@@ -9,7 +9,7 @@ module typeScriptIonicApp.components.login {
         var $ionicHistory:any;
 
         beforeEach(function () {
-            angular.mock.module('typeScriptIonicApp.components.login');
+            angular.mock.module('hoay.components.login');
         });
 
         beforeEach(inject(function ($rootScope:ng.IRootScopeService,

@@ -1,6 +1,6 @@
 /// <reference path='../../definitions.d.ts' />
 
-module typeScriptIonicApp.common.services {
+module hoay.common.services {
 
     export interface ISampleData {
         getData: () => string;
@@ -18,6 +18,6 @@ module typeScriptIonicApp.common.services {
         }
     }
 
-    export var app:ng.IModule = app || angular.module('typeScriptIonicApp.common.services', ['ionic']);
+    export var app:ng.IModule = app || angular.module('hoay.common.services', ['ionic']);
     app.service('SampleDataService', SampleData);
 }

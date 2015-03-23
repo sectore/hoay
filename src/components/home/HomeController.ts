@@ -1,7 +1,7 @@
 /// <reference path='../../definitions.d.ts' />
 
-module typeScriptIonicApp.components.home {
-    export interface IHomeScope extends typeScriptIonicApp.common.ICoreScope {
+module hoay.components.home {
+    export interface IHomeScope extends hoay.common.ICoreScope {
         vm: {
             doLogout: () => void;
             data: string;
@@ -43,7 +43,7 @@ module typeScriptIonicApp.components.home {
         $stateProvider.state('app.home', state);
     }
 
-    export var app:ng.IModule = app || angular.module('typeScriptIonicApp.components.home', ['ionic']);
+    export var app:ng.IModule = app || angular.module('hoay.components.home', ['ionic']);
     app.controller('HomeController', HomeController);
     app.config(setRouteState);
 }

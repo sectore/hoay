@@ -54,9 +54,13 @@ gulp.task('watch', function () {
 });
 
 gulp.task('watch-tasks', function () {
-  gulp.watch(paths.e2e, ['tsE2E', 'tslint']);
+  //gulp.watch(paths.e2e, ['tsE2E', 'tslint']);
   gulp.watch(paths.sass, ['css']);
-  gulp.watch(paths.ts.concat(paths.tsds), ['ts', 'tsTest', 'tsE2E', 'tslint']);
+  gulp.watch(paths.ts.concat(paths.tsds), [
+    'ts',
+    'tsTest',
+    //'tsE2E',
+    'tslint']);
   gulp.watch(paths.html, ['html']);
   gulp.watch(paths.fonts, ['fonts']);
   gulp.watch(paths.images, ['images']);
@@ -178,12 +182,17 @@ var tsTestProject = ts.createProject({
   declarationFiles: false,
   noExternalResolve: false
 });
+
 gulp.task('tsTest', ['ts'], function () {
   return gulp.src(paths.tsSpec)
     .pipe(sourcemaps.init({debug: true}))
     .pipe(ts(tsTestProject))
     .pipe(concat('unit.js'))
-    .pipe(ngAnnotate({remove: true, add: true, single_quotes: true}))
+    .pipe(ngAnnotate({
+      remove: true,
+      add: true,
+      single_quotes: true
+    }))
     .pipe(sourcemaps.write('maps'))
     .pipe(gulp.dest('www/test'))
 });

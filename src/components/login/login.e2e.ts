@@ -1,4 +1,4 @@
-module typeScriptIonicApp.components.login {
+module hoay.components.login {
     export class LoginFeature {
         usernameInput = element(by.model('vm.username'));
         passwordInput = element(by.model('vm.password'));
@@ -63,7 +63,7 @@ module typeScriptIonicApp.components.login {
             expect(feature.getUsername()).toBe('defaultJulie');
             expect(feature.getPassword()).toBe('myPassword');
             feature.submitForm();
-            expect((new typeScriptIonicApp.components.home.HomeFeature()).isRendered()).toEqual([true, true, true]);
+            expect((new hoay.components.home.HomeFeature()).isRendered()).toEqual([true, true, true]);
         });
     });
 }

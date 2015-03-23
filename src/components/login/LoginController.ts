@@ -1,7 +1,7 @@
 /// <reference path='../../definitions.d.ts' />
 
-module typeScriptIonicApp.components.login {
-    export interface ILoginScope extends typeScriptIonicApp.common.ICoreScope {
+module hoay.components.login {
+    export interface ILoginScope extends hoay.common.ICoreScope {
         vm: {
             doLogin: () => void;
             username: string;
@@ -44,7 +44,7 @@ module typeScriptIonicApp.components.login {
         $stateProvider.state('app.login', state);
     }
 
-    export var app:ng.IModule = app || angular.module('typeScriptIonicApp.components.login', ['ionic']);
+    export var app:ng.IModule = app || angular.module('hoay.components.login', ['ionic']);
     app.controller('LoginController', LoginController);
     app.config(loginConfig);
 }

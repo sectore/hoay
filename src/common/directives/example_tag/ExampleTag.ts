@@ -1,7 +1,7 @@
 /// <reference path='../../../definitions.d.ts' />
 
-module typeScriptIonicApp.common.directives {
-    export interface IExampleTagDirectiveScope extends typeScriptIonicApp.common.ICoreScope {
+module hoay.common.directives {
+    export interface IExampleTagDirectiveScope extends hoay.common.ICoreScope {
         vm: {
         }
     }
@@ -23,7 +23,7 @@ module typeScriptIonicApp.common.directives {
     }
 
     // this module is re-declared per directive
-    export var app:ng.IModule = app || angular.module('typeScriptIonicApp.common.directives', ['templates', 'ionic']);
+    export var app:ng.IModule = app || angular.module('hoay.common.directives', ['templates', 'ionic']);
     app.directive('exampleTag', () => new ExampleTagDirective());
     app.controller('ExampleTagDirectiveController', ExampleTagDirectiveController);
 

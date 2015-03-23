@@ -1,11 +1,11 @@
 /// <reference path='../../definitions.d.ts' />
 
-module typeScriptIonicApp.common.services {
+module hoay.common.services {
     describe('SampleDataService', function () {
         var $log:ng.ILogService, SampleDataService:ISampleData;
 
         beforeEach(function () {
-            angular.mock.module('typeScriptIonicApp.common.services');
+            angular.mock.module('hoay.common.services');
         });
 
         beforeEach(inject(function (_SampleDataService_:ISampleData, _$log_:ng.ILogService) {

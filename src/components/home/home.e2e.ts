@@ -1,4 +1,4 @@
-module typeScriptIonicApp.components.home {
+module hoay.components.home {
     export class HomeFeature {
         logout() {
             element(by.partialButtonText('Logout')).click();
@@ -41,7 +41,7 @@ module typeScriptIonicApp.components.home {
 
         it('should let me log out via the link', function () {
             feature.logout();
-            expect((new typeScriptIonicApp.components.login.LoginFeature()).isRendered()).toBe(true);
+            expect((new hoay.components.login.LoginFeature()).isRendered()).toBe(true);
         });
     });
 }
