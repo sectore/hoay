@@ -1,0 +1,367 @@
+.content-result{
+  
+  background-color: $color_1;
+
+  /**********************************
+    wrapper
+  **********************************/
+  
+  .content-wrapper{
+    @include size(100%);
+    background-color: $color_4;
+    position: relative;
+  }
+
+  /**********************************
+    dates
+  **********************************/
+
+  $dates-container-height: 100;
+  $dates-container-height-small: 65;
+  
+  .dates-wrapper{
+    padding: em(0) em(15);
+    background-color: $color_2;
+    display: table;
+
+    @include size(100% em($dates-container-height));
+    @include position(absolute, em(0) em(0) em($dates-container-height) em(0));
+
+    @include respond-to(small){
+      padding: em(0) em(20);
+      @include size(100% em($dates-container-height-small));
+      @include position(absolute, em(0) em(0) em($dates-container-height-small) em(0));
+    }
+
+  }
+
+  .dates-container{
+    display: table-cell;
+    vertical-align: middle;
+    @include clearfix;
+  }
+
+  .date-container{
+    width: 50%;
+    font-family: $font_1;
+    color: $color_4;
+    float: left;
+
+    $font-size-date-label:21;
+    $font-size-date-label-small:13;
+
+    .label-date{
+      font-size: em($font-size-date-label);
+      @include respond-to(small){
+        font-size: em($font-size-date-label-small);
+      }
+    }
+
+    $font-size-date: 42;
+    $font-size-date-small: 27;
+    .date{
+      font-size: em($font-size-date);
+      @include respond-to(small){
+        font-size: em($font-size-date-small);
+      }
+    }
+
+    &:last-child{
+      p{
+        border-left-color: $color_4;
+        border-left-style: solid;
+        text-align: right;
+      }
+      .date{
+        border-left-width: em(1, $font-size-date);
+        @include respond-to(small){
+          border-left-width: em(1, $font-size-date-small);
+        }
+      }
+      .label-date{
+        border-left-width: em(1, $font-size-date-label);
+        @include respond-to(small){
+          border-left-width: em(1, $font-size-date-label-small);
+        }
+      }
+    }
+  }
+  /**********************************
+    result
+  **********************************/
+  
+  .result-list{
+    @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
+
+    @include respond-to(small){
+      @include position(absolute, em($dates-container-height-small) em(0) em(0) em(0));
+    }
+
+    background-color: green;
+  }
+
+  .result-list-item{
+    @include size(100% 34%);
+    cursor: pointer;
+
+    &:last-child{
+      @include size(100% 33%);
+    }
+  }
+
+  .result-list-item-years{
+    background-color: $color_8;
+
+    .result-container{
+      background-color: $color_9;
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      .result-container{
+        background-color: #FAFAFD;
+      }
+      .result-more-icon{
+        color: #DED8F3;
+      }
+    }
+  }
+
+  .result-list-item-months{
+    background-color: $color_7;
+    .result-container{
+      background-color: $color_10;
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      .result-container{
+        background-color: #F8F6FC;
+      }
+      .result-more-icon{
+        color: #DCD5F3;
+      }
+    }
+  }
+
+  .result-list-item-days{
+    background-color: $color_6;
+    .result-container{
+      background-color: $color_11;
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      .result-container{
+        background-color: #F5F3FB;
+      }
+      .result-more-icon{
+        color: #DAD3F2;
+      }
+    }
+  }
+
+  $padding-left-result: 20;
+
+  .result-wrapper{
+    display: table;
+    @include size(100%);
+    padding-left: em($padding-left-result);
+  }
+  .result-container{
+    display:table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  $font-size-result: 140;
+  $font-size-result-small: 90;
+  $font-size-more-icon: 50;
+  $font-size-more-icon-small: 30;
+  $font-size-result-label: 35;
+  $font-size-result-label-small: 27;
+
+  .result-txt{
+    font-size: em($font-size-result);
+    padding-right: em($padding-left-result, $font-size-result);
+
+    @include respond-to(small){
+      font-size: em($font-size-result-small);
+      padding-right: em($padding-left-result, $font-size-result-small);
+    }
+    font-family: $font_1;
+    color: $color_2;
+  }
+
+  .result-txt-container{
+    position: relative;
+  }
+
+  .result-more-icon{
+    position: absolute;
+    color: #DCD6F4;
+    font-size: em($font-size-more-icon);
+    top: em(($font-size-result - $font-size-more-icon)*0.5, $font-size-more-icon);
+    right: em($padding-left-result, $font-size-more-icon);
+    @include respond-to(small){
+      font-size: em($font-size-more-icon-small);
+      top: em(($font-size-result-small - $font-size-more-icon-small)*0.5, $font-size-more-icon-small);
+      right: em($padding-left-result, $font-size-more-icon-small);
+    }
+  }
+
+  .result-list-item-years .result-more-icon{
+    color: #E3DDF6;
+  }
+  .result-list-item-months .result-more-icon{
+    color: #DCD6F4;
+  }
+
+  .result-list-item-days .result-more-icon{
+    color: #D6CFF0;
+  }
+
+  .result-label{
+    font-size: em($font-size-result-label);
+    margin-top: em(-20, $font-size-result-label);
+    padding-right: em($padding-left-result, $font-size-result-label);
+    @include respond-to(small){
+      font-size: em($font-size-result-label-small);
+      margin-top: em(-20, $font-size-result-label-small);
+      padding-right: em($padding-left-result, $font-size-result-label-small);
+    }
+    font-family: $font_1;
+    color: $color_2;
+  }
+
+  /**********************************
+    total
+  **********************************/
+  
+  .total-view{
+    @include position(absolute, em($dates-container-height) em(0) em(0) em(0));
+    @include respond-to(small){
+      @include position(absolute, em($dates-container-height-small) em(0) em(0) em(0));
+    }
+
+
+    @include transform(translate3d(-100%,0,0));
+    @include transition-property (transform);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-out);
+
+  }
+
+  .total-view-active{
+      @include transform(translate3d(0,0,0));
+    }
+
+  .total-view-years{
+    background-color: $color_8;
+    .total-result-back-icon{
+      color: #E198E6;
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      background-color: #D56EDB;
+      .total-result-back-icon{
+        color: $color_4;
+      }
+    }
+  }
+
+  .total-view-months{
+    background-color: $color_7;
+    .total-result-back-icon{
+      color: #D396DD;
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      background-color: #C16BCF;
+      .total-result-back-icon{
+        color: $color_4;
+      }
+    }
+  }
+
+  .total-view-days{
+    background-color: $color_6;
+    .total-result-back-icon{
+      color: #A79ADF;
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      background-color: #9988DA;
+      .total-result-back-icon{
+        color: $color_4;
+      }
+    }
+  }
+
+  .total-result-wrapper{
+    display: table;
+    @include size(100%);
+  }
+
+  .total-result-container{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .total-result-txt-container{
+    position: relative;
+  }
+
+  $font-size-total: 210;
+  $font-size-total-small: 90;
+  $font-size-back-icon: 50;
+  $font-size-back-icon-small: 30;
+
+
+  .total-result-txt{
+
+    color: $color_4;
+    font-size: em($font-size-total);
+    padding-left: em(20, $font-size-total);
+    @include respond-to(small){
+      font-size: em($font-size-total-small);
+      padding-left: em(20, $font-size-total-small);
+    }
+    font-family: $font_1;
+  }
+
+
+  .total-result-back-icon{
+    position: absolute;
+    color: #DCD6F4;
+    font-size: em($font-size-back-icon);
+    top: em(($font-size-total - $font-size-back-icon)*0.5, $font-size-back-icon);
+    right: em($padding-left-result, $font-size-back-icon);
+    @include respond-to(small){
+      font-size: em($font-size-back-icon-small);
+      top: em(($font-size-total-small - $font-size-back-icon-small)*0.5, $font-size-back-icon-small);
+      right: em($padding-left-result, $font-size-back-icon-small);
+    }
+  }
+
+  .total-label{
+    color: $color_4;
+    font-family: $font_1;
+
+    $font-size-total-label: 35;
+    $font-size-total-label-small: 27;
+
+    font-size: em($font-size-total-label);
+    padding-left: em(20, $font-size-total-label);
+    margin-top: em(-19, $font-size-total-label);
+    @include respond-to(small){
+      font-size: em($font-size-total-label-small);
+      padding-left: em(20, $font-size-total-label-small);
+      margin-top: em(-19, $font-size-total-label-small);
+    }
+  }
+
+}

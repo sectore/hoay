@@ -1,0 +1,146 @@
+.content-calculate{
+
+  /**********************************
+    vertical-button-bar
+  **********************************/
+
+
+  .button-list{
+
+    @include position(absolute, rem(0) rem(0) rem(0) rem(0));
+
+    li{
+      @include size(100% 34%);
+
+      &:first-child{
+        .button{
+          border-bottom: solid rem(1) $color_1
+        }
+      }
+
+      &:last-child{
+        @include size(100% 32%);
+      }
+    }
+
+  }
+
+  .button{
+    display: table;
+    @include size(100%);
+    background-color: $color_2;
+    cursor: pointer;
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      background-color: $color_13;
+    }
+
+  }
+
+  .button-calculate{
+    background-color: $color_1;
+    position: relative;
+
+    &:after{
+      $arrow-size: 32;
+      $arrow-size-small: 17;
+
+      position: absolute;
+      bottom: 100%;
+      border: solid transparent;
+      content: " ";
+      @include size(rem($arrow-size));
+      border-bottom-color: $color_1;
+      left: 50%;
+      top: -2 * rem($arrow-size);
+
+      border-width: rem($arrow-size);
+      margin-left: rem($arrow-size * -1);
+
+      @include respond-to(small){
+        @include size(rem($arrow-size-small));
+        border-width: rem($arrow-size-small);
+        margin-left: rem($arrow-size-small * -1);
+        top: -2 * rem($arrow-size-small);
+      }
+    }
+    /* active status
+    ------------------------------------------------------------ */
+    &.ng-click-active{
+      background-color: $color_4;
+
+      .label-calculate{
+        color: $color_14;
+      }
+    }
+
+    &.ng-click-active:after{
+      border-bottom-color: $color_4;
+    }
+
+  }
+
+  .button-content-wrapper{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .button-content-container{
+    display: inline-block;
+    text-align: left;
+  }
+
+  .date-label,
+  .date-txt{
+    padding: 0;
+    font-family: $font_1;
+    color: $color_4;
+  }
+
+
+  .date-label{
+    $font-size-label: 35;
+    $font-size-label-small: 19;
+    font-size: rem($font-size-label);
+    @include respond-to(small){
+      font-size: rem($font-size-label-small);
+    }
+  }
+
+  $font-size-date: 95;
+  $font-size-date-small: 55;
+
+  .date-txt{
+    font-size: rem($font-size-date);
+
+    @include respond-to(small){
+      font-size: rem($font-size-date-small);
+    }
+  }
+
+
+  .icon-sort{
+    color: $color_4;
+
+    $icon-size: 80;
+    $icon-size-small: 40;
+    font-size: rem($icon-size);
+    @include respond-to(small){
+      font-size: rem($icon-size-small);
+    }
+  }
+
+  .label-calculate{
+    color: $color_2;
+    font-family: $font_1;
+
+    font-size: rem(110);
+
+    @include respond-to(small){
+      font-size: rem(60);
+    }
+  }
+
+}

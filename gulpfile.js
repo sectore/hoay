@@ -14,7 +14,13 @@ var sourcemaps = require('gulp-sourcemaps');
 var testFilePattern = 'src/**/*.spec.ts';
 var paths = {
   e2e: ['src/**/*.e2e.ts', './lib/definitions/e2e-definitions/**/*.d.ts'],
-  sass: ['./assets/scss/**/*.scss', './assets/scss/*.scss'],
+  sass: [
+    './assets/scss/**/*.scss',
+    './assets/scss/*.scss'
+  ],
+  sassToWatch: [
+    './src/**/*.scss'
+  ],
   ts: [
     'src/*.ts',
     'src/**/*.ts',
@@ -26,12 +32,23 @@ var paths = {
   html: ['src/**/*.html'],
   lib: ['lib/**/*.js'],
   fonts: ['bower_components/ionic/fonts/*', 'assets/fonts/*'],
+  locales: ['assets/locales/*'],
   index: ['assets/index.html'],
   images: ['assets/images/*'],
   testJs: ['www/test/unit.js']
 };
 
-gulp.task('default', ['html', 'lib', 'css', 'fonts', 'images', 'index', 'ts', 'tsTest', 'tsE2E']);
+gulp.task('default', [
+  'html',
+  'lib',
+  'css',
+  'fonts',
+  'images',
+  'index',
+  'locales',
+  'ts',
+  'tsTest',
+  'tsE2E']);
 
 /*
  * this task re-builds the project before watching it
@@ -55,7 +72,7 @@ gulp.task('watch', function () {
 
 gulp.task('watch-tasks', function () {
   //gulp.watch(paths.e2e, ['tsE2E', 'tslint']);
-  gulp.watch(paths.sass, ['css']);
+  gulp.watch(paths.sass.concat(paths.sassToWatch), ['css']);
   gulp.watch(paths.ts.concat(paths.tsds), [
     'ts',
     'tsTest',
@@ -65,6 +82,7 @@ gulp.task('watch-tasks', function () {
   gulp.watch(paths.fonts, ['fonts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.index, ['index']);
+  gulp.watch(paths.locales, ['locales']);
   gulp.watch(paths.lib, ['lib']);
   gulp.watch(paths.testJs, ['runJustTest']);
 })
@@ -94,13 +112,24 @@ gulp.task('cleanIndex', function () {
   return gulp.src(['www/index.html'], {read: false})
     .pipe(clean());
 });
+gulp.task('cleanLocales', function () {
+  return gulp.src(['www/locales'], {read: false})
+    .pipe(clean());
+});
 
 /*
  * copies important external dependencies into the working folder
  */
 var mainBowerFiles = require('main-bower-files');
 gulp.task('lib', function () {
-  return gulp.src(['bower_components/ionic/js/ionic.bundle.js'].concat(paths.lib, mainBowerFiles(), '!**/*.css'))
+  return gulp.src(
+    [
+      'bower_components/ionic/js/ionic.bundle.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'bower_components/angular-local-storage/dist/angular-local-storage.js',
+      'bower_components/moment/moment.js',
+    ].concat(paths.lib, mainBowerFiles(), '!**/*.css'))
     .pipe(sourcemaps.init({debug: true}))
     .pipe(concat('lib.js'))
     .pipe(sourcemaps.write('maps'))
@@ -132,19 +161,35 @@ gulp.task('index', ['cleanIndex'], function () {
     .pipe(gulp.dest('www'));
 });
 
+
+/*
+ * copies locales from external dependencies
+ */
+gulp.task('locales', ['cleanLocales'], function () {
+  return gulp.src(paths.locales)
+    .pipe(gulp.dest('www/locales'));
+});
+
 /*
  * compiles CSS from SCSS
  */
-gulp.task('css', ['cleanCss'], function (done) {
+gulp.task('css', ['cleanCss'], function () {
+
+
+
   gulp.src(paths.sass)
-    .pipe(sourcemaps.init({debug: true}))
-    .pipe(sass({errLogToConsole: true, sync: false}))
+    .pipe(sourcemaps.init({
+      debug: true
+    }))
+    .pipe(sass({
+      errLogToConsole: true,
+      //sync: false
+    }))
     .pipe(gulp.dest('www/css'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe(sourcemaps.write('map'))
-    .on('end', done);
+    .pipe(sourcemaps.write('map'));
 });
 
 /*

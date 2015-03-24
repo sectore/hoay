@@ -1,0 +1,34 @@
+{
+  "common":{
+    "FORMAT_DATE_SHORT": "dd.MM.yyyy",
+    "START_DATE": "Startdatum",
+    "END_DATE": "Enddatum",
+    "YEARS": "Jahre",
+    "MONTHS": "Monate",
+    "DAYS": "Tage",
+    "YEARS_TOTAL": "Jahre insgesamt",
+    "MONTHS_TOTAL": "Monate insgesamt",
+    "DAYS_TOTAL": "Tage insgesamt",
+    "NOTE": "Hinweis",
+    "DONE": "Übernehmen",
+    "CANCEL": "Abbrechen"
+  },
+  "calculate":{
+    "TITLE": "Wie alt bist Du?",
+    "LABEL_BUTTON": "Berechnen"
+  },
+  "result":{
+    "TITLE": "Ergebnis"
+  },
+  "settings":{
+    "TITLE": "Einstellungen",
+    "LANGUAGE": "Sprache"
+  },
+  "info":{
+    "TITLE": "Über HOAY",
+    "TXT_ABOUT": "<strong>HOAY</strong> ist die Abkürzung für \"How old are you\" (zu deutsch \"Wie alt bist Du\"). Mit HOAY ist es ganz einfach, jedes Alter genau zu berechnen - egal ob in Tagen, Monaten oder Jahren. Viel Spass!",
+    "TXT_CODE": "Die Anwendung <strong>HOAY</strong> wurde mit <open-external url='http://angularjs.org/'>AngularJS</open-external> und <open-external url='http://phonegap.com/'>PhoneGap</open-external> entwickelt. Der <open-external url='https://github.com/sectore/hoay'>gesamte Code</open-external> dieser Anwendung steht bei <open-external url='https://github.com/sectore/hoay'>GitHub</open-external> zu Verfügung.",
+    "TXT_COPYRIGHT": "Copyright (c) 2013-2015 Jens Krause - <open-external url='http://websector.de'>WEBSECTOR.DE</open-external>",
+    "TXT_VERSION": "Version: v.{{version}}"
+  }
+}

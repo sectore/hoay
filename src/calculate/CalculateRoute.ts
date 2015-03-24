@@ -4,7 +4,7 @@ module hoay.calculate {
   'use strict';
 
   angular.module('hoay.calculate')
-    .constant('CALCULATE_PATH', '/calculate')
+    .constant('CALCULATE_PATH', '/')
     .config(($stateProvider:ng.ui.IStateProvider, CALCULATE_PATH:string) => {
 
       $stateProvider.state('calculate', {

@@ -11,14 +11,12 @@ module.exports = function (config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: [
-      'jasmine',
       'mocha',
       'chai',
       'sinon'
     ],
 
     plugins: [
-      'karma-jasmine',
       'karma-mocha',
       'karma-chai',
       'karma-sinon',
@@ -33,6 +31,9 @@ module.exports = function (config) {
     files: [
       'www/js/lib.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      //'node_modules/mocha/mocha.js',
+      //'node_modules/sinon/lib/sinon.js',
+      //'node_modules/chai/lib/chai.js',
       'www/js/app.js',
       'www/js/templates.js',
       'www/test/unit.js'
@@ -53,7 +54,9 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'notify', 'junit'],
+    reporters: [
+      'mocha'
+    ],
 
     // https://www.npmjs.com/package/karma-notify-reporter
     notifyReporter: {
@@ -85,20 +88,9 @@ module.exports = function (config) {
       'PhantomJS'
     ],
 
-    // junit output for use in CI
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    },
-
-
-    reporters: [
-      , 'mocha'
-    ],
-
-
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
+
   });
 };

@@ -1,0 +1,34 @@
+{
+  "common":{
+    "FORMAT_DATE_SHORT": "MM/dd/yyyy",
+    "START_DATE": "start date",
+    "END_DATE": "end date",
+    "YEARS": "years",
+    "MONTHS": "months",
+    "DAYS": "days",
+    "YEARS_TOTAL": "years in total",
+    "MONTHS_TOTAL": "months in total",
+    "DAYS_TOTAL": "days in total",
+    "NOTE": "Please note",
+    "DONE": "Done",
+    "CANCEL": "Cancel"
+  },
+  "calculate":{
+    "TITLE": "How old are you?",
+    "LABEL_BUTTON": "Calculate"
+  },
+  "result":{
+    "TITLE": "Result"
+  },
+  "settings":{
+    "TITLE": "Settings",
+    "LANGUAGE": "Language"
+  },
+  "info":{
+    "TITLE": "About HOAY",
+    "TXT_ABOUT": "<strong>HOAY</strong> (\"How old are you\") calculates any age like a piece of cake. The result displays the sum or the total values of years, months and days. Have fun!",
+    "TXT_CODE": "<strong>HOAY</strong> is built with <open-external url='http://angularjs.org/'>AngularJS</open-external> and <open-external url='http://phonegap.com/'>PhoneGap</open-external>. All <open-external url='https://github.com/sectore/hoay'>source code</open-external> is available at <open-external url='https://github.com/sectore/hoay'>GitHub</open-external>.",
+    "TXT_COPYRIGHT": "Copyright (c) 2013-2015 Jens Krause - <open-external url='http://websector.de'>WEBSECTOR.DE</open-external>",
+    "TXT_VERSION": "Version: v.{{version}}"
+  }
+}

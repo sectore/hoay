@@ -1,0 +1,25 @@
+// Breakpoint definitions
+$screen-small: 480px;
+$screen-medium: 768px;
+$screen-large: 1280px;
+
+// Handling breakpoints
+// Modified mixin of http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+@mixin respond-to($size) {
+  // small: <= 480px
+  @if $size == small {
+    @media only screen and (max-width: $screen-small) { @content; }
+  }
+  // medium: 481px - 768px
+  @else if $size == medium {
+    @media only screen and (min-width: $screen-small + 1) and (max-width: $screen-medium) { @content; }
+  }
+  // large: 769px - 1799px
+  @else if $size == large {
+    @media only screen and (min-width: $screen-medium + 1) and (max-width: $screen-large - 1){ @content; }
+  }
+  // xlarge: >= 1280px
+  @else if $size == xlarge {
+    @media only screen and (min-width: $screen-large) { @content; }
+  }
+}

@@ -1,4 +1,5 @@
 /// <reference path='../definitions.d.ts' />
+/// <reference path='../definitions.test.d.ts' />
 
 module hoay.result {
 
@@ -15,7 +16,7 @@ module hoay.result {
                        $controller:ng.IControllerService) => {
 
       scope = <any>$rootScope.$new();
-      $controller('ResultPageController', {$scope: scope});
+      controller = $controller('ResultPageController', {$scope: scope});
 
     }));
 
@@ -24,9 +25,7 @@ module hoay.result {
     });
 
     it('should be injected', () => {
-      //expect(controller).to.be.ok;
-      expect(controller).not.toBeNull();
-
+      chai.expect(controller).to.be.ok;
     });
 
   });

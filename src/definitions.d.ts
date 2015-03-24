@@ -22,6 +22,9 @@
 /// <reference path='components/home/HomeController.ts' />
 /// <reference path='components/login/LoginController.ts' />
 
+/// <reference path='common/date/DateModule.ts' />
+/// <reference path='common/date/DateModel.ts' />
+
 /// <reference path='calculate/CalculateModule.ts' />
 /// <reference path='calculate/CalculateRoute.ts' />
 /// <reference path='calculate/CalculatePageController.ts' />

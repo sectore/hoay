@@ -1,0 +1,59 @@
+.navbar{
+
+  $icon-size: em(20);
+  $navbar-height: 44;
+  @include size(100% em($navbar-height));
+  z-index: 10;
+  top: 20px;
+
+  position: fixed;
+
+  $navbar-padding: em(5);
+  background-color: $color_1;
+
+  border-bottom: solid 1px $color_3;
+
+  .title{
+    @include position(absolute, null em(30) null em(30));
+    height: 100%;
+    font-family: $font_1;
+    $font-size: 22;
+    font-size: em($font-size);
+    line-height: em($navbar-height, $font-size);
+    text-align: center;
+    color: $color_3;
+  }
+
+  .icon{
+    color: $color_3;
+    @include size(em($navbar-height));
+    cursor: pointer;
+    text-align: center;
+
+
+    i{
+      $icon-height: 22;
+      font-size: em($icon-height);
+      display: inline-block;
+      @include size(em($navbar-height));
+      line-height: em($navbar-height, $icon-height);
+    }
+
+    &:first-child{
+      @include position(absolute, em(0) null null em(0));
+    }
+
+    &:last-child{
+      @include position(absolute, em(0) em(0) null null);
+    }
+
+  }
+
+  /* state active
+  ------------------------------------------------------------ */
+  .ng-click-active [class^="icon-"]{
+    color: $color_12;
+  }
+
+}
+

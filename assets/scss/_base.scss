@@ -1,0 +1,62 @@
+@include font-face('#{$font_1}', '../fonts/SourceSansPro-Regular');
+@include font-face('#{$font_2}', '../fonts/SourceSansPro-Bold', bold);
+
+@include font-face('#{$font_3}', '../fonts/fontawesome-webfont');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font_1;
+  background-color: $color_1;
+  color: $color_3;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, h1, h2, ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 20;
+  overflow: auto;
+  background-color: $color_2;
+}
+
+.fa {
+  font-family: $font_3;
+}
+
+/** overridden of ionic styles **/
+
+.bar {
+  .title {
+    font-family: $font_1;
+  }
+
+  .button.button-clear {
+    font-size: rem(23);
+    color: $color_3;
+  }
+
+}
+
+.button {
+  border-style: none;
+  border: 0;
+  border-radius: 0;
+}
