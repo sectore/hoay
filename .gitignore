@@ -10,6 +10,7 @@ www/*
 tsd/*
 !tsd/tsd.d.ts
 test_out/*
+src/**/*.map
 
 # Created by https://www.gitignore.io
 
