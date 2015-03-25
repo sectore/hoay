@@ -34,10 +34,10 @@ module hoay.common.date {
     setEnd(date:Date) {
       this.end = date;
       this.localStorageService.set('endDate', this.end.toDateString());
+      this.updateDifferences();
     }
 
     updateDifferences() {
-
       if (this.start !== undefined && this.end !== undefined) {
         var sum = this.getSumByDates(this.start, this.end);
         this.days = sum.days;
@@ -46,7 +46,6 @@ module hoay.common.date {
         this.totalDays = this.getTotalDaysByDates(this.start, this.end);
         this.totalMonths = this.getTotalMonthsByDates(this.start, this.end);
         this.totalYears = this.getTotalYearsByDates(this.start, this.end);
-
       }
     }
 
@@ -81,29 +80,31 @@ module hoay.common.date {
 
       if (days < 0) {
         months -= 1;
+        var lastMonthNumber = endDate.getMonth() - 1;
+        if (lastMonthNumber < 0) {
+          lastMonthNumber += 12;
+        }
+        var daysInLastMonth = new Date(endDate.getFullYear(), lastMonthNumber, 0).getDate();
+        days += daysInLastMonth;
       }
-      var lastMonthNumber = endDate.getMonth() - 1;
-      if (lastMonthNumber < 0) {
-        lastMonthNumber += 12;
-      }
-      var daysInLastMonth = new Date(endDate.getFullYear(), lastMonthNumber, 0).getDate();
-      days += daysInLastMonth;
 
       if (months < 0) {
         years -= 1;
+        months += 12;
       }
 
-      months += 12;
 
       if (years < 0) {
         years = 0;
       }
 
-      return {
+      var result = {
         days: days,
         months: months,
         years: years
       };
+
+      return result;
 
     }
 
