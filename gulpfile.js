@@ -10,6 +10,9 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 var notify = require("gulp-notify");
 var sourcemaps = require('gulp-sourcemaps');
+var replace = require('gulp-replace');
+var fs = require('fs');
+var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 var testFilePattern = 'src/**/*.spec.ts';
 var paths = {
@@ -167,6 +170,7 @@ gulp.task('index', ['cleanIndex'], function () {
  */
 gulp.task('locales', ['cleanLocales'], function () {
   return gulp.src(paths.locales)
+    .pipe(replace(/__version__/g, pkg.version))
     .pipe(gulp.dest('www/locales'));
 });
 
