@@ -17,6 +17,9 @@
 
 /// <reference path='common/ICoreScope.d.ts' />
 
+/// <reference path='common/util/mixin' />
+/// <reference path='common/navigation/navigation-mixin' />
+
 /// <reference path='components/home/HomeController.ts' />
 /// <reference path='components/login/LoginController.ts' />
 
@@ -28,8 +31,8 @@
 
 /// <reference path='calculate/calculate-module.ts' />
 /// <reference path='calculate/calculate-route.ts' />
-/// <reference path='calculate/calculate-component.ts' />
-/// <reference path='calculate/calculate-component-controller.ts' />
+/// <reference path='calculate/calculate-content-component.ts' />
+/// <reference path='calculate/calculate-content-component-controller.ts' />
 
 /// <reference path='result/result-module.ts' />
 /// <reference path='result/result-route.ts' />
