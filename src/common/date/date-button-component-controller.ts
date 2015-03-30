@@ -14,7 +14,7 @@ module hoay.calculate {
 
   }
 
-  angular.module('hoay.calculate')
+  angular.module('hoay.common.date')
     .controller('DateButtonComponentController', DateButtonComponentController);
 }
 

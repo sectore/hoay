@@ -7,7 +7,7 @@ module hoay.calculate {
     var component:ng.IDirective = <ng.IDirective>{};
 
     component.restrict = 'E';
-    component.templateUrl = 'calculate/date-button.html';
+    component.templateUrl = 'common/date/date-button.html';
     component.controller = 'DateButtonComponentController';
     component.controllerAs = 'ctrl';
     component.bindToController = true;
@@ -21,7 +21,7 @@ module hoay.calculate {
 
   }
 
-  angular.module('hoay.calculate')
+  angular.module('hoay.common.date')
     .directive('dateButton', DateButtonComponent);
 }
 
