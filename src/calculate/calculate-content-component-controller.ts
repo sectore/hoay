@@ -10,9 +10,9 @@ module hoay.calculate {
 
   export class CalculateContentComponentController implements CalculateContentComponentControllerInterface {
 
-    public start:Date = new Date(1980, 4, 22);
-    public end:Date = new Date(1999, 1, 21);
-    public dateFormat:string;
+    start:Date = new Date(1980, 4, 22);
+    end:Date = new Date(1999, 1, 21);
+    dateFormat:string;
 
     // @ngInject
     constructor($scope:IMainScope,
