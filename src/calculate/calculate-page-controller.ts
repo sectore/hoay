@@ -5,6 +5,10 @@ module hoay.calculate {
 
   export class CalculatePageController {
 
+    // @ngInject
+    constructor(private $state) {
+      console.log('state', $state);
+    }
   }
 
   hoay.common.util.applyMixins(CalculatePageController, [
