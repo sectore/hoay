@@ -4,12 +4,12 @@ module hoay.result {
 
   export class ResultPageController {
 
-    constructor(private $scope:IMainScope) {
-      // Content
-      console.log('ResultPageController');
-      $scope.vm = this;
-    }
   }
+
+  hoay.common.util.applyMixins(ResultPageController, [
+    hoay.common.navigation.NavigationMixin
+  ]);
+
 
   angular.module('hoay.result')
     .controller('ResultPageController', ResultPageController);

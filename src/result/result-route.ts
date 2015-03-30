@@ -9,8 +9,8 @@ module hoay.result {
 
       $stateProvider.state('result', {
         url: RESULT_PATH,
-        templateUrl: 'result/result.html',
-        controller: 'ResultPageController as resultPageCtrl'
+        templateUrl: 'result/result-page.html',
+        controller: 'ResultPageController as ctrl'
       });
 
     });
