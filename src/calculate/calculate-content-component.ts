@@ -2,7 +2,7 @@
 module hoay.calculate {
   'use strict';
 
-  export function CalculateComponent():ng.IDirective {
+  export function CalculateContentComponent():ng.IDirective {
 
     var component:ng.IDirective = <ng.IDirective>{};
 
@@ -18,6 +18,6 @@ module hoay.calculate {
   }
 
   angular.module('hoay.calculate')
-    .directive('calculate', CalculateComponent);
+    .directive('calculateContent', CalculateContentComponent);
 }
 
