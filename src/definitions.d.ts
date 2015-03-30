@@ -37,5 +37,13 @@
 /// <reference path='result/result-module.ts' />
 /// <reference path='result/result-route.ts' />
 /// <reference path='result/result-page-controller.ts' />
+/// <reference path='result/result-content-component.ts' />
+/// <reference path='result/result-content-component-controller.ts' />
+
+/// <reference path='info/info-module.ts' />
+/// <reference path='info/info-route.ts' />
+/// <reference path='info/info-page-controller.ts' />
+/// <reference path='info/info-content-component.ts' />
+/// <reference path='info/info-content-component-controller.ts' />
 
 
