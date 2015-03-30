@@ -2,7 +2,7 @@
 module hoay {
   'use strict';
 
-  interface MainControllerInterface{
+  interface MainControllerInterface {
     gotoInfo():void;
     gotoSettings():void;
     gotoResult():void;

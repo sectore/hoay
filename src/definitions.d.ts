@@ -12,19 +12,17 @@
  *******/
 
 /// <reference path='main.ts' />
-/// <reference path='MainController.ts' />
+/// <reference path='main-controller.ts' />
 /// <reference path='IMainScope.ts' />
 
 /// <reference path='common/ICoreScope.d.ts' />
-/// <reference path='common/directives/example_tag/ExampleTag.ts' />
-/// <reference path='common/services/SampleData.ts' />
 
 /// <reference path='components/home/HomeController.ts' />
 /// <reference path='components/login/LoginController.ts' />
 
-/// <reference path='common/date/DateModule.ts' />
-/// <reference path='common/date/DateModel.ts' />
-/// <reference path='common/date/DateFilter.ts' />
+/// <reference path='common/date/date-module.ts' />
+/// <reference path='common/date/date-model.ts' />
+/// <reference path='common/date/date-filter.ts' />
 /// <reference path='common/date/date-button-component.ts' />
 /// <reference path='common/date/date-button-component-controller.ts' />
 
@@ -33,8 +31,8 @@
 /// <reference path='calculate/calculate-component.ts' />
 /// <reference path='calculate/calculate-component-controller.ts' />
 
-/// <reference path='result/ResultModule.ts' />
-/// <reference path='result/ResultRoute.ts' />
-/// <reference path='result/ResultPageController.ts' />
+/// <reference path='result/result-module.ts' />
+/// <reference path='result/result-route.ts' />
+/// <reference path='result/result-page-controller.ts' />
 
 
