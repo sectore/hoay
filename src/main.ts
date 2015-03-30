@@ -10,7 +10,8 @@ module hoay {
       'templates',
       'hoay.common.date',
       'hoay.calculate',
-      'hoay.result'
+      'hoay.result',
+      'hoay.info'
     ])
 
     .run(($ionicPlatform) => {
@@ -40,16 +41,17 @@ module hoay {
 
       // html5Mode (deactivated by using cordova)
       $locationProvider.html5Mode(!window.cordova);
+      //$locationProvider.html5Mode(false);
     })
 
-    .config(['$translateProvider', ($translateProvider) => {
+    .config(($translateProvider) => {
       $translateProvider.useStaticFilesLoader({
         prefix: 'locales/',
         suffix: '.json'
       });
 
       $translateProvider.preferredLanguage('en-US');
-    }])
+    })
 
 
     .config(function (localStorageServiceProvider) {
@@ -57,6 +59,12 @@ module hoay {
         .setPrefix('hoay')
         .setStorageType('setStorageCookie')
         .setNotify(true, true);
+    })
+
+    .config(function ($ionicConfigProvider) {
+      $ionicConfigProvider.backButton.previousTitleText(true)
+        .icon('ion-chevron-left')
+        .text(' ');
     });
 
 }
