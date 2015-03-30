@@ -3,21 +3,26 @@
 
 module hoay.calculate {
 
-  describe('CalculatePageController', () => {
+  describe('CalculateComponentController', () => {
 
-    var controller:CalculatePageController;
+    var controller:CalculateComponentController;
     var scope:any;
 
     beforeEach(() => {
       angular.mock.module('hoay.calculate');
+      angular.mock.module('pascalprecht.translate');
     });
 
     beforeEach(inject(($rootScope:ng.IRootScopeService,
-                       $controller:ng.IControllerService) => {
+                       $controller:ng.IControllerService,
+                       $translate:ng.translate.ITranslateService) => {
 
       scope = <any>$rootScope.$new();
-      controller = $controller('CalculatePageController', {
-        $scope: scope
+      var rootScope = <any>$rootScope.$new();
+      controller = $controller('CalculateComponentController', {
+        $scope: scope,
+        $translate: $translate,
+        $rootScope: rootScope
       });
 
     }));

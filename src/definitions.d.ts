@@ -24,10 +24,14 @@
 
 /// <reference path='common/date/DateModule.ts' />
 /// <reference path='common/date/DateModel.ts' />
+/// <reference path='common/date/DateFilter.ts' />
 
-/// <reference path='calculate/CalculateModule.ts' />
-/// <reference path='calculate/CalculateRoute.ts' />
-/// <reference path='calculate/CalculatePageController.ts' />
+/// <reference path='calculate/calculate-module.ts' />
+/// <reference path='calculate/calculate-route.ts' />
+/// <reference path='calculate/calculate-component.ts' />
+/// <reference path='calculate/calculate-component-controller.ts' />
+/// <reference path='calculate/date-button-component.ts' />
+/// <reference path='calculate/date-button-component-controller.ts' />
 
 /// <reference path='result/ResultModule.ts' />
 /// <reference path='result/ResultRoute.ts' />

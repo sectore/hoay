@@ -1,0 +1,28 @@
+<ul class="button-list">
+  <li>
+    <date-button
+        label="{{ctrl.start | date: ctrl.dateFormat}}"
+        sub-label="{{'common.START_DATE' | translate}}"
+        on-touch="ctrl.changeStartDate()">
+    </date-button>
+  </li>
+  <li>
+    <date-button
+        label="{{ctrl.end | date: ctrl.dateFormat}}"
+        sub-label="{{'common.END_DATE' | translate}}"
+        on-touch="ctrl.changeEndDate()">
+    </date-button>
+  </li>
+  <li>
+    <a class="button button-calculate"
+       href="/#/result"
+        >
+      <!--ng-click="showResult()"-->
+      <div class="button-content-wrapper">
+        <div class="button-content-container">
+          <p class="label-calculate" translate="calculate.LABEL_BUTTON"></p>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

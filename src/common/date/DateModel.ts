@@ -12,6 +12,7 @@ module hoay.common.date {
     private years:number;
     private totalYears:number;
 
+    // @ngInject
     constructor(private localStorageService:angular.local.storage.ICookie,
                 private DATE_DEFAULT:any) {
       this.init();
