@@ -10,7 +10,7 @@ module hoay.calculate {
       $stateProvider.state('calculate', {
         url: CALCULATE_PATH,
         templateUrl: 'calculate/calculate-page.html',
-        controller: 'MainController as ctrl'
+        controller: 'CalculatePageController as ctrl'
       });
 
     });

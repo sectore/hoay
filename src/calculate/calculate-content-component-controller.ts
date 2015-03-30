@@ -3,12 +3,12 @@ module hoay.calculate {
   'use strict';
 
 
-  interface CalculateComponentControllerInterface{
+  interface CalculateContentComponentControllerInterface {
     changeStartDate():void;
     changeEndDate():void;
   }
 
-  export class CalculateComponentController implements CalculateComponentControllerInterface{
+  export class CalculateContentComponentController implements CalculateContentComponentControllerInterface {
 
     public start:Date = new Date(1980, 4, 22);
     public end:Date = new Date(1999, 1, 21);
@@ -16,11 +16,11 @@ module hoay.calculate {
 
     // @ngInject
     constructor($scope:IMainScope,
-                private $translate: ng.translate.ITranslateService,
+                private $translate:ng.translate.ITranslateService,
                 $rootScope:ng.IRootScopeService) {
 
       // Content
-      console.log('CalculateComponentController');
+      console.log('CalculateContentComponentController');
       $scope.vm = this;
       //this.dateFormat = 'dd.MM.yyyy';
 
@@ -41,16 +41,16 @@ module hoay.calculate {
     }
 
     changeStartDate():void {
-      console.log('changeStartDate aa');
+      console.log('changeStartDate');
     }
 
     changeEndDate():void {
-      console.log('changeEndDate bb');
+      console.log('changeEndDate');
     }
 
   }
 
   angular.module('hoay.calculate')
-    .controller('CalculateComponentController', CalculateComponentController);
+    .controller('CalculateContentComponentController', CalculateContentComponentController);
 }
 

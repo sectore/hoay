@@ -7,8 +7,8 @@ module hoay.calculate {
     var component:ng.IDirective = <ng.IDirective>{};
 
     component.restrict = 'E';
-    component.templateUrl = 'calculate/calculate-component.html';
-    component.controller = 'CalculateComponentController';
+    component.templateUrl = 'calculate/calculate-content-component.html';
+    component.controller = 'CalculateContentComponentController';
     component.controllerAs = 'ctrl';
     component.bindToController = true;
     component.scope = {};

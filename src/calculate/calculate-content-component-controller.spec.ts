@@ -3,9 +3,9 @@
 
 module hoay.calculate {
 
-  describe('CalculateComponentController', () => {
+  describe('CalculateContentComponentController', () => {
 
-    var controller:CalculateComponentController;
+    var controller:CalculateContentComponentController;
     var scope:any;
 
     beforeEach(() => {
@@ -19,7 +19,7 @@ module hoay.calculate {
 
       scope = <any>$rootScope.$new();
       var rootScope = <any>$rootScope.$new();
-      controller = $controller('CalculateComponentController', {
+      controller = $controller('CalculateContentComponentController', {
         $scope: scope,
         $translate: $translate,
         $rootScope: rootScope
