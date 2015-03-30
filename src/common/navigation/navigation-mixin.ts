@@ -11,7 +11,12 @@ module hoay.common.navigation {
 
   export class NavigationMixin implements NavigationMixinInterface {
 
+    // @ngInject
+    constructor(private $state) {
+      console.log('state', $state);
+    }
     gotoInfo():void {
+      this.$state.go('info');
       console.log('goto info');
     }
 
