@@ -1,5 +1,5 @@
 /// <reference path='../definitions.d.ts' />
-module hoay.calculate {
+module hoay.info {
   'use strict';
 
 
