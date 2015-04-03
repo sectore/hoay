@@ -11,8 +11,8 @@ module hoay.common.date {
       angular.mock.module('hoay.common.date');
     });
 
-    beforeEach(inject((_DateModel_) => {
-      model = _DateModel_;
+    beforeEach(inject((_dateModel_:hoay.common.date.DateModel) => {
+      model = _dateModel_;
     }));
 
     afterEach(() => {
@@ -33,7 +33,7 @@ module hoay.common.date {
 
     it('should update a start date', () => {
       var date = new Date();
-      model.setStart(date);
+      model.start = date;
       chai.expect(model.start).to.equal(date);
     });
 
@@ -43,7 +43,7 @@ module hoay.common.date {
 
     it('should update an end date', () => {
       var date = new Date();
-      model.setEnd(date);
+      model.end = date;
       chai.expect(model.end).to.be.equal(date);
     });
 
@@ -58,16 +58,16 @@ module hoay.common.date {
     it('should have a valid value of days', () => {
       var start = new Date(2001, 11, 10);
       var end = new Date(2011, 11, 9);
-      model.setStart(start);
-      model.setEnd(end);
+      model.start = start;
+      model.end = end;
       chai.expect(model.days).to.be.equal(30);
     });
 
     it('should have a valid value of total days', () => {
       var start = new Date(2012, 11, 10);
       var end = new Date(2013, 0, 11);
-      model.setStart(start);
-      model.setEnd(end);
+      model.start = start;
+      model.end = end;
       chai.expect(model.totalDays).to.be.equal(32);
     });
 
@@ -79,8 +79,8 @@ module hoay.common.date {
     it('should have a valid value of months', () => {
       var start = new Date(2001, 11, 10);
       var end = new Date(2011, 11, 9);
-      model.setStart(start);
-      model.setEnd(end);
+      model.start = start;
+      model.end = end;
       chai.expect(model.months).to.be.equal(11);
     });
 
@@ -91,8 +91,8 @@ module hoay.common.date {
     it('should have a valid value of total months', () => {
       var start = new Date(2011, 11, 10);
       var end = new Date(2013, 0, 9);
-      model.setStart(start);
-      model.setEnd(end);
+      model.start = start;
+      model.end = end;
       chai.expect(model.totalMonths).to.be.equal(12);
     });
 
@@ -103,8 +103,8 @@ module hoay.common.date {
     it('should have a valid value of years', () => {
       var start = new Date(2001, 11, 10);
       var end = new Date(2011, 11, 9);
-      model.setStart(start);
-      model.setEnd(end);
+      model.start = start;
+      model.end = end;
       chai.expect(model.years).to.be.equal(9);
     });
 
@@ -115,8 +115,8 @@ module hoay.common.date {
     it('should have a valid value of total years', () => {
       var start = new Date(2001, 11, 10);
       var end = new Date(2013, 0, 9);
-      model.setStart(start);
-      model.setEnd(end);
+      model.start = start;
+      model.end = end;
       chai.expect(model.totalYears).to.be.equal(11);
     });
 

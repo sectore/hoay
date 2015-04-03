@@ -3,8 +3,8 @@ module hoay.common.date {
 
   export class DateModel {
 
-    private start:Date;
-    private end:Date;
+    private _start:Date;
+    private _end:Date;
     private days:number;
     private totalDays:number;
     private months:number;
@@ -26,16 +26,24 @@ module hoay.common.date {
       this.updateDifferences();
     }
 
-    setStart(date:Date) {
-      this.start = date;
+    set start(date:Date) {
+      this._start = date;
       this.localStorageService.set('startDate', this.start.toDateString());
       this.updateDifferences();
     }
 
-    setEnd(date:Date) {
-      this.end = date;
+    get start(){
+      return this._start;
+    }
+
+    set end(date:Date) {
+      this._end = date;
       this.localStorageService.set('endDate', this.end.toDateString());
       this.updateDifferences();
+    }
+
+    get end(){
+      return this._end;
     }
 
     updateDifferences() {
@@ -65,7 +73,6 @@ module hoay.common.date {
 
 
     getTotalYearsByDates(startDate, endDate) {
-
       var startMoment = moment(startDate);
       var endMoment = moment(endDate);
       return endMoment.diff(startMoment, 'years');
@@ -126,5 +133,5 @@ module hoay.common.date {
     //It is acting as a domain model
     // to share date beetween controllers
     // It provides some helper methods
-    .service('DateModel', DateModel);
+    .service('dateModel', DateModel);
 }
