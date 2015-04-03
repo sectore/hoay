@@ -11,6 +11,7 @@ module hoay {
       'hoay.common.date',
       'hoay.calculate',
       'hoay.result',
+      'hoay.settings',
       'hoay.info'
     ])
 
