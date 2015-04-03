@@ -6,8 +6,8 @@ module hoay.calculate {
   export class CalculatePageController {
 
     // @ngInject
-    constructor(private $state) {
-      console.log('state', $state);
+    constructor(private $state:angular.ui.IStateService) {
+      console.log('CalculatePageController', this.gotoSettings);
     }
   }
 
