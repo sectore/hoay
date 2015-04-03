@@ -10,20 +10,16 @@ module hoay.calculate {
 
   export class CalculateContentComponentController implements CalculateContentComponentControllerInterface {
 
-    start:Date = new Date(1980, 4, 22);
-    end:Date = new Date(1999, 1, 21);
-    dateFormat:string;
+    public dateFormat:string;
 
     // @ngInject
-    constructor($scope:IMainScope,
+    constructor(private $scope:IMainScope,
                 private $translate:ng.translate.ITranslateService,
-                $rootScope:ng.IRootScopeService) {
+                private $rootScope:ng.IRootScopeService,
+                private $state:angular.ui.IStateService,
+                public dateModel:hoay.common.date.DateModel) {
 
-      // Content
-      console.log('CalculateContentComponentController');
-      $scope.vm = this;
-      //this.dateFormat = 'dd.MM.yyyy';
-
+      // ng-translate
       $rootScope.$on('$translateChangeSuccess', ():void => {
         this.updateDateFormat();
       });
@@ -36,11 +32,11 @@ module hoay.calculate {
       this.$translate('common.FORMAT_DATE_SHORT')
         .then((dateFormat:string):void => {
           this.dateFormat = dateFormat;
-          console.log('dateFormat', dateFormat);
         });
     }
 
     changeStartDate():void {
+      var date = this.dateModel.start;
       console.log('changeStartDate');
     }
 
@@ -49,6 +45,11 @@ module hoay.calculate {
     }
 
   }
+
+
+  hoay.common.util.applyMixins(CalculateContentComponentController, [
+    hoay.common.navigation.NavigationMixin
+  ]);
 
   angular.module('hoay.calculate')
     .controller('CalculateContentComponentController', CalculateContentComponentController);
