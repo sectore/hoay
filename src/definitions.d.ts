@@ -46,4 +46,10 @@
 /// <reference path='info/info-content-component.ts' />
 /// <reference path='info/info-content-component-controller.ts' />
 
+/// <reference path='settings/settings-module.ts' />
+/// <reference path='settings/settings-route.ts' />
+/// <reference path='settings/settings-page-controller.ts' />
+/// <reference path='settings/settings-content-component.ts' />
+/// <reference path='settings/settings-content-component-controller.ts' />
+
 
