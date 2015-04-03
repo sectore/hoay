@@ -6,7 +6,6 @@ module hoay.calculate {
   describe('CalculateContentComponentController', () => {
 
     var controller:CalculateContentComponentController;
-    var scope:any;
 
     beforeEach(() => {
       angular.mock.module('hoay.calculate');
@@ -17,8 +16,8 @@ module hoay.calculate {
                        $controller:ng.IControllerService,
                        $translate:ng.translate.ITranslateService) => {
 
-      scope = <any>$rootScope.$new();
-      var rootScope = <any>$rootScope.$new();
+      var scope:any = <any>$rootScope.$new();
+      var rootScope:any = <any>$rootScope.$new();
       controller = $controller('CalculateContentComponentController', {
         $scope: scope,
         $translate: $translate,
