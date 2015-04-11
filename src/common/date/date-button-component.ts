@@ -2,9 +2,9 @@
 module hoay.calculate {
   'use strict';
 
-  export function DateButtonComponent():ng.IDirective {
+  export function DateButtonComponent():angular.IDirective {
 
-    var component:ng.IDirective = <ng.IDirective>{};
+    var component:angular.IDirective = <angular.IDirective>{};
 
     component.restrict = 'E';
     component.templateUrl = 'common/date/date-button.html';

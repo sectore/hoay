@@ -7,7 +7,7 @@ module hoay.info {
 
     .constant('INFO_PATH', '/info')
 
-    .config(($stateProvider:ng.ui.IStateProvider, INFO_PATH:string) => {
+    .config(($stateProvider:angular.ui.IStateProvider, INFO_PATH:string) => {
 
       $stateProvider.state('info', {
         url: INFO_PATH,

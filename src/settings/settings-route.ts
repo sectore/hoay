@@ -7,7 +7,7 @@ module hoay.settings {
 
     .constant('SETTINGS_PATH', '/settings')
 
-    .config(($stateProvider:ng.ui.IStateProvider, SETTINGS_PATH:string) => {
+    .config(($stateProvider:angular.ui.IStateProvider, SETTINGS_PATH:string) => {
 
       $stateProvider.state('settings', {
         url: SETTINGS_PATH,

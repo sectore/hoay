@@ -8,8 +8,8 @@ module hoay.calculate {
     subLabel:string;
 
     // @ngInject
-    constructor(private $scope: ng.IScope,
-                private $attrs: ng.IAttributes) {
+    constructor(private $scope: angular.IScope,
+                private $attrs: angular.IAttributes) {
     }
 
   }

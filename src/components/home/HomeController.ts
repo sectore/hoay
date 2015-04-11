@@ -29,8 +29,8 @@ module hoay.components.home {
         }
     }
 
-    function setRouteState($stateProvider:ng.ui.IStateProvider) {
-        var state:ng.ui.IState = {
+    function setRouteState($stateProvider:angular.ui.IStateProvider) {
+        var state:angular.ui.IState = {
             url: '/home',
             views: {
                 menuContent: {
@@ -43,7 +43,7 @@ module hoay.components.home {
         $stateProvider.state('app.home', state);
     }
 
-    export var app:ng.IModule = app || angular.module('hoay.components.home', ['ionic']);
+    export var app:angular.IModule = app || angular.module('hoay.components.home', ['ionic']);
     app.controller('HomeController', HomeController);
     app.config(setRouteState);
 }

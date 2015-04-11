@@ -2,9 +2,9 @@
 module hoay.calculate {
   'use strict';
 
-  export function CalculateContentComponent():ng.IDirective {
+  export function CalculateContentComponent():angular.IDirective {
 
-    var component:ng.IDirective = <ng.IDirective>{};
+    var component:angular.IDirective = <angular.IDirective>{};
 
     component.restrict = 'E';
     component.templateUrl = 'calculate/calculate-content-component.html';

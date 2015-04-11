@@ -12,8 +12,8 @@ module hoay.info {
       angular.mock.module('hoay.info');
     });
 
-    beforeEach(inject(($rootScope:ng.IRootScopeService,
-                       $controller:ng.IControllerService) => {
+    beforeEach(inject(($rootScope:angular.IRootScopeService,
+                       $controller:angular.IControllerService) => {
 
       scope = <any>$rootScope.$new();
       controller = $controller('InfoPageController', {$scope: scope});

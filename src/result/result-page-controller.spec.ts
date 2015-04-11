@@ -12,8 +12,8 @@ module hoay.result {
       angular.mock.module('hoay.result');
     });
 
-    beforeEach(inject(($rootScope:ng.IRootScopeService,
-                       $controller:ng.IControllerService) => {
+    beforeEach(inject(($rootScope:angular.IRootScopeService,
+                       $controller:angular.IControllerService) => {
 
       scope = <any>$rootScope.$new();
       controller = $controller('ResultPageController', {$scope: scope});

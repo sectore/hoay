@@ -2,9 +2,9 @@
 module hoay.info {
   'use strict';
 
-  export function InfoContentComponent():ng.IDirective {
+  export function InfoContentComponent():angular.IDirective {
 
-    var component:ng.IDirective = <ng.IDirective>{};
+    var component:angular.IDirective = <angular.IDirective>{};
 
     component.restrict = 'E';
     component.templateUrl = 'info/info-content-component.html';

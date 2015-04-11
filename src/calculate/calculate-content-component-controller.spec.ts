@@ -12,9 +12,9 @@ module hoay.calculate {
       angular.mock.module('pascalprecht.translate');
     });
 
-    beforeEach(inject(($rootScope:ng.IRootScopeService,
-                       $controller:ng.IControllerService,
-                       $translate:ng.translate.ITranslateService) => {
+    beforeEach(inject(($rootScope:angular.IRootScopeService,
+                       $controller:angular.IControllerService,
+                       $translate:angular.translate.ITranslateService) => {
 
       var scope:any = <any>$rootScope.$new();
       var rootScope:any = <any>$rootScope.$new();

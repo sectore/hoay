@@ -2,9 +2,9 @@
 module hoay.settings {
   'use strict';
 
-  export function SettingsContentComponent():ng.IDirective {
+  export function SettingsContentComponent():angular.IDirective {
 
-    var component:ng.IDirective = <ng.IDirective>{};
+    var component:angular.IDirective = <angular.IDirective>{};
 
     component.restrict = 'E';
     component.templateUrl = 'settings/settings-content-component.html';

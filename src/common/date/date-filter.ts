@@ -2,7 +2,7 @@ module hoay.common.date {
   'use strict';
 
   // @ngInject
-  export function dateFilter($filter:ng.IFilterService):Function {
+  export function dateFilter($filter:angular.IFilterService):Function {
 
     return function(data:any, format:string) {
       var result = $filter('date')(data, format || 'MM/dd/yyyy');

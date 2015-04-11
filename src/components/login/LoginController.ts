@@ -13,7 +13,7 @@ module hoay.components.login {
         public username:string;
         public password:string;
 
-        constructor(public $scope:ILoginScope, private $state:ng.ui.IStateService, private $ionicHistory) {
+        constructor(public $scope:ILoginScope, private $state:angular.ui.IStateService, private $ionicHistory) {
             this.username = 'default';
             console.log('Login loaded');
             // 'vm' stands for 'view model'. An additional benefit to this is to prevent primatives getting
@@ -30,8 +30,8 @@ module hoay.components.login {
         }
     }
 
-    function loginConfig($stateProvider:ng.ui.IStateProvider) {
-        var state:ng.ui.IState = {
+    function loginConfig($stateProvider:angular.ui.IStateProvider) {
+        var state:angular.ui.IState = {
             url: '/login',
             views: {
                 menuContent: {
@@ -44,7 +44,7 @@ module hoay.components.login {
         $stateProvider.state('app.login', state);
     }
 
-    export var app:ng.IModule = app || angular.module('hoay.components.login', ['ionic']);
+    export var app:angular.IModule = app || angular.module('hoay.components.login', ['ionic']);
     app.controller('LoginController', LoginController);
     app.config(loginConfig);
 }

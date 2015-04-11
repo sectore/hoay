@@ -14,8 +14,8 @@ module hoay.calculate {
 
     // @ngInject
     constructor(private $scope:IMainScope,
-                private $translate:ng.translate.ITranslateService,
-                private $rootScope:ng.IRootScopeService,
+                private $translate:angular.translate.ITranslateService,
+                private $rootScope:angular.IRootScopeService,
                 private $state:angular.ui.IStateService,
                 public dateModel:hoay.common.date.DateModel) {
 

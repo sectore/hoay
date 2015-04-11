@@ -1,3 +1,5 @@
+/// <reference path='../../definitions.d.ts' />
+
 module hoay.common.date {
   'use strict';
 

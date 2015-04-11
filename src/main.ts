@@ -30,9 +30,9 @@ module hoay {
       });
     })
 
-    .config(($stateProvider:ng.ui.IStateProvider,
-             $urlRouterProvider:ng.ui.IUrlRouterProvider,
-             $locationProvider:ng.ILocationProvider,
+    .config(($stateProvider:angular.ui.IStateProvider,
+             $urlRouterProvider:angular.ui.IUrlRouterProvider,
+             $locationProvider:angular.ILocationProvider,
              CALCULATE_PATH:string,
              RESULT_PATH:string) => {
       // if none of the above states are matched, use this as the fallback

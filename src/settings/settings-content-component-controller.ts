@@ -11,8 +11,8 @@ module hoay.settings {
 
     // @ngInject
     constructor($scope:IMainScope,
-                private $translate:ng.translate.ITranslateService,
-                $rootScope:ng.IRootScopeService) {
+                private $translate:angular.translate.ITranslateService,
+                $rootScope:angular.IRootScopeService) {
     }
 
   }

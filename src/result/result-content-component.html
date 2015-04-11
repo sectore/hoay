@@ -1,1 +1,16 @@
-Reeessssulllllt :)
+<div class="dates-wrapper">
+  <div class="dates-container">
+    <div class="date-container">
+      <p class="label-date">{{'common.START_DATE' | translate}}</p>
+      <p class="date">
+        {{ctrl.dateModel.start | date: ctrl.dateFormat}}
+      </p>
+    </div>
+    <div class="date-container">
+      <p class="label-date">{{'common.END_DATE' | translate}}</p>
+      <p class="date">
+        {{ctrl.dateModel.end | date: ctrl.dateFormat}}
+      </p>
+    </div>
+  </div>
+</div>

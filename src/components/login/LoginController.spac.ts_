@@ -4,17 +4,17 @@ module hoay.components.login {
     describe('Login Controller', function () {
         var controller:LoginController;
         var scope:ILoginScope;
-        var $location:ng.ILocationService;
-        var $state:ng.ui.IStateService;
+        var $location:angular.ILocationService;
+        var $state:angular.ui.IStateService;
         var $ionicHistory:any;
 
         beforeEach(function () {
             angular.mock.module('hoay.components.login');
         });
 
-        beforeEach(inject(function ($rootScope:ng.IRootScopeService,
-                                    _$location_:ng.ILocationService,
-                                    _$state_:ng.ui.IStateService,
+        beforeEach(inject(function ($rootScope:angular.IRootScopeService,
+                                    _$location_:angular.ILocationService,
+                                    _$state_:angular.ui.IStateService,
                                     _$ionicHistory_:any) {
             scope = <any>$rootScope.$new();
             $location = _$location_;
