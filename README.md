@@ -104,7 +104,7 @@ grunt test:unit
 
 For testing purposes:
 
-* [Jasmine](http://pivotal.github.io/jasmine/)
+* [Jasmine](https://jasmine.github.io/)
 * [jasmine-sinon](https://github.com/froots/jasmine-sinon)
 * [Karma](http://karma-runner.github.io/)
 * [PhantomJS](http://phantomjs.org/)
